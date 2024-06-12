@@ -1,0 +1,48 @@
+.home-two{
+    padding: 30px;
+}
+.homecount-main{
+    align-items: center;
+}
+.homecount-box{
+    width: 182.845px;
+height: 161px;
+flex-shrink: 0;
+border-radius: 5px;
+border: 1px solid #095477;
+background: rgba(38, 156, 200, 0.17);
+margin-left: 50px;
+
+}
+.homecount-box h3{
+    /* width: 79px;
+height: 34px; */
+padding: 20px;
+/* padding-left: 20px; */
+/* text-align: center; */
+flex-shrink: 0;
+color: #0A5377;
+font-family: Poppins;
+font-size: 25px;
+font-style: normal;
+font-weight: bolder;
+line-height: normal;
+text-transform: uppercase;
+/* font-weight: 1200; */
+}
+.homecount-box p{
+    /* width: 100.729px;
+height: 64.847px; */
+flex-shrink: 0;
+color: #2B2A31;
+text-align: center;
+font-family: Poppins;
+font-size: 19px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.095px;
+text-transform: uppercase;
+font-weight: bolder;
+
+}

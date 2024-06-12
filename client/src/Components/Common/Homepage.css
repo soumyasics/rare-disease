@@ -1,0 +1,77 @@
+
+.homepage-first-box{
+    height: 300px;
+    width: 100%;
+    background: #095477;
+}
+.homepage-first-box-contain{
+    height: 700px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 70px;
+    border-radius: 25px;
+}
+.homepage-first-conatain img{
+    border-radius: 20px;
+}
+#span1 {
+    font-style:inherit;
+    /* padding-right: 70px; */
+    font-weight: 500;
+    color: rgb(47, 47, 159);
+}
+#span3 {
+    font-style: inherit;
+    font-weight: 500;
+    /* padding-left: 100px; */
+    color: rgb(47, 47, 159);
+
+}
+.homepage-firsts-conatain p{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    color: #095477;
+    padding-top: 40px;
+    text-shadow: 2px 2px 3px #555;
+}
+.homepage-firsts-conatain h6{
+    padding: 40px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.085px;
+    text-transform: capitalize;
+    color: #000;
+text-align: justify;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.085px;
+/* text-transform: uppercase; */
+}
+.homepage-first-content h5{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 20px;
+    color: #095477;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.homepage-first-content p{
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.085px;
+    text-transform: capitalize;
+}

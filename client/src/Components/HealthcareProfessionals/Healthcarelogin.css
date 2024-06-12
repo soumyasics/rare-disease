@@ -1,0 +1,91 @@
+.hplogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .hplogin-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: max-content;
+  }
+  
+  .hplogin-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .hploginform-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .hploginform-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .hploginform-group input {
+    width: 417px;
+height: 43px;
+flex-shrink: 0;
+border-radius: 5px;
+border: 1px solid #269CC8;
+background: #DAEEF6;
+  }
+  .hplogin-icon img{
+        width: 80px;
+        margin-bottom: 1rem;
+        margin-top: -60px;
+      
+  }
+  
+  .hppassword-container {
+    position: relative;
+  }
+  
+  .hppassword-container button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .hpreset-password {
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+    color: #0DB0FD;
+    text-decoration: none;
+  }
+  
+  .hplogin-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+border: 1px solid #269CC8;
+background: #0A5377;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+  }
+/*   
+  .adminlogin-button:hover {
+    background-color: #0056b3;
+  } */
+   .hplofin-reg{
+    padding-top: 20px;
+   }
+  .hplofin-reg i{
+
+    font-style: normal;
+    color: #0DB0FD;
+  }

@@ -1,0 +1,15 @@
+.nav-background {
+    background-color:rgb(181, 173, 173) !important;
+    height: 15vh;
+}
+#patient-nav-img{
+    border-radius: 100%;
+}
+.patient-nav-dropdown select{
+    width: 200px;
+    height: 40px;
+    background-color: aliceblue;
+    border: 0cap ;
+    border-radius: 20px;
+    text-align: center;
+}
