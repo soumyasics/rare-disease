@@ -24,7 +24,8 @@ import Adminlogin from './Components/Admin/Adminlogin';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/rare_disease">
+      
   <div>
   <Routes>
 
