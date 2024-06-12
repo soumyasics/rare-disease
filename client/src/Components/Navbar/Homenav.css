@@ -1,0 +1,62 @@
+.user_navbar {
+    background-color: rgb(255, 255, 255) !important;
+    max-height: fit-content;
+}
+
+#navbarSupportedContent {
+    padding-left: 350px;
+}
+
+.header-boxcontain {
+    display: flex;
+    align-items: center;
+    height: 62px;
+    border-radius: 5px 0px 0px 5px;
+    background: #0A5377;
+    padding: 0 10px; 
+    margin-right: -54px;
+}
+
+.header-boxcontain .nav-item {
+    margin: 0 10px; 
+    text-align: center;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; 
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+.image-profilelicon {
+    position: relative;
+    align-items: end;
+    padding-left: 400px;
+}
+
+.image-profilelicon img {
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
