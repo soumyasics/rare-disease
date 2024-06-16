@@ -37,7 +37,7 @@ function Healthcarelogin() {
             alert("Login Successfully")
         }
         else{
-            alert(res.data.message)
+            alert(res.data.msg)
         }
       })
       .catch((err)=>{

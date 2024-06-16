@@ -126,10 +126,113 @@ const hpLogin = async (req, res) => {
   }
 };
 
+//login using token completed
+
+const viewhpreq=((req,res)=>{
+  hpschema.find({isactive:false})
+  .exec()
+  .then((result)=>{
+    res.json({
+      status:200,
+      data:result
+    })
+  })
+  .catch((err)=>{
+    console.log(err);
+    res.json({
+      status:404,
+      err:err
+    })
+  })
+})
+
+const viewhpbyid=((req,res)=>{
+  hpschema.findById({_id:req.params.id})
+  .exec()
+  .then((result)=>{
+    res.json({
+      status:200,
+      data:result
+    })
+  })
+  .catch((err)=>{
+    console.log(err);
+    res.json({
+      status:404,
+      err:err
+    })
+  })
+})
+
+
+const deletehpreqById = async (req, res) => {
+  await hpschema.findByIdAndDelete({ _id: req.params.id }).exec()
+      .then((result) => {
+          res.json({
+              status: 200,
+              data: result,
+              msg: 'data deleted'
+          })
+      })
+      .catch(err => {
+          res.json({
+              status: 500,
+              msg: 'Error in API',
+              err: err
+          })
+      })
+
+}
+
+const activatehpById = async (req, res) => {
+  await hpschema.findByIdAndUpdate({ _id: req.params.id }, { isactive: true }).exec()
+      .then((result) => {
+          res.json({
+              status: 200,
+              data: result,
+              msg: 'Accepted'
+          })
+      })
+      .catch(err => {
+          res.json({
+              status: 500,
+              msg: 'Error in API',
+              err: err
+          })
+      })
+
+}
+
+const viewallhp = async (req, res) => {
+  await hpschema.find({isactive:true}).exec()
+      .then((result) => {
+          res.json({
+              status: 200,
+              data: result,
+              msg: 'Counsellor Found'
+          })
+      })
+      .catch(err => {
+          res.json({
+              status: 500,
+              msg: 'Error in API',
+              err: err
+          })
+      })
+
+}
+
+
+
 
 
 module.exports={
     registerhp,upload,
-    hpLogin
+    hpLogin,
+    viewhpreq,
+    viewhpbyid,
+    deletehpreqById,
+    activatehpById,
+    viewallhp
 }
 

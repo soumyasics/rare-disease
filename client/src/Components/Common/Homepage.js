@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import "./Homepage.css"
 import img from "../../Assets/homepage.jpg"
 import Homepage2 from './Homepage2'
@@ -6,6 +6,12 @@ import Aboutuspage from './Aboutuspage'
 import Footer from '../Footer/Footer'
 
 function Homepage() {
+    const aboutUsRef = useRef(null);
+
+    const scrollToAboutUs = () => {
+      aboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+    
   return (
     // <div className='homepage-first'>
     <div className='homepage-first-box'>
@@ -33,7 +39,10 @@ function Homepage() {
 
             </div>
             <Homepage2/>
+            <div id="about-us-section" ref={aboutUsRef}>
             <Aboutuspage/>
+
+            </div>
             <div>
                 
             </div>

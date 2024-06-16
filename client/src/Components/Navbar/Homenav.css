@@ -15,16 +15,17 @@
     background: #0A5377;
     padding: 0 10px; 
     margin-right: -54px;
+    width: 70%;
 }
 
 .header-boxcontain .nav-item {
-    margin: 0 10px; 
+    margin: 0 20px; 
     text-align: center;
     color: #FFF;
     font-family: Poppins;
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 300;
+    /* font-weight: 300; */
     line-height: 150%; 
     letter-spacing: 0.5px;
     text-transform: capitalize;
@@ -32,12 +33,12 @@
 .image-profilelicon {
     position: relative;
     align-items: end;
-    padding-left: 400px;
+    padding-left: 500px;
 }
 
 .image-profilelicon img {
     cursor: pointer;
-    padding-top: 10px;
+    /* padding-top: 0px; */
 }
 
 .dropdown-content {
@@ -59,4 +60,21 @@
 
 .dropdown-item:hover {
     background-color: #f1f1f1;
+}
+@media (max-width: 768px) {
+    .header-boxcontain {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .nav-item {
+        margin: 5px 0;
+        text-align: left;
+    }
+    
+    .image-profilelicon {
+        align-self: flex-end;
+        padding-top: 0;
+    }
 }

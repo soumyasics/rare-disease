@@ -17,15 +17,17 @@ export const hpRegSchema  = yup.object().shape({
     state: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
     // pincode:  yup.number().min(100000,pincodeErrorMessage).max(999999,"Pincode must be a 6 digit number") .positive("Pincode must be a positive number").required("Required"),
     licenceno: yup.string()
-    .matches(/^\d{9,}$/, "Licence number must be at least 9 digits")
-    .required("Licence number is required"),
-        phone: yup.string()
-    .matches(/^\d{10}$/, "Contact number must be a 10-digit number")
-    .required("Contact number is required"),  
-    aadharno: yup.string()
-    .matches(/^\d{12}$/, "Aadhaar number must be a 12-digit number")
-    .required("Aadhaar number is required"),
-        specialisation: yup.string()
+    .matches(/^\d{9,}$/, "Licence number must be at least 9 digits and cannot be negative")
+    .required("Licence number is required")
+    .test('is-positive', 'Licence number must be positive', value => parseInt(value, 10) > 0),
+  phone: yup.string()
+    .matches(/^\d{10}$/, "Contact number must be a 10-digit number and cannot be negative")
+    .required("Contact number is required")
+    .test('is-positive', 'Contact number must be positive', value => parseInt(value, 10) > 0),
+  aadharno: yup.string()
+    .matches(/^\d{12}$/, "Aadhaar number must be a 12-digit number and cannot be negative")
+    .required("Aadhaar number is required")
+    .test('is-positive', 'Aadhaar number must be positive', value => parseInt(value, 10) > 0),        specialisation: yup.string()
     .min(3, "Specialization must be at least 3 characters long")
     .required("Specialization is required"),
     yearofexp: yup.number()
@@ -50,12 +52,13 @@ export const counsellorRegSchema  = yup.object().shape({
     // state: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
     // pincode:  yup.number().min(100000,pincodeErrorMessage).max(999999,"Pincode must be a 6 digit number") .positive("Pincode must be a positive number").required("Required"),
     regno: yup.string()
-    .matches(/^\d{9,}$/, "Register number must be at least 9 digits")
-    .required("Licence number is required"),
-        phone: yup.string()
-    .matches(/^\d{10}$/, "Contact number must be a 10-digit number")
-    .required("Contact number is required"),  
-    // aadharno: yup.string()
+    .matches(/^\d{9,}$/, "Register number must be at least 9 digits and cannot be negative")
+    .required("Register number is required")
+    .test('is-positive', 'Register number must be positive', value => parseInt(value, 10) > 0),
+  phone: yup.string()
+    .matches(/^\d{10}$/, "Contact number must be a 10-digit number and cannot be negative")
+    .required("Contact number is required")
+    .test('is-positive', 'Contact number must be positive', value => parseInt(value, 10) > 0),    // aadharno: yup.string()
     // .matches(/^\d{12}$/, "Aadhaar number must be a 12-digit number")
     // .required("Aadhaar number is required"),
     //     specialisation: yup.string()
