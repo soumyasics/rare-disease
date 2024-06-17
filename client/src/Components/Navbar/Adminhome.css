@@ -1,0 +1,29 @@
+.searchnav-adminhomemain input{
+    width: 355px;
+height: 36px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #269CC8;
+}
+.searchnav-adminhomemain input::placeholder{
+    color: white;
+}
+.search-containeradminnav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ri-search-line {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    color: #ccc; 
+}
+
+.search-inputadminnav {
+    padding-left: 35px; 
+    height: 30px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}

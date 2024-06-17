@@ -15,11 +15,24 @@ router.post("/updatepatientprofile/:id",Patients.updateprofilepatient,Patients.u
 
 
 router.post("/counsellorregistration",Counsellor.upload,Counsellor.registercounsellor)
-
+router.post("/counsellorlogin",Counsellor.counsellorLogin)
+router.post("/viewcouncellorreq",Counsellor.viewcounsellorreq)
+router.post("/viewcouncellorbyid/:id",Counsellor.viewcounsellorbyid)
+router.post("/deletecounsellorreq/:id",Counsellor.deleteCounsellorById)
+router.post("/activatecouncellor/:id",Counsellor.activateCounsellorById)
+router.post("/viewallcounsellor",Counsellor.viewallcounsellor)
 
 
 router.post("/hpregister",Hp.upload,Hp.registerhp)
 router.post("/hplogin",Hp.hpLogin)
+router.post("/viewhprequest",Hp.viewhpreq)
+router.post("/viewhpbyid/:id",Hp.viewhpbyid)
+router.post("/deletehpreq/:id",Hp.deletehpreqById)
+router.post("/activatehp/:id",Hp.activatehpById)
+router.post("/viewallhp",Hp.viewallhp)
+
+
+
 
 
 module.exports=router

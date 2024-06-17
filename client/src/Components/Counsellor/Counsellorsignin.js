@@ -228,12 +228,12 @@ function Counsellorsignin() {
                     <i className="error">{errors.confirmpassword}</i>
                   )}
                 </div>                <div className="col-12 pb-3 patient-signin-inputbutton ">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-primary" style={{marginLeft:"70px"}}>
                     Register
                   </button>
-                  <button type="reset" className="btn btn-primary">
+                  {/* <button type="reset" className="btn btn-primary">
                     Cancel
-                  </button>
+                  </button> */}
                 </div>
                 <div className="col-12 pb-3 patient-signin-account">
                   <h6>

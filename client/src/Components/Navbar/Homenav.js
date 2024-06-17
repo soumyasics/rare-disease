@@ -15,53 +15,84 @@ function Homenav() {
     setOpenDropdown(null);
   };
 
+  const handleAboutClick = () => {
+    const aboutUsSection = document.getElementById('about-us-section');
+    aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  
   return (
-    
-      <div class="container-fluid ">
-        <nav class="navbar navbar-expand-lg user_navbar ">
-          <div class="container ">
-            <a class="navbar-brand" href="#">
-              <img
-                src={img}
-                alt="logo"
-                width="189px"
-                height="104px"
-                style={{ borderRadius: "50px" }}
-              />
-            </a>
+    <div class="container-fluid ">
+      <nav class="navbar navbar-expand-lg user_navbar ">
+        <div class="container ">
+          <a class="navbar-brand" href="#">
+            <img
+              src={img}
+              alt="logo"
+              width="189px"
+              height="104px"
+              style={{ borderRadius: "50px" }}
+            />
+          </a>
 
-
-            <div className="header-boxcontain d-flex">
-           <Link to="/" style={{textDecoration:"none"}}> <p className="nav-item">Home</p></Link>
-            <p className="nav-item">About</p>
+          <div className="header-boxcontain d-flex">
+            <Link to="/" style={{ textDecoration: "none" }}>
+              {" "}
+              <p className="nav-item">Home</p>
+            </Link>
+            <Link to="/aboutus"
+              // onClick={handleAboutClick}
+             style={{ textDecoration: "none" }}>
+              {" "}
+              <p className="nav-item">About</p>
+            </Link>
             <p className="nav-item">Contact Us</p>
-            
-                          <div className="co-6 image-profilelicon">
-                
-                <img src={imgprofile}           className={`dropdown-button ${openDropdown === 'dropdown1' ? 'active' : ''}`}
-          onClick={() => toggleDropdown('dropdown1')} 
- />
- <i className={`${openDropdown === 'dropdown1' ? 'up' : 'down'}-s-line`}></i>
- {openDropdown === 'dropdown1' && (
-          <div className="dropdown-content">
-           <Link to="/admin-login" style={{textDecoration:"none"}}> <button className="dropdown-item" onClick={closeDropdown}>Admin</button></Link>
-            <button className="dropdown-item" onClick={closeDropdown}>Patients</button>
-            <button className="dropdown-item" onClick={closeDropdown}>Counselor</button>
-          <Link to="/healthcare-signin" style={{textDecoration:"none"}}> <button className="dropdown-item" onClick={closeDropdown}>Health Care Professionals</button></Link> 
 
-
-          </div>
-        )}
-
-              </div>
-
+            <div className=" image-profilelicon">
+              <img
+                src={imgprofile}
+                className={`dropdown-button ${
+                  openDropdown === "dropdown1" ? "active" : ""
+                }`}
+                onClick={() => toggleDropdown("dropdown1")}
+              />
+              <i
+                className={`${
+                  openDropdown === "dropdown1" ? "up" : "down"
+                }-s-line`}
+              ></i>
+              {openDropdown === "dropdown1" && (
+                <div className="dropdown-content">
+                  <Link to="/admin-login" style={{ textDecoration: "none",color:"black" }}>
+                    {" "}
+                    <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                      Admin
+                    </button>
+                  </Link>
+                  <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                    Patients
+                  </button>
+                  <Link to="/counsellor-login" style={{ textDecoration: "none",color:"black" }}>
+                  <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                    Counsellor
+                  </button>
+                  </Link>
+                  <Link
+                    to="/health-login"
+                    style={{ textDecoration: "none" }}
+                  >
+                    {" "}
+                    <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                      Health Care Professionals
+                    </button>
+                  </Link>
+                </div>
+              )}
             </div>
-
-
-
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
+    </div>
   );
 }
 

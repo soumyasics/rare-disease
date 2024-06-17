@@ -53,6 +53,10 @@ const schema=mongoose.Schema({
     specialisation:{
         type:String,
         required:true
+    },
+    isactive:{
+        type:Boolean,
+        default:false
     }
 
    

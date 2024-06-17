@@ -1,0 +1,119 @@
+.adminsidebar-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 399px;
+  background-color: #0A74A6;
+  color: white;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevents the sidebar from shrinking */
+  height: auto; /* Allows the height to adjust based on content */
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.adminsidebar-content {
+  padding: 1rem;
+}
+
+.sidebar-item {
+  padding: 1rem;
+  cursor: pointer;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 28.5px */
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.sidebar-item:hover {
+  background: #39a4ca;
+}
+
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.admindrop-main{
+  padding-left: 30px;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 28.5px */
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.dropdown-item:hover {
+  background: #269CC8;
+}
+
+.content {
+  flex-grow: 1; /* Ensures the content area takes the remaining space */
+  background-color: #f0f0f0;
+  padding: 1rem;
+  height: auto; /* Allows the height to adjust based on content */
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .sidebar {
+    position: absolute;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+.adminsidebar-head img {
+  padding: 30px;
+}
+
+.adminsidebar-head h4 {
+  padding-top: 40px;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.adminsidebar-reqimg {
+  padding-left: 20px;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 28.5px */
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}

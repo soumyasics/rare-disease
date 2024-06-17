@@ -10,8 +10,6 @@ function Healthcarelogin() {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
   
-    let userName="Admin"
-    let Passw0rd="Admin@123"
   
     const handleUsernameChange = (e) => {
       setEmail(e.target.value);
@@ -37,7 +35,7 @@ function Healthcarelogin() {
             alert("Login Successfully")
         }
         else{
-            alert(res.data.message)
+            alert(res.data.msg)
         }
       })
       .catch((err)=>{

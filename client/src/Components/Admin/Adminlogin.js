@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import "../Admin/Adminlogin.css"
 import img from "../../Assets/iconlogin.png"
+import { useNavigate } from 'react-router-dom';
 
 
 function Adminlogin() {
     const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate=useNavigate()
 
   let userName="Admin"
   let Passw0rd="Admin@123"
@@ -31,6 +34,8 @@ function Adminlogin() {
     if(userName===username){
         if(Passw0rd===password){
             alert("Login Successsfully")
+            navigate("/admin-dashboard")
+            localStorage.setItem("adminid",1)
         }
         else{
             alert("Password Error")

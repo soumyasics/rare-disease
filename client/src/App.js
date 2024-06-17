@@ -20,6 +20,11 @@ import Aboutuspage from './Components/Common/Aboutuspage';
 import Homenav from './Components/Navbar/Homenav';
 import Footer from './Components/Footer/Footer';
 import Adminlogin from './Components/Admin/Adminlogin';
+import Adminsidebar from './Components/Admin/Adminsidebar';
+import Adminmain from './Components/Admin/Adminmain';
+import Viewuserpopup from './Components/Admin/Viewuserpopup';
+import Counsellorreq from './Components/Admin/Requests/Counsellorreq';
+import Adminhome from './Components/Navbar/Adminhome';
 
 
 function App() {
@@ -38,7 +43,7 @@ function App() {
     <Route path='/patient_signin' element={[<Patientnav/>,<Patientsignin/>]}/>
     <Route path='/patinet-login' element={[<Patientnav/>,<Patientlogin/>]}/>
     <Route path='/patient-forgetpswd' element={[<Patientnav/>,<Patientforgrtpswd/>,<Footer/>]}/>
-    <Route path='/aboutus' element={<Aboutuspage/>}/>
+    <Route path='/aboutus' element={[<Homenav/>,<Aboutuspage/>,<Footer/>]}/>
     <Route path='/homenav' element={<Homenav/>}/>
     <Route path='/footer' element={<Footer/>}/>
 
@@ -51,12 +56,16 @@ function App() {
 
     {/* counsellor */}
     <Route path='/counsellor-signin' element={[<Counsellorsignin/>]}/>
-    <Route path='/counsellor-login' element={[<Patientnav/>,<Counselorlogin/>]}/>
+    <Route path='/counsellor-login' element={[<Homenav/>,<Counselorlogin/>,<Footer/>]}/>
     <Route path='/counselor-forgetpswd' element={[<Patientnav/>,<Counsellorforgetpswd/>]}/>
 
 
     {/* Admin */}
     <Route path='/admin-login' element={[<Homenav/>,<Adminlogin/>,<Footer/>]}/>
+    <Route path='/admin-dashboard' element={[<Adminhome/>,<Adminmain data="admin-dashboard"/>]}/>
+    <Route path='/admin-counsellorreq' element={[<Adminhome/>,<Adminmain data="admin-counsellorreq"/>]}/>
+    <Route path='/admin-hprequest' element={[<Adminhome/>,<Adminmain data="admin-hprequest"/>]}/>
+
 
   </Routes>
 
