@@ -18,10 +18,10 @@ function Adminsidebar() {
     setIsOpen(!isOpen);
   };
 
-  const toggleRequestsDropdown = () => {
+  const toggleRequestsDropdown = (e) => {
+    e.stopPropagation(); 
     setIsRequestsOpen(!isRequestsOpen);
   };
-
   const adminid=localStorage.getItem("adminid")
   // console.log(adminid+"admin");
   const handleLogout = () => {
@@ -53,7 +53,7 @@ function Adminsidebar() {
               <img src={imgreq} alt="requests" />
               <span className="adminsidebar-reqimg">Requests</span>
               {isRequestsOpen && (
-                <div className="admindrop-main">
+                <div className="admindrop-main" onClick={(e) => e.stopPropagation()}>
                   <Link to="/admin-counsellorreq" style={{ textDecoration: "none", color: "white" }}><div className="dropdown-item">Counsellor Request</div></Link>
                   <Link to="/admin-hprequest" style={{ textDecoration: "none", color: "white" }}><div className="dropdown-item">Hcp Request</div></Link>
                  

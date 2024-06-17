@@ -1,8 +1,9 @@
 .admindash-main{
-    width: 1065px;
+    width: 1053px;
     /* margin: 0; */
     height:666px;
     background: #d1e5ed;
+    border: 1px solid #095477;
 
 }
 /* .App {

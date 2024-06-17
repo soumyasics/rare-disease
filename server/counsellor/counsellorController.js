@@ -85,7 +85,7 @@ const counsellorLogin = async (req, res) => {
     const user = await counsellorSchema.findOne({ email: email });
 
     if (user) {
-      if (user.isactive === false) {
+      if (user.isActive === false) {
         return res.json({
           status: 403,
           msg: "Counsellor is not active. Please contact administrator.",

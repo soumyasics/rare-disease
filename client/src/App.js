@@ -56,17 +56,16 @@ function App() {
 
     {/* counsellor */}
     <Route path='/counsellor-signin' element={[<Counsellorsignin/>]}/>
-    <Route path='/counsellor-login' element={[<Patientnav/>,<Counselorlogin/>]}/>
+    <Route path='/counsellor-login' element={[<Homenav/>,<Counselorlogin/>,<Footer/>]}/>
     <Route path='/counselor-forgetpswd' element={[<Patientnav/>,<Counsellorforgetpswd/>]}/>
 
 
     {/* Admin */}
     <Route path='/admin-login' element={[<Homenav/>,<Adminlogin/>,<Footer/>]}/>
     <Route path='/admin-dashboard' element={[<Adminhome/>,<Adminmain data="admin-dashboard"/>]}/>
-    <Route path='/admin-counsellorreq' element={<Adminmain data="admin-counsellorreq"/>}/>
-    <Route path='/admin-hprequest' element={<Adminmain data="admin-hprequest"/>}/>
+    <Route path='/admin-counsellorreq' element={[<Adminhome/>,<Adminmain data="admin-counsellorreq"/>]}/>
+    <Route path='/admin-hprequest' element={[<Adminhome/>,<Adminmain data="admin-hprequest"/>]}/>
 
-    <Route path='/adminhome' element={<Adminhome/>}/>
 
   </Routes>
 
