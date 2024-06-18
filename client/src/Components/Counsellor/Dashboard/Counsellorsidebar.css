@@ -1,0 +1,4 @@
+.counsellor-headimage img{
+    border-radius: 50%;
+    object-fit: fill;
+}

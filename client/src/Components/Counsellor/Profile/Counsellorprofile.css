@@ -1,0 +1,98 @@
+.Counsellorprofile-mainbox{
+    width: 1053px;
+    /* margin: 0; */
+    height:666px;
+    background: #d1e5ed;
+    border: 1px solid #095477;
+    display: flex; /* Add this line */
+    justify-content: center; /* Add this line */
+    align-items: center;
+}
+.counsellorprofile-box{
+    width: 896px;
+height: 492px;
+flex-shrink: 0;
+border-radius: 10px 10px 5px 5px;
+border: 10px solid #095477;
+background: #FFF;
+/* display: flex;
+justify-content:center;
+align-items: center; */
+}
+.counsellorprofile-head{
+    width: 891px;
+height: 63px;
+flex-shrink: 0;
+border-radius: 5px 5px 0px 0px;
+background: #095477;
+margin-left: -10px;
+}
+.counsellorprofile-head p{
+    color: #FFF;
+font-family: Poppins;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 45px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+padding-left: 20px;
+}
+.counsellorprofileimg img{
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px;
+}
+.counsellorprofile-data input{
+    width: 290px;
+height: 39px;
+flex-shrink: 0;
+border-radius: 9.011px;
+border: 1.001px solid #000;
+background: #FFF;
+}
+.counsellorprofile-data p{
+    color: #000;
+    font-family: Poppins;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 28.5px */
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    width: 350px;
+}
+.counsellorprofile-name{
+    color: #000;
+font-family: Poppins;
+font-size: 19px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 28.5px */
+/* letter-spacing: 0.5px; */
+text-transform: capitalize;
+}
+.counsellorprofile-datamainclass{
+    margin-top: 50px;
+}
+.counsellorprofile-button button{
+    width: 102px;
+height: 50px;
+flex-shrink: 0;
+border-radius: 30px;
+background: #095477;
+color: #FFF;
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: capitalize;
+gap: 20px;
+}
+.counsellorprofile-button1{
+    margin-left: 25%;
+}
+.counsellorprofile-button2{
+    margin-left: -10%;  
+}
