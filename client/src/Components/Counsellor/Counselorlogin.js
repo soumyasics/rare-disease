@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import img from "../../Assets/iconlogin.png"
 import axiosInstance from '../Constants/Baseurl';
 
@@ -22,7 +22,7 @@ function Counselorlogin() {
     const togglePasswordVisibility = () => {
       setShowPassword(!showPassword);
     };
-  
+  const navigate=useNavigate()
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -30,7 +30,9 @@ function Counselorlogin() {
       .then((res)=>{
         console.log(res);
         if(res.data.status===200){
+            localStorage.setItem("counsellorlogin", res.data.id)
             alert("Login Successfully")
+            navigate("/counsellor-dashboard")
         }
         else{
             alert(res.data.msg)

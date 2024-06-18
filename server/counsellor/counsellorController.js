@@ -214,6 +214,32 @@ const viewallcounsellor = async (req, res) => {
 
 }
 
+const updatecounsellor=((req,res)=>{
+  counsellorSchema.findByIdAndUpdate({_id:req.params.id},{
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    address: req.body.address,
+    regno:req.body.regno,
+    image: req.file,
+  })
+  .then((result) => {
+    res.json({
+        status: 200,
+        data: result,
+        msg: 'Updated'
+    })
+})
+.catch(err => {
+    res.json({
+        status: 500,
+        msg: 'Error in API',
+        err: err
+    })
+})
+
+})
+
 
 
 
@@ -225,6 +251,7 @@ module.exports={
     viewcounsellorbyid,
     deleteCounsellorById,
     activateCounsellorById,
-    viewallcounsellor
+    viewallcounsellor,
+    updatecounsellor
 }
 

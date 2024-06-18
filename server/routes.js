@@ -21,6 +21,7 @@ router.post("/viewcouncellorbyid/:id",Counsellor.viewcounsellorbyid)
 router.post("/deletecounsellorreq/:id",Counsellor.deleteCounsellorById)
 router.post("/activatecouncellor/:id",Counsellor.activateCounsellorById)
 router.post("/viewallcounsellor",Counsellor.viewallcounsellor)
+router.post("/updatecounsellor/:id",Counsellor.upload,Counsellor.updatecounsellor)
 
 
 router.post("/hpregister",Hp.upload,Hp.registerhp)

@@ -25,6 +25,8 @@ import Adminmain from './Components/Admin/Adminmain';
 import Viewuserpopup from './Components/Admin/Viewuserpopup';
 import Counsellorreq from './Components/Admin/Requests/Counsellorreq';
 import Adminhome from './Components/Navbar/Adminhome';
+import Counsellorsidebar from './Components/Counsellor/Dashboard/Counsellorsidebar';
+import Counsellormain from './Components/Counsellor/Dashboard/Counsellormain';
 
 
 function App() {
@@ -58,6 +60,8 @@ function App() {
     <Route path='/counsellor-signin' element={[<Counsellorsignin/>]}/>
     <Route path='/counsellor-login' element={[<Homenav/>,<Counselorlogin/>,<Footer/>]}/>
     <Route path='/counselor-forgetpswd' element={[<Patientnav/>,<Counsellorforgetpswd/>]}/>
+    <Route path='/counsellor-dashboard' element={[<Adminhome/>,<Counsellormain data="counsellor-dashboard"/>]}/>
+    <Route path='/counsellor-priofile' element={[<Adminhome/>,<Counsellormain data="counsellor-profile"/>]}/>
 
 
     {/* Admin */}
