@@ -5,7 +5,7 @@
 
 .sidebar {
   width: 399px;
-  background-color: #0A74A6;
+  background: #0A5377;
   color: white;
   transition: transform 0.3s ease;
   flex-shrink: 0; /* Prevents the sidebar from shrinking */

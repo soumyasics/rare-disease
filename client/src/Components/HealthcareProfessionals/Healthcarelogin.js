@@ -32,7 +32,7 @@ function Healthcarelogin() {
       .then((res)=>{
         console.log(res);
         if(res.data.status===200){
-            alert("Login Successfully")
+            // alert("Login Successfully")
         }
         else{
             alert(res.data.msg)
