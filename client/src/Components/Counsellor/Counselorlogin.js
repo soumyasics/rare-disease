@@ -31,7 +31,7 @@ function Counselorlogin() {
         console.log(res);
         if(res.data.status===200){
             localStorage.setItem("counsellorlogin", res.data.id)
-            alert("Login Successfully")
+            // alert("Login Successfully")
             navigate("/counsellor-dashboard")
         }
         else{
@@ -84,7 +84,7 @@ function Counselorlogin() {
       </div>
       <button type="submit" className="hplogin-button">LOGIN</button>
       <div className='hplofin-reg'>
-        <p>New To Rare Care!<Link to="/healthcare-signin" style={{textDecoration:"none"}}><i>Register Now</i></Link> </p>
+        <p>New To Rare Care!<Link to="/counsellor-signin" style={{textDecoration:"none"}}><i>Register Now</i></Link> </p>
     </div>
 
     </form>

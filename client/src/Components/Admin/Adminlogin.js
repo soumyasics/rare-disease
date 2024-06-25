@@ -33,7 +33,7 @@ function Adminlogin() {
     e.preventDefault();
     if(userName===username){
         if(Passw0rd===password){
-            alert("Login Successsfully")
+            // alert("Login Successsfully")
             navigate("/admin-dashboard")
             localStorage.setItem("adminid",1)
         }
