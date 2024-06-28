@@ -240,6 +240,34 @@ const updatecounsellor=((req,res)=>{
 
 })
 
+const forgotPwdcounsellor = (req, res) => {
+  counsellorSchema
+    .findOneAndUpdate(
+      { email: req.body.email },
+      { password: req.body.password }
+    )
+    .exec()
+    .then((data) => {
+      if (data != null)
+        res.json({
+          status: 200,
+          msg: "Updated successfully",
+        });
+      else
+        res.json({
+          status: 500,
+          msg: "User Not Found",
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json({
+        status: 500,
+        msg: "Data not Updated",
+        Error: err,
+      });
+    });
+};
 
 
 
@@ -252,6 +280,7 @@ module.exports={
     deleteCounsellorById,
     activateCounsellorById,
     viewallcounsellor,
-    updatecounsellor
+    updatecounsellor,
+    forgotPwdcounsellor
 }
 

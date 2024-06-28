@@ -13,20 +13,27 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage }).single("image");
+const upload = multer({ storage: storage }).array("files",2);
+
+// const upload = multer({ storage: storage }).array("files");
+// const upload2 = multer({ storage: storage }).single("image");
+
 
 const registerpatient = (req, res) => {
+  console.log("req",req.files);
   const patient = new patientschema({
     name: req.body.name,
     phone: req.body.phone,
     email: req.body.email,
+    gender:req.body.gender,
+    dob:req.body.dob,
     password: req.body.password,
-    housename: req.body.housename,
-    street: req.body.street,
+    country:req.body.country,
     city: req.body.city,
-    state: req.body.state,
-    pincode: req.body.pincode,
-    image: req.file,
+    diseaseinfo:req.body.diseaseinfo,
+    usertype:req.body.usertype,
+    healthrecord:req.files[0],
+    image: req.files[1],
   });
   patient
     .save()

@@ -21,6 +21,7 @@ router.post("/viewcouncellorbyid/:id",Counsellor.viewcounsellorbyid)
 router.post("/deletecounsellorreq/:id",Counsellor.deleteCounsellorById)
 router.post("/activatecouncellor/:id",Counsellor.activateCounsellorById)
 router.post("/viewallcounsellor",Counsellor.viewallcounsellor)
+router.post("/forgotPwdcounsellor",Counsellor.forgotPwdcounsellor)
 router.post("/updatecounsellor/:id",Counsellor.upload,Counsellor.updatecounsellor)
 
 
@@ -31,6 +32,7 @@ router.post("/viewhpbyid/:id",Hp.viewhpbyid)
 router.post("/deletehpreq/:id",Hp.deletehpreqById)
 router.post("/activatehp/:id",Hp.activatehpById)
 router.post("/viewallhp",Hp.viewallhp)
+router.post("/forgotPwdhp",Hp.forgotPwdhp)
 
 
 

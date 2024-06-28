@@ -27,6 +27,8 @@ import Counsellorreq from './Components/Admin/Requests/Counsellorreq';
 import Adminhome from './Components/Navbar/Adminhome';
 import Counsellorsidebar from './Components/Counsellor/Dashboard/Counsellorsidebar';
 import Counsellormain from './Components/Counsellor/Dashboard/Counsellormain';
+import HpSibebar from './Components/HealthcareProfessionals/HpDashboard/HpSibebar';
+import Hpmain from './Components/HealthcareProfessionals/HpDashboard/Hpmain';
 
 
 function App() {
@@ -42,9 +44,9 @@ function App() {
 
     {/* Patients */}
     <Route path='/patientnav' element={<Patientnav/>}/>
-    <Route path='/patient_signin' element={[<Patientnav/>,<Patientsignin/>]}/>
-    <Route path='/patinet-login' element={[<Patientnav/>,<Patientlogin/>]}/>
-    <Route path='/patient-forgetpswd' element={[<Patientnav/>,<Patientforgrtpswd/>,<Footer/>]}/>
+    <Route path='/patient_signin' element={[<Homenav/>,<Patientsignin/>,<Footer/>]}/>
+    <Route path='/patinet-login' element={[<Homenav/>,<Patientlogin/>,<Footer/>]}/>
+    <Route path='/patient-forgetpswd' element={[<Homenav/>,<Patientforgrtpswd/>,<Footer/>]}/>
     <Route path='/aboutus' element={[<Homenav/>,<Aboutuspage/>,<Footer/>]}/>
     <Route path='/homenav' element={<Homenav/>}/>
     <Route path='/footer' element={<Footer/>}/>
@@ -53,13 +55,15 @@ function App() {
     {/* Healthcare Professional */}
     <Route path='/healthcare-signin' element={[<Homenav/>,<Healthcaresignup/>,<Footer/>]}/>
     <Route path='/health-login' element={[<Homenav/>,<Healthcarelogin/>,<Footer/>]}/>
-    <Route path='/health-forgetpswd' element={[<Patientnav/>,<Healthcareforgetpswd/>]}/>
+    <Route path='/health-forgetpswd' element={[<Homenav/>,<Healthcareforgetpswd/>,<Footer/>]}/>
+    <Route path='/health-dashboard' element={[<Adminhome/>,<Hpmain data="health-dashboard"/>]}/>
+   
 
 
     {/* counsellor */}
-    <Route path='/counsellor-signin' element={[<Counsellorsignin/>]}/>
+    <Route path='/counsellor-signin' element={[<Homenav/>,<Counsellorsignin/>,<Footer/>]}/>
     <Route path='/counsellor-login' element={[<Homenav/>,<Counselorlogin/>,<Footer/>]}/>
-    <Route path='/counselor-forgetpswd' element={[<Patientnav/>,<Counsellorforgetpswd/>]}/>
+    <Route path='/counselor-forgetpswd' element={[<Homenav/>,<Counsellorforgetpswd/>,<Footer/>]}/>
     <Route path='/counsellor-dashboard' element={[<Adminhome/>,<Counsellormain data="counsellor-dashboard"/>]}/>
     <Route path='/counsellor-priofile' element={[<Adminhome/>,<Counsellormain data="counsellor-profile"/>]}/>
 

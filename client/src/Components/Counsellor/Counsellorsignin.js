@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import img from "../../Assets/regimg.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Counsellor/Counsellorsignin.css";
 import axiosInstance from "../Constants/Baseurl";
 import { useFormik } from "formik";
@@ -10,7 +10,7 @@ import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 function Counsellorsignin() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  const navigate=useNavigate()
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -49,7 +49,7 @@ function Counsellorsignin() {
         console.log(res);
         if (res.data.status === 200) {
           alert("Registration Successful");
-          // navigate("/shoplogin")
+          navigate("/counsellor-login")
           // localStorage.setItem("userid",res.data.data._id)
           // console.log(res.data.data._id);
         } else {
@@ -237,7 +237,7 @@ function Counsellorsignin() {
                 </div>
                 <div className="col-12 pb-3 patient-signin-account">
                   <h6>
-                    Already have an account?<Link to=""> Login </Link>
+                    Already have an account?<Link to="/counsellor-login"> Login </Link>
                   </h6>
                 </div>
               </div>

@@ -31,7 +31,7 @@ function Counsellordashboard() {
         </header>
 
         <div className="counsellordash-counsellor">
-          <div className="admindash-shrink">Counsellor</div>
+          <div className="admindash-shrink">Appointments</div>
           <div className="row d-flex">
             {/* {counsellor && counsellor.length ? (
               counsellor.slice(0, 3).map((a) => {

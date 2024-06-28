@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import img from "../../Assets/iconlogin.png"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import "../HealthcareProfessionals/Healthcarelogin.css"
 import axiosInstance from '../Constants/Baseurl';
 
@@ -9,7 +9,7 @@ function Healthcarelogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-  
+    const navigate=useNavigate()
   
     const handleUsernameChange = (e) => {
       setEmail(e.target.value);
@@ -32,6 +32,8 @@ function Healthcarelogin() {
       .then((res)=>{
         console.log(res);
         if(res.data.status===200){
+          localStorage.setItem("healthcareid", res.data.id)
+          navigate("/health-dashboard")
             // alert("Login Successfully")
         }
         else{
@@ -79,7 +81,7 @@ function Healthcarelogin() {
           <button type="button" onClick={togglePasswordVisibility}>
           <i className={showPassword ? 'ri-eye-off-line' : 'ri-eye-line'}></i>          </button>
         </div>
-        <a href="#" className="hpreset-password">Reset password</a>
+        <Link className="hpreset-password" to="/health-forgetpswd">Reset password</Link>
       </div>
       <button type="submit" className="hplogin-button">LOGIN</button>
       <div className='hplofin-reg'>

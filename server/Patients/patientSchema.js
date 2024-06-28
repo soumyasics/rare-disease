@@ -17,34 +17,42 @@ const schema=mongoose.Schema({
         required:true,
         dropDups: true
     },
+    gender:{
+        type:String,
+        require:true
+    },
+    dob:{
+        type:String,
+        require:true  
+    },
+    country:{
+        type:String,
+        require:true  
+    },
+    city:{
+        type:String,
+        require:true  
+    },
+    diseaseinfo:{
+        type:String,
+        require:true  
+    },
     password:{
         type:String,
         required:true
     },
-    housename:{
+    usertype:{
         type:String,
-        required:true,
-    },
-    street:{
-        type:String,
-        required:true,     
-    },
-    city:{
-        type:String,
-        required:true,     
-    },
-    state:{
-        type:String,
-        required:true,     
-    },
-    pincode:{
-        type:Number,
-        required:true,     
+        require:true
     },
     image:{
         type:Object,
         required: true
     },
+    healthrecord:{
+        type:Object,
+        required:true
+    }
 
    
 });
