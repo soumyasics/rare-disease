@@ -69,9 +69,11 @@ function Homenav() {
                       Admin
                     </button>
                   </Link>
+                  <Link to="/patinet-login" style={{ textDecoration: "none",color:"black" }}>
                   <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
                     Patients
                   </button>
+                  </Link>
                   <Link to="/counsellor-login" style={{ textDecoration: "none",color:"black" }}>
                   <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
                     Counsellor

@@ -72,3 +72,30 @@ export const counsellorRegSchema  = yup.object().shape({
     // district: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
     image: yup.object().required("Required"),     
 })
+
+
+
+
+export const patientregschema  = yup.object().shape({
+  name: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+  email:yup.string().email("Please enter a valid email").required("Required"),
+  password:  yup.string().min(5).max(16).matches(passwordRule, "1 uppercase, 1 number, 1 symbol").required("Required"),
+  confirmpassword: yup.string().oneOf([yup.ref("password"), null], "Password mismatch").required("Required"),
+  city: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+  country: yup.string().min(2,"Please select Country").required("Required"),
+  diseaseinfo: yup.string().min(2,"Enter minimum 2 character").required("Required"),
+  usertype: yup.string().min(2,"Enter minimum 2 character").required("Required"),
+  phone: yup.string()
+  .matches(/^\d{10}$/, "Contact number must be a 10-digit number and cannot be negative")
+  .required("Contact number is required")
+  .test('is-positive', 'Contact number must be positive', value => parseInt(value, 10) > 0),
+  gender: yup.string().required("Gender is Required"),     
+  dob: yup
+  .date()
+  .required("Date of birth is required")
+  .max(new Date(), "Date of birth cannot be in the future")
+  .typeError("Invalid date format, please use a valid date"),
+  image: yup.string().required("Required"),   
+  healthrecord: yup.string().required("Required"),     
+  
+})

@@ -78,7 +78,7 @@ function Adminlogin() {
           <button type="button" onClick={togglePasswordVisibility}>
           <i className={showPassword ? 'ri-eye-off-line' : 'ri-eye-line'}></i>          </button>
         </div>
-        <a href="#" className="adminreset-password">Reset password</a>
+        {/* <a href="#" className="adminreset-password">Reset password</a> */}
       </div>
       <button type="submit" className="adminlogin-button">LOGIN</button>
     </form>

@@ -8,10 +8,30 @@ import imgcoun from "../../Assets/counsellor.png";
 import imghealth from "../../Assets/healthcare.png";
 import imglogout from "../../Assets/logout.png";
 import axiosInstance from "../Constants/Baseurl";
+import Logoutpopu from "../Common/Popups/Logoutpopu";
 
 function Adminsidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const [isRequestsOpen, setIsRequestsOpen] = useState(false);
+  const[readerid,setReaderid]=useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleLogout = () => {
+    setShowModal(true);
+  };
+
+  const confirmLogout = () => {
+    localStorage.removeItem("adminid");
+    setReaderid(null);
+    setShowModal(false);
+    navigate("/admin-login")
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+
   const navigate=useNavigate()
 
   const toggleSidebar = () => {
@@ -24,10 +44,10 @@ function Adminsidebar() {
   };
   const adminid=localStorage.getItem("adminid")
   // console.log(adminid+"admin");
-  const handleLogout = () => {
-    localStorage.removeItem("adminid");
-    window.location.reload(); 
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("adminid");
+  //   window.location.reload(); 
+  // };
   useEffect(()=>{
     if(adminid===null){
       navigate("/admin-login")
@@ -79,6 +99,8 @@ function Adminsidebar() {
             <div className="sidebar-item">
               <img src={imglogout} alt="logout" />
               <span className="adminsidebar-reqimg" onClick={handleLogout}>Logout</span>
+              <Logoutpopu show={showModal} onClose={closeModal} onConfirm={confirmLogout} />
+
             </div>
           </div>
         </div>
