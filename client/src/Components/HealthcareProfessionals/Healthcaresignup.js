@@ -6,6 +6,7 @@ import axiosInstance from "../Constants/Baseurl";
 import { useFormik } from "formik";
 import { hpRegSchema } from "../Constants/Schema";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 function Healthcaresignup() {
   const navigate=useNavigate()
@@ -24,19 +25,26 @@ function Healthcaresignup() {
     const passwordRule =
       /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
-    // if (values.contact.toString().length !== 10) {
-    //   alert("Contact number must be a 10-digit number");
-    //   return;
-    // }
-    // if (values.pincode.toString().length !== 6) {
-    //   alert("Pincode must be a 6-digit number");
-    //   return;
-    // }
-
-    // if (!passwordRule.test(values.password)) {
-    //   alert("Password must meet the specified criteria");
-    //   return;
-    // }
+      if (values.phone && values.phone.toString().length !== 10 || values.phone < 0) {
+        toast.warn("Contact number must be a positive 10-digit number");
+        return;
+      }
+      if (values.licenceno && values.licenceno.toString().length !== 9 || values.licenceno < 0) {
+        toast.warn("Licence number must be a positive 9-digit number");
+        return;
+      }
+      if (values.aadharno && values.aadharno.toString().length !== 12 || values.aadharno < 0) {
+        toast.warn("Aadhar number must be a positive 12-digit number");
+        return;
+      }
+      if (!passwordRule.test(values.password)) {
+        toast.warn("Password must meet the specified criteria mentioned below");
+        return;
+      }
+      if (values.password !== values.confirmpassword) {
+        toast.warn("Password and confirm password must match");
+        return;
+      }
 
     axiosInstance
       .post(`/hpregister`, values, {

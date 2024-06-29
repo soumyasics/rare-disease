@@ -2,6 +2,7 @@ import React from 'react'
 import HpSibebar from './HpSibebar'
 import Healthcarelogin from '../Healthcarelogin'
 import Hpdashboard from './Hpdashboard'
+import Patientsrequest from '../Requests/Patientsrequest'
 
 function Hpmain({data}) {
   return (
@@ -10,7 +11,7 @@ function Hpmain({data}) {
     <div>
     {
         data==="health-dashboard"?(<Hpdashboard/>):
-        //  data==="counsellor-profile"?(<Counsellorprofile/>):
+         data==="health-viewpatientrequests"?(<Patientsrequest/>):
         // data==="admin-hprequest"?(<Hprequest/>):
        
         <Healthcarelogin/>

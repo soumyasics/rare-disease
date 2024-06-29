@@ -60,7 +60,7 @@ function HpSibebar() {
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
         <div className="adminsidebar-content">
           <div className="adminsidebar-head d-flex counsellor-headimage" >
-           <Link to="/"> <img src={`${url}/${data?.image?.filename}`} alt="admin" width="150px" height="150px"/></Link>
+           <Link to=""> <img src={`${url}/${data?.image?.filename}`} alt="admin" width="150px" height="150px"/></Link>
             <h4>{data.name}</h4>
           </div>
 
@@ -86,7 +86,7 @@ function HpSibebar() {
           </div> */}
           <div className="sidebar-item">
             <img src={imgappoinment} alt="patients" />
-           <Link to="" style={{textDecoration:"none"}}><span className="adminsidebar-reqimg">Appoinments</span></Link> 
+           <Link to="/health-viewpatientrequests" style={{textDecoration:"none"}}><span className="adminsidebar-reqimg">Appoinments</span></Link> 
           </div>
           <div className="sidebar-item">
             <img src={imgrecord} alt="healthcare" />

@@ -1,8 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import "../HpDashboard/Hpdashboard.css"
+import axiosInstance from '../../Constants/Baseurl';
+import Lottie from "lottie-react"
+import lottieimg from "../../../Assets/lottienodataanimation.json"
+import lottieimg2 from "../../../Assets/lottiedata2.json"
+
 
 function Hpdashboard() {
+  const hpid=localStorage.getItem("healthcareid")
+  console.log(hpid);
+  const navigate=useNavigate()
+  const [data,setData]=useState([])
+
+  useEffect(()=>{
+      if(hpid===null){
+          navigate("/health-login")
+      }
+      else{
+          axiosInstance.post(`viewBookingByhpid/${hpid}`)
+          .then((res)=>{
+              console.log(res);
+              setData(res.data.data)
+          })
+          .catch((err)=>{
+              console.log(err);
+          })
+      }
+
+  },[])
+
   return (
     <div className="col-9 counsellordash-main">
     <div className="admindash">
@@ -16,7 +43,7 @@ function Hpdashboard() {
     </div>
     <div className="stat-item col-4">
       <div className="stat-circle">
-        <div className="stat-number">111</div>
+        <div className="stat-number">{data.length}</div>
       </div>
       <div className="stat-label">Total Appoinments</div>
     </div>
@@ -33,9 +60,9 @@ function Hpdashboard() {
 <div className="counsellordash-counsellor">
   <div className="admindash-shrink">Appointments</div>
   <div className="row d-flex">
-    {/* {counsellor && counsellor.length ? (
-      counsellor.slice(0, 3).map((a) => {
-        return ( */}
+     {data && data.length ? (
+      data.slice(0, 3).map((a) => {
+        return ( 
           <div  className="col-4 counsellordash-counsellorcount">
             <div className="counsellor-dashdetails row d-flex">
               <div className="col-2">
@@ -46,86 +73,37 @@ function Hpdashboard() {
 
               </div>
               <div className="col-4 counsellor-dashpdata">
-                <p>:Vinayak </p>
-                <p>:Male</p>
-                <p>:22/08/2001</p>
-                <p>:23/09/3993</p>
+                <p>:{a?.patientid?.name} </p>
+                <p>:{a?.patientid?.gender}</p>
+                <p>:{a?.date}</p>
+                <p>:{a?.time}</p>
 
               </div>
 
             </div>
-            <div
+           <Link to="/health-viewpatientrequests" style={{textDecoration:"none"}}><div
               className="view-morecounsellordash"
             //   onClick={() => openModal(a?._id, 'counsellor')}
             >
               view more
-            </div>
-          </div>
-          <div  className="col-4 counsellordash-counsellorcount">
-            <div className="counsellor-dashdetails row d-flex">
-              <div className="col-2">
-                <p>Name</p>
-                <p>Gender</p>
-                <p>Date</p>
-                <p style={{width:"100px"}}>Time Slot</p>
-
-              </div>
-              <div className="col-4 counsellor-dashpdata">
-                <p>:Vinayak </p>
-                <p>:Male</p>
-                <p>:22/08/2001</p>
-                <p>:23/09/3993</p>
-
-              </div>
-
-            </div>
-            <div
-              className="view-morecounsellordash"
-            //   onClick={() => openModal(a?._id, 'counsellor')}
-            >
-              view more
-            </div>
-          </div>
-          <div  className="col-4 counsellordash-counsellorcount">
-            <div className="counsellor-dashdetails row d-flex">
-              <div className="col-2">
-                <p>Name</p>
-                <p>Gender</p>
-                <p>Date</p>
-                <p style={{width:"100px"}}>Time Slot</p>
-
-              </div>
-              <div className="col-4 counsellor-dashpdata">
-                <p>:Vinayak </p>
-                <p>:Male</p>
-                <p>:22/08/2001</p>
-                <p>:23/09/3993</p>
-
-              </div>
-
-            </div>
-            <div
-              className="view-morecounsellordash"
-            //   onClick={() => openModal(a?._id, 'counsellor')}
-            >
-              view more
-            </div>
+            </div></Link> 
           </div>
 
-        {/* );
+        );
       })
     ) : (
       <div className="viewcounsellor-lottie">
-      <Lottie animationData={lottieimg} style={{ width: 150, height: 150 }} />
+      <Lottie animationData={lottieimg2} style={{ width: 150, height: 150 }} />
     </div>       
-       )} */}
+    )}
 
-    {/* {counsellor?.length > 0 && counsellor?.length >= 3 && ( */}
-     <Link to="" style={{textDecoration:"none"}}><p className="admindash-counsellorviewall">
+
+     {data?.length > 0  && ( 
+     <Link to="/health-viewpatientrequests" style={{textDecoration:"none"}}><p className="admindash-counsellorviewall">
         View all
         <span className="ri-arrow-right-s-line" />
       </p></Link> 
-    {/* )} */}
+  )} 
   </div>
 </div>
 <br />

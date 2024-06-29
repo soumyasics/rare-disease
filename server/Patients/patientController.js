@@ -178,7 +178,7 @@ const viewallpatients = (req, res) => {
 
 const viewpatientbyid = (req, res) => {
   patientschema
-    .find({ _id: req.params.id })
+    .findById({ _id: req.params.id })
     .then((result) => {
       res.json({
         status: 200,
