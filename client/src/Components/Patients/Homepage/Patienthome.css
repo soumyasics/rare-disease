@@ -1,0 +1,147 @@
+.patient-homecontainer{
+    background-image: url("../../../Assets//backgroundhome.jpg");
+    height: 450px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.patient-homebackgroundtext p{
+    color: #124965;
+text-align: justify;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 30px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: 0.15px;
+text-transform: capitalize;
+padding-top: 100px;
+padding-left: 100px;
+}
+.patient-homebackgroundtext button{
+    width: 299px;
+height: 61px;
+flex-shrink: 0;
+border-radius: 50px;
+background: #269CC8;
+border: none;
+margin-left: 100px;
+color: #FFF;
+font-family: Poppins;
+font-size: 25px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 37.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.patient-homecontainersecond p{
+    color: #0A5377;
+text-align: center;
+text-shadow: 3px 1px 2px rgba(0, 0, 0, 0.50);
+font-family: Poppins;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.15px;
+text-transform: capitalize;
+padding-top: 30px;
+}
+.horizondal-width{
+    width: 1237.004px;
+height: 1px;
+/* width: 50%; */
+margin: auto;
+}
+.patient-homecontainersecondpara{
+    width: 1237.004px;
+    margin: auto;
+    color: #000;
+text-align: justify;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.085px;
+text-transform: capitalize;
+padding-top: 20px;
+}
+.patient-homecontainerthird{
+    width: 1259.004px;
+    margin: auto;
+    
+}
+.patient-homecontainerthird-container{
+    margin-top: 30px;
+}
+.patient-homecontainerthird-head h5{
+    color: #095477;
+    font-family: Poppins;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.019px;
+    text-transform: capitalize;
+}
+.patient-homecontainerthird-head p{
+    color: #000;
+text-align: justify;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.085px;
+text-transform: capitalize;
+text-shadow: none;
+padding-top: 10px;
+}
+.patient-homecontainerforth h4{
+    color: #095477;
+    text-align: center;
+    text-shadow: 3px 1px 2px rgba(0, 0, 0, 0.50);
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    text-transform: capitalize;
+}
+.patient-headrectangle1{
+    width: 178px;
+height: 150px;
+flex-shrink: 0;
+border: 1px solid #000;
+background: #FFF;
+gap: 30px;
+}
+.patient-rectangle-main{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px; 
+    padding: 0 10px;  
+    display: flex;
+    justify-content: center;  
+    align-items: center;   
+}
+.patient-headrectangle1{
+    /* display: flex; */
+    justify-content: center;  
+    align-items: center; 
+    padding-top: 20px; 
+    text-align: center;   
+}
+
+/* .patient-headrectangle1 h3{
+    align-items: center;      
+} */
+ .patient-headimage2 img{
+padding-left: 20px;
+ }
+ .patient-headimage2 h3{
+text-align: center;     }

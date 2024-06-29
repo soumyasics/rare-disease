@@ -32,9 +32,9 @@ const navigate=useNavigate()
     .then((res)=>{
       console.log(res);
       if(res.data.status===200){
-          localStorage.setItem("counsellorlogin", res.data.id)
+          localStorage.setItem("patientid", res.data.id)
            alert("Login Successfully")
-          // navigate("/counsellor-dashboard")
+          navigate("/patient-home")
       }
       else{
           alert(res.data.msg)

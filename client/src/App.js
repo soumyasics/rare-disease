@@ -29,6 +29,10 @@ import Counsellorsidebar from './Components/Counsellor/Dashboard/Counsellorsideb
 import Counsellormain from './Components/Counsellor/Dashboard/Counsellormain';
 import HpSibebar from './Components/HealthcareProfessionals/HpDashboard/HpSibebar';
 import Hpmain from './Components/HealthcareProfessionals/HpDashboard/Hpmain';
+import Patienthome from './Components/Patients/Homepage/Patienthome';
+import Patienthomenav from './Components/Navbar/Patient/Patienthomenav';
+import Hcpapoinment from './Components/Patients/PatientAppoinments/Hcpapoinment';
+import Viewhpappoinments from './Components/Patients/Viewappoinments/Viewhpappoinments';
 
 
 function App() {
@@ -50,6 +54,9 @@ function App() {
     <Route path='/aboutus' element={[<Homenav/>,<Aboutuspage/>,<Footer/>]}/>
     <Route path='/homenav' element={<Homenav/>}/>
     <Route path='/footer' element={<Footer/>}/>
+    <Route path='/patient-home' element={[<Patienthomenav/>,<Patienthome/>]}/>
+    <Route path='/patient-hcpappoinment' element={[<Patienthomenav/>,<Hcpapoinment/>]}/>
+    <Route path='/patient-viewhrappoinment' element={[<Patienthomenav/>,<Viewhpappoinments/>]}/>
 
 
     {/* Healthcare Professional */}
@@ -57,7 +64,9 @@ function App() {
     <Route path='/health-login' element={[<Homenav/>,<Healthcarelogin/>,<Footer/>]}/>
     <Route path='/health-forgetpswd' element={[<Homenav/>,<Healthcareforgetpswd/>,<Footer/>]}/>
     <Route path='/health-dashboard' element={[<Adminhome/>,<Hpmain data="health-dashboard"/>]}/>
-   
+    <Route path='/health-dashboard' element={[<Adminhome/>,<Hpmain data="health-dashboard"/>]}/>
+    <Route path='/health-viewpatientrequests' element={[<Adminhome/>,<Hpmain data="health-viewpatientrequests"/>]}/>
+  
 
 
     {/* counsellor */}

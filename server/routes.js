@@ -4,6 +4,7 @@ const router=express.Router()
 const Patients=require("./Patients/patientController")
 const Counsellor=require("./counsellor/counsellorController")
 const Hp=require("./HP/hpController")
+const patienthpreq=require("./HP/Patientreqhp/PatientreqHpController")
 
 router.post("/registerpatient",Patients.upload,Patients.registerpatient)
 router.post("/patientlogin",Patients.patientLogin)
@@ -35,6 +36,12 @@ router.post("/viewallhp",Hp.viewallhp)
 router.post("/forgotPwdhp",Hp.forgotPwdhp)
 
 
+// Patinet Request hp appoinment
+router.post("/registerreq",patienthpreq.registerreq)
+router.post("/viewBookingByhpid/:id",patienthpreq.viewBookingByhpid)
+router.post("/approveBookingByid/:id",patienthpreq.approveBookingByid)
+router.post("/rejectBookingByid/:id",patienthpreq.rejectBookingByid)
+router.post("/viewBookingBypatientid/:id",patienthpreq.viewBookingBypatientid)
 
 
 

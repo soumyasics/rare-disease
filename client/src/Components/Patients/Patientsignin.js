@@ -66,7 +66,7 @@ function Patientsignin() {
           console.log(res);
           if (res.data.status === 200) {
             alert("Registration Successful");
-            navigate("/counsellor-login");
+            navigate("/patinet-login");
           } else {
             alert(res.response.data.msg);
           }
