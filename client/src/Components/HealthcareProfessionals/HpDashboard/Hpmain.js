@@ -3,6 +3,7 @@ import HpSibebar from './HpSibebar'
 import Healthcarelogin from '../Healthcarelogin'
 import Hpdashboard from './Hpdashboard'
 import Patientsrequest from '../Requests/Patientsrequest'
+import Hpprofileview from '../HpProfile/Hpprofileview'
 
 function Hpmain({data}) {
   return (
@@ -12,7 +13,7 @@ function Hpmain({data}) {
     {
         data==="health-dashboard"?(<Hpdashboard/>):
          data==="health-viewpatientrequests"?(<Patientsrequest/>):
-        // data==="admin-hprequest"?(<Hprequest/>):
+        data==="health-profile"?(<Hpprofileview/>):
        
         <Healthcarelogin/>
     }

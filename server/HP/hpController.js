@@ -253,6 +253,34 @@ const forgotPwdhp = (req, res) => {
 };
 
 
+const hpupdateprofile=((req,res)=>{
+  hpschema.findByIdAndUpdate({_id:req.params.id},{
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    state: req.body.state,
+    city:req.body.city,
+    licenceno:req.body.licenceno,
+    aadharno:req.body.aadharno,
+    yearofexp:req.body.yearofexp,
+    specialisation:req.body.specialisation,
+    image: req.file,
+  })
+  .then((result)=>{
+    res.json({
+      status:200,
+      msg:"updated successfully",
+      data:result
+    })
+  })
+  .catch((err)=>{
+    res.json({
+      status:404,
+      msg:"error in api"+err,
+    })
+  })
+})
+
 
 
 
@@ -264,6 +292,7 @@ module.exports={
     deletehpreqById,
     activatehpById,
     viewallhp,
-    forgotPwdhp
+    forgotPwdhp,
+    hpupdateprofile
 }
 

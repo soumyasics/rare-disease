@@ -84,18 +84,24 @@ function Adminsidebar() {
                 // </div>
               )}
             </div>
+
+            <Link to="/admin-allpatients" style={{ textDecoration: "none", color: "white" }}>
             <div className="sidebar-item">
               <img src={imgpat} alt="patients" />
               <span className="adminsidebar-reqimg">Patients</span>
             </div>
+            </Link>
+            
+            <Link to="/admin-allcounsellors" style={{ textDecoration: "none", color: "white" }}>
             <div className="sidebar-item">
               <img src={imgcoun} alt="counsellor" />
               <span className="adminsidebar-reqimg">Counsellor</span>
-            </div>
+            </div></Link>
+            <Link to="/admin-allhp" style={{ textDecoration: "none", color: "white" }}>
             <div className="sidebar-item">
               <img src={imghealth} alt="healthcare" />
               <span className="adminsidebar-reqimg">Health Care Professionals</span>
-            </div>
+            </div></Link>
             <div className="sidebar-item">
               <img src={imglogout} alt="logout" />
               <span className="adminsidebar-reqimg" onClick={handleLogout}>Logout</span>

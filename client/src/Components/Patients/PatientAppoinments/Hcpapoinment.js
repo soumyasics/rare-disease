@@ -98,7 +98,7 @@ function Hcpapoinment() {
         <div className="container">
           <div className="row">
            <Link to="/patient-home" style={{textDecoration:"none"}} ><h2 className="ri-arrow-left-line personal-infohpapoinmnt">
-              Professional Information
+              Personal Information
             </h2></Link>
             <form onSubmit={handleSubmit} >
             <div className="d-flex row patient-infoinputs">

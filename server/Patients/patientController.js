@@ -196,39 +196,44 @@ const viewpatientbyid = (req, res) => {
 //view patientby id completed
 
 const updateprofilepatient = (req, res) => {
-    patientschema
-      .findByIdAndUpdate(
-       {_id:req.params.id},
-        {
-          name: req.body.name,
-          phone: req.body.phone,
-          email: req.body.email,
-          password: req.body.password,
-          housename: req.body.housename,
-          street: req.body.street,
-          city: req.body.city,
-          state: req.body.state,
-          pincode: req.body.pincode,
-          image: req.file,
-        },
-      )
-      .exec()
-      .then((result) => {
-        res.json({
-          status: 200,
-          msg: "updated successfully",
-          data: result,
-        });
-      })
-      .catch((err) => {
-        res.json({
-          status: 404,
-          err: err,
-          msg: "error in update",
-        });
+  const files = req.files || [];
+  const healthRecordFile = files.find((file) => file.originalname === req.body.healthrecord);
+  const imageFile = files.find((file) => file.originalname === req.body.image);
+
+  patientschema
+    .findByIdAndUpdate(
+      req.params.id,
+      {
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        gender: req.body.gender,
+        dob: req.body.dob,
+        country: req.body.country,
+        city: req.body.city,
+        diseaseinfo: req.body.diseaseinfo,
+        usertype: req.body.usertype,
+        healthrecord: healthRecordFile ? healthRecordFile.filename : undefined,
+        image: imageFile ? imageFile.filename : undefined,
+      },
+      { new: true } 
+    )
+    .exec()
+    .then((result) => {
+      res.json({
+        status: 200,
+        msg: "updated successfully",
+        data: result,
       });
-  };
-  
+    })
+    .catch((err) => {
+      res.json({
+        status: 404,
+        err: err,
+        msg: "error in update",
+      });
+    });
+};
 module.exports = {
   registerpatient,
   upload,

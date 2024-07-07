@@ -46,8 +46,11 @@ function Homenav() {
               {" "}
               <p className="nav-item">About</p>
             </Link>
-            <p className="nav-item">Contact Us</p>
+            <Link to="/contactus"
+             style={{ textDecoration: "none" }}>
 
+            <p className="nav-item">Contact Us</p>
+</Link>
             <div className=" image-profilelicon">
               <img
                 src={imgprofile}

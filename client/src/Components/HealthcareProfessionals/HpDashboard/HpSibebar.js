@@ -8,12 +8,15 @@ import imglogout from "../../../Assets/logout.png";
 import imgchat from "../../../Assets/chat.png";
 import imgblog from "../../../Assets/blog.png";
 import axiosInstance from '../../Constants/Baseurl';
+import Logoutpopu from '../../Common/Popups/Logoutpopu';
 
 
 
 function HpSibebar() {
     const [isOpen, setIsOpen] = useState(true);
     const [isRequestsOpen, setIsRequestsOpen] = useState(false);
+    const[readerid,setReaderid]=useState(null);
+    const [showModal, setShowModal] = useState(false);
     const navigate=useNavigate()
     const url = axiosInstance.defaults.url;
     const [data,setData]=useState({})
@@ -31,10 +34,10 @@ function HpSibebar() {
     //   e.stopPropagation(); 
     //   setIsRequestsOpen(!isRequestsOpen);
     // };
-    const handleLogout = () => {
-      localStorage.removeItem("healthcareid");
-      window.location.reload(); 
-    };
+    // const handleLogout = () => {
+    //   localStorage.removeItem("healthcareid");
+    //   window.location.reload(); 
+    // };
 
 
 
@@ -54,13 +57,32 @@ function HpSibebar() {
       }
     },[])
 
+    //logout Fuctionality
+
+  
+    const handleLogout = () => {
+      setShowModal(true);
+    };
+  
+    const confirmLogout = () => {
+      localStorage.removeItem("healthcareid");
+      setReaderid(null);
+      setShowModal(false);
+      navigate("/")
+    };
+  
+    const closeModal = () => {
+      setShowModal(false);
+    };
+  
+
   return (
     <div className="col-3">
     <div className="adminsidebar-container">
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
         <div className="adminsidebar-content">
           <div className="adminsidebar-head d-flex counsellor-headimage" >
-           <Link to=""> <img src={`${url}/${data?.image?.filename}`} alt="admin" width="150px" height="150px"/></Link>
+           <Link to="/health-profile"> <img src={`${url}/${data?.image?.filename}`} alt="admin" width="150px" height="150px"/></Link>
             <h4>{data.name}</h4>
           </div>
 
@@ -84,10 +106,11 @@ function HpSibebar() {
               // </div>
             )}
           </div> */}
+          <Link to="/health-viewpatientrequests" style={{textDecoration:"none"}}>
           <div className="sidebar-item">
             <img src={imgappoinment} alt="patients" />
-           <Link to="/health-viewpatientrequests" style={{textDecoration:"none"}}><span className="adminsidebar-reqimg">Appoinments</span></Link> 
-          </div>
+           <span className="adminsidebar-reqimg">Appoinments</span>
+          </div></Link> 
           <div className="sidebar-item">
             <img src={imgrecord} alt="healthcare" />
             <span className="adminsidebar-reqimg">Patient</span>
@@ -109,6 +132,8 @@ function HpSibebar() {
           <div className="sidebar-item">
             <img src={imglogout} alt="logout" />
             <span className="adminsidebar-reqimg" onClick={handleLogout}>Logout</span>
+            <Logoutpopu show={showModal} onClose={closeModal} onConfirm={confirmLogout} />
+
           </div>
         </div>
       </div>

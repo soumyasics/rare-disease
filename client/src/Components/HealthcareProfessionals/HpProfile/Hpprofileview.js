@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "../Profile/Counsellorprofile.css";
 import imgprofileicon from "../../../Assets/counsellor1.jpg";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../Constants/Baseurl";
 import { toast } from "react-toastify";
+import "./Hpprofileview.css";
 
-function Counsellorprofile() {
-  const counselorid = localStorage.getItem("counsellorlogin");
+function Hpprofileview() {
+  const hpid = localStorage.getItem("healthcareid");
   const navigate = useNavigate();
   const [data, setData] = useState({});
   const [isEditing, setIsEditing] = useState(false);
@@ -14,20 +14,24 @@ function Counsellorprofile() {
     name: "",
     phone: "",
     email: "",
-    regno: "",
+    state: "",
+    city:"",
+    licenceno:"",
+    aadharno:"",
+    yearofexp:"",
+    specialisation:"",
   });
-  const [errors, setErrors] = useState({});
   const [selectedFile, setSelectedFile] = useState(null);
   const [imageTimestamp, setImageTimestamp] = useState(Date.now());
 
   const url = axiosInstance.defaults.url;
 
   useEffect(() => {
-    if (counselorid === null) {
+    if (hpid === null) {
       navigate("/counsellor-login");
     } else {
       axiosInstance
-        .post(`viewcouncellorbyid/${counselorid}`)
+        .post(`viewhpbyid/${hpid}`)
         .then((result) => {
           console.log(result);
           setData(result.data.data);
@@ -35,14 +39,19 @@ function Counsellorprofile() {
             name: result.data.data.name,
             phone: result.data.data.phone,
             email: result.data.data.email,
-            regno: result.data.data.regno,
+            state: result.data.data.state,
+            city:result.data.data.city,
+            licenceno:result.data.data.licenceno,
+            aadharno:result.data.data.aadharno,
+            yearofexp:result.data.data.yearofexp,
+            specialisation:result.data.data.specialisation,
           });
         })
         .catch((err) => {
           console.log(err);
         });
     }
-  }, [counselorid, navigate]);
+  }, [hpid, navigate]);
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -54,10 +63,14 @@ function Counsellorprofile() {
       name: data.name,
       phone: data.phone,
       email: data.email,
-      regno: data.regno,
+      state: data.state,
+      city: data.city,
+      licenceno: data.licenceno,
+      aadharno: data.aadharno,
+      yearofexp: data.yearofexp,
+      specialisation: data.specialisation,
     });
     setSelectedFile(null);
-    setErrors({});
   };
 
   const handleChange = (e) => {
@@ -71,36 +84,58 @@ function Counsellorprofile() {
     setSelectedFile(e.target.files[0]);
   };
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name) newErrors.name = "Name is required";
-    if (!formData.phone) newErrors.phone = "Phone is required";
-    else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = "Phone must be a 10-digit number";
-    if (!formData.email) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid";
-    if (!formData.regno) newErrors.regno = "Registration number is required";
-    else if (formData.regno.length < 8) newErrors.regno = "Registration number must be at least 8 digits";
+  const validateForm = () => {
+    const phonePattern = /^\d{10}$/;
+    const aadharPattern = /^\d{12}$/;
+    const yearOfExpPattern = /^\d{1,3}$/;
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    if (!phonePattern.test(formData.phone)) {
+      toast.info("Phone number must have exactly 10 digits and cannot be negative.");
+      return false;
+    }
+
+    if (formData.licenceno.length < 10) {
+      toast.info("License number must have at least 10 characters.");
+      return false;
+    }
+
+    if (!aadharPattern.test(formData.aadharno)) {
+      toast.info("Aadhar number must have exactly 12 digits and cannot be negative.");
+      return false;
+    }
+
+    if (!yearOfExpPattern.test(formData.yearofexp) || formData.yearofexp <= 0) {
+      toast.info("Years of experience must be a positive number and cannot be more than 3 digits.");
+      return false;
+    }
+
+    return true;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validate()) return;
+
+    if (!validateForm()) {
+      return;
+    }
 
     const updateData = new FormData();
     updateData.append("name", formData.name);
     updateData.append("phone", formData.phone);
     updateData.append("email", formData.email);
-    updateData.append("regno", formData.regno);
+    updateData.append("state", formData.state);
+    updateData.append("city", formData.city);
+    updateData.append("licenceno", formData.licenceno);
+    updateData.append("aadharno", formData.aadharno);
+    updateData.append("yearofexp", formData.yearofexp);
+    updateData.append("specialisation", formData.specialisation);
 
     if (selectedFile) {
       updateData.append("image", selectedFile);
     }
 
     axiosInstance
-      .post(`updatecounsellor/${counselorid}`, updateData, {
+      .post(`hpupdateprofile/${hpid}`, updateData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -124,7 +159,7 @@ function Counsellorprofile() {
 
   return (
     <div className="col-9 Counsellorprofile-mainbox">
-      <div className="counsellorprofile-box">
+      <div className="hpprofile-box">
         <div className="counsellorprofile-head">
           <p>My Profile</p>
         </div>
@@ -152,21 +187,38 @@ function Counsellorprofile() {
           <div className="col-4 counsellorprofile-name">
             <p>Name</p>
             <p>Contact No</p>
+
             {isEditing ? (
-              <>
-                <p style={{ paddingTop: "15px" }}>Email Id</p>
-              </>
+              <p style={{ paddingTop: "10px" }}>Email</p>
             ) : (
-              <p>Email Id</p>
+              <p>Email</p>
+            )}
+            {isEditing ? (
+              <p style={{ paddingTop: "20px" }}>Specialisation</p>
+            ) : (
+              <p>Specialisation</p>
             )}
 
             {isEditing ? (
-              <>
-                <p style={{ paddingTop: "20px" }}>Counsellor Registration Number</p>
-              </>
+              <p style={{ paddingTop: "15px" }}>State/Province</p>
             ) : (
-              <p>Counsellor Registration Number</p>
+              <p>State/Province</p>
             )}
+
+            <p>City</p>
+            {isEditing ? (
+              <p style={{ paddingTop: "20px" }}>Medical License Number</p>
+            ) : (
+              <p>Medical License Number</p>
+            )}
+
+            {isEditing ? (
+              <p style={{ paddingTop: "15px" }}>Aadhar Number</p>
+            ) : (
+              <p>Aadhar Number</p>
+            )}
+
+            <p>Year Of Exp</p>
           </div>
           <div className="col-4 counsellorprofile-data">
             {isEditing ? (
@@ -178,46 +230,101 @@ function Counsellorprofile() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    required
                   />
-                  {errors.name && <span className="error">{errors.name}</span>}
                 </p>
                 <p>
                   :{" "}
                   <input
-                    type="text"
+                    type="number"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                   />
-                  {errors.phone && <span className="error">{errors.phone}</span>}
                 </p>
                 <p>
                   :{" "}
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                   />
-                  {errors.email && <span className="error">{errors.email}</span>}
                 </p>
                 <p>
                   :{" "}
                   <input
                     type="text"
-                    name="regno"
-                    value={formData.regno}
+                    name="specialisation"
+                    value={formData.specialisation}
                     onChange={handleChange}
+                    required
                   />
-                  {errors.regno && <span className="error">{errors.regno}</span>}
+                </p>
+                <p>
+                  :{" "}
+                  <input
+                    type="text"
+                    name="state"
+                    value={formData.state}
+                    onChange={handleChange}
+                    required
+                  />
+                </p>
+                <p>
+                  :{" "}
+                  <input
+                    type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    required
+                  />
+                </p>
+                <p>
+                  :{" "}
+                  <input
+                    type="text"
+                    name="licenceno"
+                    value={formData.licenceno}
+                    onChange={handleChange}
+                    required
+                  />
+                </p>
+                <p>
+                  :{" "}
+                  <input
+                    type="number"
+                    name="aadharno"
+                    value={formData.aadharno}
+                    onChange={handleChange}
+                    required
+                  />
+                </p>
+                <p>
+                  :{" "}
+                  <input
+                    type="number"
+                    name="yearofexp"
+                    value={formData.yearofexp}
+                    onChange={handleChange}
+                    required
+                  />
                 </p>
               </>
             ) : (
               <>
-                <p>: {data.name}</p>
-                <p>: {data.phone}</p>
-                <p>: {data.email}</p>
-                <p>: {data.regno}</p>
+                <p>: {data?.name}</p>
+                <p>: {data?.phone}</p>
+                <p>: {data?.email}</p>
+                <p>: {data?.specialisation}</p>
+                <p>: {data?.state}</p>
+                <p>: {data?.city}</p>
+                <p>: {data?.licenceno}</p>
+                <p>: {data?.aadharno}</p>
+                <p>: {data?.yearofexp}</p>
               </>
             )}
           </div>
@@ -243,4 +350,4 @@ function Counsellorprofile() {
   );
 }
 
-export default Counsellorprofile;
+export default Hpprofileview;

@@ -18,6 +18,7 @@ function Admindashboard() {
   const [hp, setHp] = useState([]);
   const [counsellorcount,setCounsellorcount]=useState([])
   const [hpcount,sethpcount]=useState([])
+  const [patientcount,setpatientcount]=useState([])
 
   const url = axiosInstance.defaults.url;
 
@@ -100,6 +101,16 @@ function Admindashboard() {
       console.log(err);
     });
   },[])
+  useEffect(()=>{
+    axiosInstance.post(`viewallhp`)
+    .then((res)=>{
+      console.log(res);
+      setpatientcount(res.data.data)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  },[])
 
   return (
     <div className="col-9 admindash-main">
@@ -108,7 +119,7 @@ function Admindashboard() {
           <div className="stats">
             <div className="stat-item col-4">
               <div className="stat-circle">
-                <div className="stat-number">1300</div>
+                <div className="stat-number">{patientcount.length}</div>
               </div>
               <div className="stat-label">Total Patients</div>
             </div>
