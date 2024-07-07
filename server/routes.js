@@ -5,6 +5,7 @@ const Patients=require("./Patients/patientController")
 const Counsellor=require("./counsellor/counsellorController")
 const Hp=require("./HP/hpController")
 const patienthpreq=require("./HP/Patientreqhp/PatientreqHpController")
+const Patientinfo=require("./Patients/Patientinfo/Patientinfocontroller")
 
 router.post("/registerpatient",Patients.upload,Patients.registerpatient)
 router.post("/patientlogin",Patients.patientLogin)
@@ -12,7 +13,7 @@ router.post("/verifytooken",Patients.verifyToken)
 router.post("/forgotPwdpatient",Patients.forgotPwdpatient)
 router.post("/viewallpatients",Patients.viewallpatients)
 router.post("/viewallpatientbyid/:id",Patients.viewpatientbyid)
-router.post("/updatepatientprofile/:id",Patients.updateprofilepatient,Patients.upload)
+router.post("/updatepatientprofile/:id",Patients.upload,Patients.updateprofilepatient)
 
 
 router.post("/counsellorregistration",Counsellor.upload,Counsellor.registercounsellor)
@@ -34,6 +35,7 @@ router.post("/deletehpreq/:id",Hp.deletehpreqById)
 router.post("/activatehp/:id",Hp.activatehpById)
 router.post("/viewallhp",Hp.viewallhp)
 router.post("/forgotPwdhp",Hp.forgotPwdhp)
+router.post("/hpupdateprofile/:id",Hp.upload,Hp.hpupdateprofile)
 
 
 // Patinet Request hp appoinment
@@ -43,6 +45,9 @@ router.post("/approveBookingByid/:id",patienthpreq.approveBookingByid)
 router.post("/rejectBookingByid/:id",patienthpreq.rejectBookingByid)
 router.post("/viewBookingBypatientid/:id",patienthpreq.viewBookingBypatientid)
 
+
+//patient information
+router.post("/regpatientinfo",Patientinfo.regpatientinfo)
 
 
 module.exports=router

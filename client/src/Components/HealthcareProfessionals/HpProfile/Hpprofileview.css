@@ -1,0 +1,9 @@
+.hpprofile-box{
+    width: 896px;
+    min-height: 520px;
+    max-height: max-content;
+    flex-shrink: 0;
+    border-radius: 10px 10px 5px 5px;
+    border: 10px solid #095477;
+    background: #FFF;
+}

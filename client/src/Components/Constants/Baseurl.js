@@ -2,7 +2,7 @@ import axios from "axios"
 
 const axiosInstance = axios.create({
 
-    //server api
+    // server api
     // baseURL: 'http://hybrid.srishticampus.in:4035/rare_disease_api', 
 
     // baseURL: '', 
@@ -10,7 +10,6 @@ const axiosInstance = axios.create({
   //local api 
   
     baseURL: 'http://localhost:4035/rare_disease_api', 
-  
     headers: {
       'Content-Type': 'application/json',
     },

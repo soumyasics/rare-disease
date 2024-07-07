@@ -71,12 +71,12 @@ function Adminhome() {
               </div>
             )}
           </div>*/}
-           <div className=" image-profilelicon searchnav-adminhomemain">
+           {/* <div className=" image-profilelicon searchnav-adminhomemain">
            <div className="search-containeradminnav">
         <i className="ri-search-line"></i>
         <input type="text" className="search-inputadminnav" placeholder="Search"/>
     </div>         
-      </div>
+      </div> */}
         </div> 
       </div>
     </nav>

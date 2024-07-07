@@ -1,0 +1,133 @@
+.adminviewallpatient-main{
+    width: 1043px;
+height: 100vh;
+flex-shrink: 0;
+border-left: 15px solid #269CC8;
+background: #FFF;
+overflow: hidden;
+/* display: flex;
+height: 100%;
+ */
+}
+.adminviewallpatient-headcmain{
+    width: 100%;
+    height: 51px;
+    flex-shrink: 0;
+    background: #ffffff;
+    display: flex;
+  align-items: center; 
+}
+.adminviewallpatient-headc{
+    width: 300px;
+height: 51px;
+flex-shrink: 0;
+border-radius: 0px 50px 0px 0px;
+background: #269CC8;
+color: #FFF;
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 900;
+line-height: 150%; /* 30px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+padding: 10px;
+}
+.adminviewallpatient-scrollmain {
+    height: 550px;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.adminviewallpatient-scrollmain ::-webkit-scrollbar {
+    display: none;
+     /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+.searchnav-adminhomemain input{
+    width: 355px;
+height: 36px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #269CC8;
+}
+.searchnav-adminhomemain input::placeholder{
+    color: white;
+}
+.search-containeradminnav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+.ri-search-line {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    color: #ccc; 
+}
+
+.search-inputadminnav {
+    padding-left: 35px; 
+    height: 30px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+   
+}
+.adminviewallpatient-search{
+    margin-left: auto;
+
+}
+.admin-viewallpatient-insidebox{
+    border: 0.956px solid #000;
+background: #0A5377;
+margin: 20px;
+}
+.admin-viewpatient-box1st{
+    width: 454px;
+height: 203px;
+flex-shrink: 0;
+border: 1px solid #269CC8;
+background: #ECF6FA;
+margin: 10px;
+display: flex;
+  flex-direction: column;
+}
+.admin-viewpatient-content{
+    width: 454px;
+height: 43px;
+flex-shrink: 0;
+background: #269CC8;
+margin-top: auto;
+color: #FFF;
+font-family: Poppins;
+font-size: 19px;
+font-style: normal;
+text-align: center;
+padding-top: 10px;
+font-weight: 500;
+line-height: 150%; /* 28.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.admin-viewpatient-contents{
+    /* padding: 20px; */
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.admin-viewpatient-contents p{
+    color: #000;
+font-family: Poppins;
+font-size: 19px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 28.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+
+.admin-viewpatient-contents h6{
+    text-transform: capitalize;
+}

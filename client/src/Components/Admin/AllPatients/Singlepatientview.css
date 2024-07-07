@@ -1,0 +1,43 @@
+.admin-viewsinglepatient-insidebox{
+    width: 992px;
+min-height: 1000px;
+max-height: max-content;
+flex-shrink: 0;
+background: #ECF6FA;
+margin: 20px;
+border: 1px solid black;
+}
+.adminviewsinglepatient-scrollmain {
+    height: 550px;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.adminviewsinglepatient-scrollmain ::-webkit-scrollbar {
+    display: none;
+     /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+.adminviewsingle-head{
+    color: #0A5377;
+font-family: Poppins;
+font-size: 25px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 37.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.adminviewsingle-personal{
+    padding: 30px;
+}
+.adminviewsingle-personal p{
+    color: #000;
+font-family: Poppins;
+font-size: 19px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 28.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}

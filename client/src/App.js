@@ -33,6 +33,9 @@ import Patienthome from './Components/Patients/Homepage/Patienthome';
 import Patienthomenav from './Components/Navbar/Patient/Patienthomenav';
 import Hcpapoinment from './Components/Patients/PatientAppoinments/Hcpapoinment';
 import Viewhpappoinments from './Components/Patients/Viewappoinments/Viewhpappoinments';
+import Patientviewprofile from './Components/Patients/Profile/Patientviewprofile';
+import Patientinfo from './Components/Patients/Patientinfo/Patientinfo';
+import Contactus from './Components/Common/Contactus/Contactus';
 
 
 function App() {
@@ -57,6 +60,9 @@ function App() {
     <Route path='/patient-home' element={[<Patienthomenav/>,<Patienthome/>]}/>
     <Route path='/patient-hcpappoinment' element={[<Patienthomenav/>,<Hcpapoinment/>]}/>
     <Route path='/patient-viewhrappoinment' element={[<Patienthomenav/>,<Viewhpappoinments/>]}/>
+    <Route path='/patient-viewprofile' element={[<Patienthomenav/>,<Patientviewprofile/>]}/>
+    <Route path='/patient-info' element={[<Patienthomenav/>,<Patientinfo/>]}/>
+
 
 
     {/* Healthcare Professional */}
@@ -66,6 +72,7 @@ function App() {
     <Route path='/health-dashboard' element={[<Adminhome/>,<Hpmain data="health-dashboard"/>]}/>
     <Route path='/health-dashboard' element={[<Adminhome/>,<Hpmain data="health-dashboard"/>]}/>
     <Route path='/health-viewpatientrequests' element={[<Adminhome/>,<Hpmain data="health-viewpatientrequests"/>]}/>
+    <Route path='/health-profile' element={[<Adminhome/>,<Hpmain data="health-profile"/>]}/>
   
 
 
@@ -82,6 +89,14 @@ function App() {
     <Route path='/admin-dashboard' element={[<Adminhome/>,<Adminmain data="admin-dashboard"/>]}/>
     <Route path='/admin-counsellorreq' element={[<Adminhome/>,<Adminmain data="admin-counsellorreq"/>]}/>
     <Route path='/admin-hprequest' element={[<Adminhome/>,<Adminmain data="admin-hprequest"/>]}/>
+    <Route path='/admin-allpatients' element={[<Adminhome/>,<Adminmain data="admin-allpatients"/>]}/>
+    <Route path='/admin-singlepatient/:id' element={[<Adminhome/>,<Adminmain data="admin-singlepatient"/>]}/>
+    <Route path='/admin-allcounsellors' element={[<Adminhome/>,<Adminmain data="admin-allcounsellors"/>]}/>
+    <Route path='/admin-allhp' element={[<Adminhome/>,<Adminmain data="admin-allhp"/>]}/>
+
+
+    {/* Common */}
+    <Route path='/contactus' element={[<Homenav/>,<Contactus/>]}/>
 
 
   </Routes>

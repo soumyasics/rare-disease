@@ -94,11 +94,22 @@ function Patienthomenav() {
                   </button>
                 </Link>
                 <Logoutpopu show={showModal} onClose={closeModal} onConfirm={confirmLogout} />
+                <Link to="/patient-info" style={{ textDecoration: "none",color:"black" }}>
+                <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                  Health Record
+                </button>
+                </Link>
 
                 <Link to="/patient-viewhrappoinment" style={{ textDecoration: "none",color:"black" }}>
                 <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
                   View Appoinment Status
                 </button>
+                </Link>
+                <Link to="/patient-viewprofile" style={{ textDecoration: "none",color:"black" }}>
+                <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                  Profile
+                </button>
+
                 </Link>
                 {/* <Link to="/" style={{ textDecoration: "none",color:"black" }}>
                 <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
