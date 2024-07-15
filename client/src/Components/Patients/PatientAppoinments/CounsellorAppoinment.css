@@ -1,0 +1,73 @@
+.counsellor-appoinmnt-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.counsellor-appo-box{
+    width: 934px;
+height: 519px;
+flex-shrink: 0;
+background: #DDF4EE;
+box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.50);
+}
+.counsellor-appo-head h2{
+    color: #5B8369;
+font-family: Poppins;
+font-size: 25px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 37.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.counsellor-req-data{
+    padding-top: 30px;
+}
+.counsellor-req-data p{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center;
+    padding-left: 300px; */
+    text-align: center;
+    color: #000;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.counsellor-req-data input{
+    width: 348px;
+height: 35px;
+flex-shrink: 0;
+border: 1px solid #3C5349;
+background: #EDF9F7;
+}
+.counsellor-req-data select{
+    width: 348px;
+    height: 35px;
+    flex-shrink: 0;
+    border: 1px solid #3C5349;
+    background: #EDF9F7;
+    
+}
+.counsellor-req-data button{
+    width: 157px;
+height: 42px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #5B8369;
+color: #FFF;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+margin-top: 10px;
+}

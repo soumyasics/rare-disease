@@ -1,0 +1,106 @@
+.viewblog-counsellor-main{
+    width: 966px;
+    height: 199px;
+    margin-left: 50px;
+    flex-shrink: 0;
+    border-left: 5px solid #0A5377;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+.viewblog-counsellor-shrink{
+    width: 169px;
+height: 39px;
+flex-shrink: 0;
+border-radius: 0px 50px 0px 0px;
+background: #0A5377;
+color: #FFF;
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 30px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.viewblog-counsellor-counsellorcount{
+    width: 260px;
+height: 123px;
+flex-shrink: 0;
+border-radius: 5px 5px 0px 0px;
+background: #FFF;
+box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.70);
+margin: 10px;
+margin-left: 45px;
+}
+.viewblog-counsellor-dashpic{
+    display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.counsellor-dashpic img{
+    padding: 10px;
+    width: 55px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+.counsellor-dashpic p{
+    color: #000;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 300;
+line-height: 1.5; /* 25.5px */
+letter-spacing: -0.5px;
+text-transform: capitalize;
+/* padding-top: 10px; */
+padding-left: 20px;
+width: 177px;
+}
+.registration-number {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 177px; 
+  }
+.view-moreadmindash{
+    width: 260px;
+    height: 26px;
+    flex-shrink: 0;
+    background: #0A5377;
+    color: white;
+    margin-left: -12px;
+    margin-top: -20px;
+    /* margin-top: 15px; */
+    /* padding: 10px; */
+    text-align: center;
+    /* border-radius: 0 0 8px 8px; */
+    cursor: pointer;
+  }
+  
+  .view-moreadmindash:hover {
+    background-color: #0056b3;
+  }
+.admindash-counsellorviewall{
+  text-align: right;
+  color: #0A5377;
+  padding-right: 20px;
+  /* padding: 0px; */
+font-family: Poppins;
+font-size: 13.032px;
+font-style: normal;
+font-weight: 400;
+/* line-height: 150%;  */
+/* letter-spacing: -0.717px; */
+text-transform: lowercase;
+}
+
+.viewcounsellor-lottie {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 100%;
+}

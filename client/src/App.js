@@ -36,6 +36,8 @@ import Viewhpappoinments from './Components/Patients/Viewappoinments/Viewhpappoi
 import Patientviewprofile from './Components/Patients/Profile/Patientviewprofile';
 import Patientinfo from './Components/Patients/Patientinfo/Patientinfo';
 import Contactus from './Components/Common/Contactus/Contactus';
+import CounsellorAppoinment from './Components/Patients/PatientAppoinments/CounsellorAppoinment';
+import Payment from './Components/Patients/PatientAppoinments/Payment';
 
 
 function App() {
@@ -59,9 +61,11 @@ function App() {
     <Route path='/footer' element={<Footer/>}/>
     <Route path='/patient-home' element={[<Patienthomenav/>,<Patienthome/>]}/>
     <Route path='/patient-hcpappoinment' element={[<Patienthomenav/>,<Hcpapoinment/>]}/>
+    <Route path='/patient-payment/:id' element={[<Patienthomenav/>,<Payment/>]}/>
     <Route path='/patient-viewhrappoinment' element={[<Patienthomenav/>,<Viewhpappoinments/>]}/>
     <Route path='/patient-viewprofile' element={[<Patienthomenav/>,<Patientviewprofile/>]}/>
     <Route path='/patient-info' element={[<Patienthomenav/>,<Patientinfo/>]}/>
+    <Route path='/patient-counsellorappoinment' element={[<Patienthomenav/>,<CounsellorAppoinment/>]}/>
 
 
 
@@ -82,6 +86,15 @@ function App() {
     <Route path='/counselor-forgetpswd' element={[<Homenav/>,<Counsellorforgetpswd/>,<Footer/>]}/>
     <Route path='/counsellor-dashboard' element={[<Adminhome/>,<Counsellormain data="counsellor-dashboard"/>]}/>
     <Route path='/counsellor-priofile' element={[<Adminhome/>,<Counsellormain data="counsellor-profile"/>]}/>
+    <Route path='/counsellor-viewpatientappoinmnt' element={[<Adminhome/>,<Counsellormain data="counsellor-viewpatientappoinmnt"/>]}/>
+    <Route path='/counsellor-addblog' element={[<Adminhome/>,<Counsellormain data="counsellor-addblog"/>]}/>
+    <Route path='/counsellor-viewblog' element={[<Adminhome/>,<Counsellormain data="counsellor-viewblog"/>]}/>
+    <Route path='/counsellor-viewsingleblog/:blog_id' element={[<Adminhome/>,<Counsellormain data="counsellor-viewsingleblog/:blog_id"/>]}/>
+    <Route path='/counsellor-editblog/:blog_id' element={[<Adminhome/>,<Counsellormain data="counsellor-editblog/:blog_id"/>]}/>
+
+
+    <Route path='/counsellor-viewpatientrecord' element={[<Adminhome/>,<Counsellormain data="counsellor-viewpatientrecord"/>]}/>
+    <Route path='/counsellor-healthrecord' element={[<Adminhome/>,<Counsellormain data="counsellor-healthrecord"/>]}/>
 
 
     {/* Admin */}

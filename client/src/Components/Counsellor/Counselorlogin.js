@@ -31,7 +31,7 @@ function Counselorlogin() {
         console.log(res);
         if(res.data.status===200){
             localStorage.setItem("counsellorlogin", res.data.id)
-            // alert("Login Successfully")
+            alert("Login Successfully")
             navigate("/counsellor-dashboard")
         }
         else{

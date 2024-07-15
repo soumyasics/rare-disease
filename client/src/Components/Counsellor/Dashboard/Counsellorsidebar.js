@@ -85,24 +85,28 @@ function Counsellorsidebar() {
           </div> */}
           <div className="sidebar-item">
             <img src={imgappoinment} alt="patients" />
-           <Link to="" style={{textDecoration:"none"}}><span className="adminsidebar-reqimg">Appoinments</span></Link> 
+           <Link to="/counsellor-viewpatientappoinmnt" style={{textDecoration:"none"}}><span className="adminsidebar-reqimg">Appoinments</span></Link> 
           </div>
           <div className="sidebar-item">
             <img src={imgprisc} alt="counsellor" />
-            <span className="adminsidebar-reqimg">Prescription</span>
+            <Link to="/" style={{textDecoration:"none"}}> <span className="adminsidebar-reqimg">Prescription</span></Link>
           </div>
           <div className="sidebar-item">
             <img src={imgrecord} alt="healthcare" />
-            <span className="adminsidebar-reqimg">Patient Records</span>
+            <Link to="/counsellor-viewpatientrecord" style={{textDecoration:"none"}}> <span className="adminsidebar-reqimg">Patient Records</span></Link>
           </div>
           <div className="sidebar-item">
             <img src={imgchat} alt="healthcare" />
             <span className="adminsidebar-reqimg">Chat With Patient</span>
           </div>
-          <div className="sidebar-item">
+          <Link to="/counsellor-addblog" style={{textDecoration:"none"}}> <div className="sidebar-item">
             <img src={imgblog} alt="healthcare" />
             <span className="adminsidebar-reqimg">Blogs</span>
-          </div>
+          </div></Link>
+          <Link to="/counsellor-viewblog" style={{textDecoration:"none"}}> <div className="sidebar-item">
+            <img src={imgblog} alt="healthcare" />
+            <span className="adminsidebar-reqimg">View Blogs</span>
+          </div></Link>
 
           <div className="sidebar-item">
             <img src={imglogout} alt="logout" />
