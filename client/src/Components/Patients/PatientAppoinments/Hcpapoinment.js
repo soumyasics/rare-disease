@@ -80,8 +80,9 @@ function Hcpapoinment() {
       .then((res) => {
         console.log(res.data);
         if(res.data.status==200){
-            toast.success("Appoinment Booked Successfully")
-            window.location.reload()
+            // toast.success("Appoinment Booked Successfully")
+            // window.location.reload()
+            navigate(`/patient-payment/${res.data.data._id}`)
         }
         else{
             toast.error("Something Went Wrong")

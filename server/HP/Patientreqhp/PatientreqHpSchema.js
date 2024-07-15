@@ -41,8 +41,12 @@ const schema=mongoose.Schema({
     hpacceptstatus:{
         type: String,
         default: "pending"
+    },
+    paymentstatus:{
+        type: Boolean,
+        default: false
     }
- 
+
 });
 module.exports = mongoose.model('userhprequest', schema);
 

@@ -3,6 +3,10 @@ import Counsellorsidebar from './Counsellorsidebar'
 import Counsellordashboard from './Counsellordashboard'
 import Counselorlogin from '../Counselorlogin'
 import Counsellorprofile from '../Profile/Counsellorprofile'
+import PatientAppoinment from '../Appoinments/PatientAppoinment'
+import CounsellorBlogadd from '../BlogAdd/CounsellorBlogadd'
+import CounsellorPatientrecord from '../Patients/CounsellorPatientrecord'
+import CounPatientHealthRecord from "../Patients/CounPatientHealthRecord"
 
 function Counsellormain({data}) {
   return (
@@ -12,8 +16,11 @@ function Counsellormain({data}) {
     {
         data==="counsellor-dashboard"?(<Counsellordashboard/>):
          data==="counsellor-profile"?(<Counsellorprofile/>):
-        // data==="admin-hprequest"?(<Hprequest/>):
-       
+        data==="counsellor-viewpatientappoinmnt"?(<PatientAppoinment/>):
+        data==="counsellor-addblog"?(<CounsellorBlogadd/>):
+        data==="counsellor-viewpatientrecord"?(<CounsellorPatientrecord/>):
+        data==="counsellor-healthrecord"?(<CounPatientHealthRecord/>):
+
         <Counselorlogin/>
     }
 
