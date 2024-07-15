@@ -103,6 +103,10 @@ function Counsellorsidebar() {
             <img src={imgblog} alt="healthcare" />
             <span className="adminsidebar-reqimg">Blogs</span>
           </div></Link>
+          <Link to="/counsellor-viewblog" style={{textDecoration:"none"}}> <div className="sidebar-item">
+            <img src={imgblog} alt="healthcare" />
+            <span className="adminsidebar-reqimg">View Blogs</span>
+          </div></Link>
 
           <div className="sidebar-item">
             <img src={imglogout} alt="logout" />

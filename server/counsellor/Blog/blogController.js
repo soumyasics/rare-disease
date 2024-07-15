@@ -39,6 +39,76 @@ const uploadblog = (req, res) => {
     });
 };
 
+// view all blogs 
+
+const viewallblogs=((req,res)=>{
+  blogSchema.find()
+  .exec()
+  .then((result)=>{
+    res.json({
+      status:200,
+      data:result
+    })
+  })
+  .catch((err)=>{
+    console.log(err);
+    res.json({
+      status:404,
+      err:err
+    })
+  })
+})
+
+// view all blogs 
+
+const viewblogsbyId=((req,res)=>{
+  blogSchema.findById(req.params.id)
+  .exec()
+  .then((result)=>{
+    res.json({
+      status:200,
+      data:result
+    })
+  })
+  .catch((err)=>{
+    console.log(err);
+    res.json({
+      status:404,
+      err:err
+    })
+  })
+})
+
+// update blogs
+
+const updateBlog=((req,res)=>{
+  blogSchema.findByIdAndUpdate({_id:req.params.id},{
+    title: req.body.title,
+    author: req.body.author,
+    content: req.body.content,
+    category: req.body.category,
+    image: req.file,
+  })
+  .then((result) => {
+    res.json({
+        status: 200,
+        data: result,
+        msg: 'Updated'
+    })
+})
+.catch(err => {
+    res.json({
+        status: 500,
+        msg: 'Error in API',
+        err: err
+    })
+})
+
+})
+
 module.exports={
-    uploadblog,upload
+    uploadblog,upload,
+    viewallblogs,
+    viewblogsbyId,
+    updateBlog
 }

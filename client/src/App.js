@@ -88,6 +88,11 @@ function App() {
     <Route path='/counsellor-priofile' element={[<Adminhome/>,<Counsellormain data="counsellor-profile"/>]}/>
     <Route path='/counsellor-viewpatientappoinmnt' element={[<Adminhome/>,<Counsellormain data="counsellor-viewpatientappoinmnt"/>]}/>
     <Route path='/counsellor-addblog' element={[<Adminhome/>,<Counsellormain data="counsellor-addblog"/>]}/>
+    <Route path='/counsellor-viewblog' element={[<Adminhome/>,<Counsellormain data="counsellor-viewblog"/>]}/>
+    <Route path='/counsellor-viewsingleblog/:blog_id' element={[<Adminhome/>,<Counsellormain data="counsellor-viewsingleblog/:blog_id"/>]}/>
+    <Route path='/counsellor-editblog/:blog_id' element={[<Adminhome/>,<Counsellormain data="counsellor-editblog/:blog_id"/>]}/>
+
+
     <Route path='/counsellor-viewpatientrecord' element={[<Adminhome/>,<Counsellormain data="counsellor-viewpatientrecord"/>]}/>
     <Route path='/counsellor-healthrecord' element={[<Adminhome/>,<Counsellormain data="counsellor-healthrecord"/>]}/>
 

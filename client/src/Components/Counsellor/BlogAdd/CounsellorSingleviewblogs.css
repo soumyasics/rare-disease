@@ -1,0 +1,116 @@
+/* Modal.css */
+
+  
+  
+  
+  
+  .viewblog-header {
+    display: flex;
+    justify-content: flex-end;
+    /* padding: 10px; */
+    background-color: white;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  .viewblog-close-buttonuser {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+.viewblog-info {
+    text-align: justify;
+  }
+  
+  .info-labels, .info-values {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-labels p, .info-values p {
+    margin: 5px 0;
+  }
+  
+  
+  
+  .profile-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: white;
+    /* border-top: 1px solid #ddd; */
+  }
+  
+  .userapprove-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .userreject-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .viewblog-maindiv{
+    width: 1044px;
+    height: 120vh;
+    background: #DAEEF6;
+    border: 2px solid #000000
+  }
+
+  .viewblog-profile-pic {
+    width: 150px;
+    height: 150px;
+    /* border-radius: 50%; */
+    margin-left: 10px;
+  }
+
+  .viewblog-row{
+    margin-top: -140px;
+    display: flex;
+  }
+
+  .viewblog-content-p{
+    text-align: justify;
+  }
+  
+  .viewblog-head-p{
+    font-weight: 700;
+  }
+
+  .viewblog-value-p{
+    font-weight: 400;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 28.5px;
+    letter-spacing: 0.5px;
+    text-align: justified;
+
+  }
+
+  .viewblog-editbtn{
+    width: 123px;
+    height: 50px;
+    color: #fff;
+    border-radius: 30px 30px 30px 30px;
+    background: #095477;
+
+  }
+
+  .viewblog-editbtn-div{
+    margin-left: 490px;
+  }
+
+  .editblog-editimage-icon{
+    cursor: pointer;
+  }
