@@ -1,0 +1,8 @@
+.patientappoinment-mainbox{
+    width: 100%;
+    min-height: 213px;
+    max-height: fit-content;
+    flex-shrink: 0;
+    border: 1px solid #0A5377;
+    background: #ECF6FA;
+}
