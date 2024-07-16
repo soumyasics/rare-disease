@@ -42,6 +42,7 @@ import ViewBlogpatient from './Components/Patients/Blogs/ViewBlogpatient';
 import ViewOneBlog from "./Components/Patients/Blogs/ViewOneBlog"
 import ReqAppoinments from './Components/Patients/ReqAppoinments/ReqAppoinments';
 import ViewHcpList from './Components/Patients/ViewHcp/ViewHcpList';
+import ViewCounsellorList from './Components/Patients/ViewCounsellor/ViewCounsellorList';
 
 function App() {
   return (
@@ -73,6 +74,8 @@ function App() {
     <Route path='/patient-viewoneblog/:id' element={[<Patienthomenav/>,<ViewOneBlog/>]}/>
     <Route path='/patient-reqappoinments' element={[<Patienthomenav/>,<ReqAppoinments/>]}/>
     <Route path='/patient-viewhcplist' element={[<Patienthomenav/>,<ViewHcpList/>]}/>
+    <Route path='/patient-viewcounsellorlist' element={[<Patienthomenav/>,<ViewCounsellorList/>]}/>
+
 
 
 

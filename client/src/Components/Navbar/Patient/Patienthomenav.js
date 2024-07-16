@@ -67,7 +67,7 @@ function Patienthomenav() {
             {" "}
             <p className="nav-item">About</p>
           </Link>
-          <Link to="/patient-counsellorappoinment"
+          <Link to="/patient-viewcounsellorlist"
             // onClick={handleAboutClick}
            style={{ textDecoration: "none" }}>
           <p className="nav-item">Councellors</p></Link>
