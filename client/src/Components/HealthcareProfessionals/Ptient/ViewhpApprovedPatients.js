@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import "./CounsellorPatientRecord.css"
 import axiosInstance from '../../Constants/Baseurl'
 import Lottie from "lottie-react";
 import imglottiedata from "../../../Assets/nodatalottie.json";
 import { Link } from "react-router-dom";
 
-function CounsellorPatientrecord() {
-    const counselorid=localStorage.getItem("counsellorlogin")
+function ViewhpApprovedPatients() {
+    const id=localStorage.getItem("healthcareid")
     const [data,setData]=useState([])
 
     useEffect(()=>{
-        axiosInstance.post(`viewApprovedBookingByCounsellorid/${counselorid}`)
+        axiosInstance.post(`viewacceptedBookingByhpid/${id}`)
         .then((res)=>{
         console.log(res);
         setData(res.data.data)
@@ -67,42 +66,43 @@ function CounsellorPatientrecord() {
                                                 <p>Name</p>
                                             </div>
                                             <div className="col-6">
-                                                <h6>: {a?.patientId?.name}</h6>
+                                                <h6>: {a?.patientid?.name}</h6>
                                             </div>
                                             <div className="col-6">
                                                 <p>Age</p>
                                             </div>
                                             <div className="col-6">
-                                                <h6>: {calculateAge(a?.patientId?.dob)}</h6>
+                                                <h6>: {calculateAge(a?.patientid?.dob)}</h6>
                                             </div>
                                             <div className="col-6">
                                                 <p>Gender</p>
                                             </div>
                                             <div className="col-6">
-                                                <h6>: {a?.patientId?.gender}</h6>
+                                                <h6>: {a?.patientid?.gender}</h6>
                                             </div>
                                         </div>
                                         
-                                        <div className="admin-viewpatient-content">
-                                         <Link to={`/counsellor-healthrecord/${a?.patientId?._id}`} style={{textDecoration:"none",color:"white"}}>
-                                            View Health Record</Link> 
-                                        </div>
+                                         <div className="admin-viewpatient-content">
+                                         <Link to={`/health-viewpatientsrecord/${a?.patientid?._id}/${a?._id}`} style={{textDecoration:"none",color:"white"}}>
+                                         View Health Record </Link> 
+                                          {/* <p className='view-health-button ri-add-circle-line'>  Add Prescription</p> */}
+                                        </div> 
                                     </div>
                                 </div>
-                              );
+                               );
                         })
                      ) : (
                          <div className="counsellornodatareq-lottie">
                              <Lottie animationData={imglottiedata} />
                          </div>
-                     )} 
+                     )}  
 
                 </div>
             </div>
         </div>
     </div>
 </div>
-)
+  )
 }
 
-export default CounsellorPatientrecord
+export default ViewhpApprovedPatients

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import "./CounsellorPatientHealthRecord.css"
-import img from "../../../Assets/counsellor.jpg"
 import { Link, useParams } from 'react-router-dom'
 import axiosInstance from '../../Constants/Baseurl'
 
-function CounPatientHealthRecord() {
+function Hpviewhealrecone() {
     const {id}=useParams()
     const [data,setData]=useState({})
     useEffect(()=>{
@@ -17,6 +15,7 @@ function CounPatientHealthRecord() {
             console.log(err);
         })
     },[])
+
   return (
     <div className='col-9'>
         <div className='container view-pat-hrec'>
@@ -70,4 +69,4 @@ function CounPatientHealthRecord() {
   )
 }
 
-export default CounPatientHealthRecord
+export default Hpviewhealrecone

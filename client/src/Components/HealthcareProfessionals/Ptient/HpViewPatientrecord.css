@@ -1,0 +1,50 @@
+.hpview-patientrecord{
+    width: 1050px;
+height: 1070px;
+flex-shrink: 0;
+background: #ECF6FA;
+}
+.hpview-patientrecord-head p{
+    color: #0A5377;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 37.5px */
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+.hpview-patientrecord-head h3{
+    color: #0A5377;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 37.5px */
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+.hpview-patientrecord-content{
+    padding: 20px;
+}
+.hpview-patientrecord-content p{
+    color: #000;
+font-family: Poppins;
+font-size: 19px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 28.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.hpview-patientrecord-content h6{
+    color: #000;
+    font-family: Poppins;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 28.5px */
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}

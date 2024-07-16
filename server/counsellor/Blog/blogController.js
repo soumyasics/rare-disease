@@ -39,6 +39,47 @@ const uploadblog = (req, res) => {
     });
 };
 
+const viewblogs=((req,res)=>{
+    blogSchema.find()
+    .exec()
+    .then((data) => {
+        res.json({
+          status: 200,
+          msg: "Inserted Successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+          res.json({
+              status:404,
+              msg:err
+          })
+      });
+  
+})
+
+const viewblogbyid=((req,res)=>{
+    blogSchema.findById({_id:req.params.id})
+    .exec()
+    .then((data) => {
+        res.json({
+          status: 200,
+          msg: "Inserted Successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+          res.json({
+              status:404,
+              msg:err
+          })
+      });
+  
+})
+
+
 module.exports={
-    uploadblog,upload
+    uploadblog,upload,
+    viewblogs,
+    viewblogbyid
 }
