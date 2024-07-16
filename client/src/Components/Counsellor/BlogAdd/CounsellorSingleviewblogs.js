@@ -3,7 +3,7 @@ import { useParams,useNavigate } from 'react-router-dom';
 import axiosInstance from '../../Constants/Baseurl'
 import './CounsellorSingleviewblogs.css'
 
-function CounsellorSingleviewblogs({close}) {
+function CounsellorSingleviewblogs() {
     const [blogdata,setBlogData]=useState([]);
     const {blog_id}=useParams();
     const viewblogbyid=()=>{
@@ -104,7 +104,7 @@ const navigateToEditBlog=(blog_id)=>{
             </div>
         </div>
         </div>
-        <div className=' mt-3 viewblog-editbtn-div'>
+        <div className=' mt-3 viewblog-editbtn-div mb-3'>
             <button className='viewblog-editbtn' onClick={()=>navigateToEditBlog(blogdata._id)}>Edit Blog</button>
         </div>
     </div>

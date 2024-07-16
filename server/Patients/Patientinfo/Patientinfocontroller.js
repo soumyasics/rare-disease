@@ -1,12 +1,19 @@
 const patientinfoschema = require("./PatientinfoSchema");
 
 
-const regpatientinfo = (req, res) => {
+const regpatientinfo =async (req, res) => {
+  const existingHistory=await patientinfoschema.findOne({ patientid:req.body.patientid})
+  if(existingHistory){
+    return res.json({
+      status: 404,
+        msg: "You have already added health record",
+    })
+  }
   const patient = new patientinfoschema({
     patientid:req.body.patientid,
     medicalhistory:req.body.medicalhistory
   });
-  patient
+ await patient
     .save()
     .then((data) => {
       res.json({
@@ -23,6 +30,27 @@ const regpatientinfo = (req, res) => {
     });
 };
 
+
+const viewinfobypId=((req,res)=>{
+  patientinfoschema.findOne({patientid:req.params.id})
+  .populate("patientid")
+  .then((data) => {
+    res.json({
+      status: 200,
+      msg: "Inserted Successfully",
+      data: data,
+    });
+  })
+  .catch((err) => {
+      res.json({
+          status:500,
+          err:err
+      })
+  });
+
+})
+
 module.exports={
-    regpatientinfo
+    regpatientinfo,
+    viewinfobypId
 }

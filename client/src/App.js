@@ -38,7 +38,10 @@ import Patientinfo from './Components/Patients/Patientinfo/Patientinfo';
 import Contactus from './Components/Common/Contactus/Contactus';
 import CounsellorAppoinment from './Components/Patients/PatientAppoinments/CounsellorAppoinment';
 import Payment from './Components/Patients/PatientAppoinments/Payment';
-
+import ViewBlogpatient from './Components/Patients/Blogs/ViewBlogpatient';
+import ViewOneBlog from "./Components/Patients/Blogs/ViewOneBlog"
+import ReqAppoinments from './Components/Patients/ReqAppoinments/ReqAppoinments';
+import ViewHcpList from './Components/Patients/ViewHcp/ViewHcpList';
 
 function App() {
   return (
@@ -66,6 +69,12 @@ function App() {
     <Route path='/patient-viewprofile' element={[<Patienthomenav/>,<Patientviewprofile/>]}/>
     <Route path='/patient-info' element={[<Patienthomenav/>,<Patientinfo/>]}/>
     <Route path='/patient-counsellorappoinment' element={[<Patienthomenav/>,<CounsellorAppoinment/>]}/>
+    <Route path='/patient-viewblogs' element={[<Patienthomenav/>,<ViewBlogpatient/>]}/>
+    <Route path='/patient-viewoneblog/:id' element={[<Patienthomenav/>,<ViewOneBlog/>]}/>
+    <Route path='/patient-reqappoinments' element={[<Patienthomenav/>,<ReqAppoinments/>]}/>
+    <Route path='/patient-viewhcplist' element={[<Patienthomenav/>,<ViewHcpList/>]}/>
+
+
 
 
 
@@ -77,7 +86,12 @@ function App() {
     <Route path='/health-dashboard' element={[<Adminhome/>,<Hpmain data="health-dashboard"/>]}/>
     <Route path='/health-viewpatientrequests' element={[<Adminhome/>,<Hpmain data="health-viewpatientrequests"/>]}/>
     <Route path='/health-profile' element={[<Adminhome/>,<Hpmain data="health-profile"/>]}/>
-  
+    <Route path='/health-viewpatients' element={[<Adminhome/>,<Hpmain data="health-viewpatients"/>]}/>
+    <Route path='/health-viewpatientsrecord/:pid/:id' element={[<Adminhome/>,<Hpmain data="health-viewpatientsrecord"/>]}/>
+    <Route path='/health-addprescription/:id' element={[<Adminhome/>,<Hpmain data="health-addprescription"/>]}/>
+    <Route path='/health-viewmedicalreport' element={[<Adminhome/>,<Hpmain data="health-viewmedicalreport"/>]}/>
+    <Route path='/health-Hpviewhealrecone/:id' element={[<Adminhome/>,<Hpmain data="health-Hpviewhealrecone"/>]}/>
+
 
 
     {/* counsellor */}
@@ -94,7 +108,7 @@ function App() {
 
 
     <Route path='/counsellor-viewpatientrecord' element={[<Adminhome/>,<Counsellormain data="counsellor-viewpatientrecord"/>]}/>
-    <Route path='/counsellor-healthrecord' element={[<Adminhome/>,<Counsellormain data="counsellor-healthrecord"/>]}/>
+    <Route path='/counsellor-healthrecord/:id' element={[<Adminhome/>,<Counsellormain data="counsellor-healthrecord"/>]}/>
 
 
     {/* Admin */}

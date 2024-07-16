@@ -17,7 +17,7 @@ function Counsellorviewblogs() {
 
 
 const viewallblogs=()=>{
-  axiosInstance.post(`viewallblogs`)
+  axiosInstance.post(`viewablogsbucounsellorId/${id}`)
     .then((res)=>{
       console.log(res);
       setBlogData(res.data.data)
@@ -42,11 +42,11 @@ const navigateToViewSingleBlog=(blog_id)=>{
   return (
     <>
         <section className='container'>
-        <div className="viewblog-counsellor-main">
+        <div className="viewallblog-counsellor">
           <div className="viewblog-counsellor-shrink">Counsellor</div>
           <div className="row d-flex">
             {blogdata && blogdata.length ? (
-              blogdata.slice(0, 3).map((a) => {
+              blogdata.map((a) => {
                 return (
                   <div 
                   key={a?._id} 
@@ -92,12 +92,12 @@ const navigateToViewSingleBlog=(blog_id)=>{
             </div>       
                )} 
 
-            {blogdata?.length > 0 && blogdata?.length >= 3 && (
+            {/* {blogdata?.length > 0 && blogdata?.length >= 3 && (
              <Link to="/admin-counsellorreq" style={{textDecoration:"none"}}><p className="admindash-counsellorviewall">
                 View all
                 <span className="ri-arrow-right-s-line" />
               </p></Link> 
-             )} 
+             )}  */}
           </div>
         </div>
       </section> 
