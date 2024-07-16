@@ -223,3 +223,13 @@ line-height: 150%; /* 37.5px */
 letter-spacing: 0.5px;
 text-transform:capitalize;
   }
+.viewallblog-counsellor{
+  width: 966px;
+   min-height: 499px;
+   max-height: fit-content;
+    margin-left: 50px;
+    flex-shrink: 0;
+    border-left: 5px solid #0A5377;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

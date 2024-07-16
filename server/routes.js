@@ -66,6 +66,12 @@ router.post("/viewApprovedBookingByCounsellorid/:id",Patientcounsellorreq.viewAp
 
 //blogs
 router.post("/uploadblog",blogs.upload,blogs.uploadblog)
+router.post("/viewablogsbucounsellorId/:id",blogs.viewablogsbucounsellorId)
+router.post("/viewblogsbyId/:id",blogs.viewblogsbyId)
+router.post("/updateBlog/:id",blogs.upload,blogs.updateBlog)
+
+
+
 router.post("/viewblogs",blogs.viewblogs)
 router.post("/viewblogbyid/:id",blogs.viewblogbyid)
 
