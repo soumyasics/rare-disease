@@ -1,0 +1,23 @@
+.patient-viewhcplist{
+    background: #ECF6FA;
+
+}
+
+.patient-viewhcplist-con{
+    text-align: center;
+}
+
+.patient-viewhcplist-head{
+    font-weight: 300;
+    color: #0A5377;
+
+}
+
+.patient-viewhcplist-index{
+    display: flex;
+}
+
+.patient-viewhcplist-pageno{
+
+}
+

@@ -40,6 +40,8 @@ import CounsellorAppoinment from './Components/Patients/PatientAppoinments/Couns
 import Payment from './Components/Patients/PatientAppoinments/Payment';
 import ViewBlogpatient from './Components/Patients/Blogs/ViewBlogpatient';
 import ViewOneBlog from "./Components/Patients/Blogs/ViewOneBlog"
+import ReqAppoinments from './Components/Patients/ReqAppoinments/ReqAppoinments';
+import ViewHcpList from './Components/Patients/ViewHcp/ViewHcpList';
 
 function App() {
   return (
@@ -69,6 +71,10 @@ function App() {
     <Route path='/patient-counsellorappoinment' element={[<Patienthomenav/>,<CounsellorAppoinment/>]}/>
     <Route path='/patient-viewblogs' element={[<Patienthomenav/>,<ViewBlogpatient/>]}/>
     <Route path='/patient-viewoneblog/:id' element={[<Patienthomenav/>,<ViewOneBlog/>]}/>
+    <Route path='/patient-reqappoinments' element={[<Patienthomenav/>,<ReqAppoinments/>]}/>
+    <Route path='/patient-viewhcplist' element={[<Patienthomenav/>,<ViewHcpList/>]}/>
+
+
 
 
 

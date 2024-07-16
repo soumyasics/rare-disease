@@ -104,7 +104,7 @@ const navigateToEditBlog=(blog_id)=>{
             </div>
         </div>
         </div>
-        <div className=' mt-3 viewblog-editbtn-div'>
+        <div className=' mt-3 viewblog-editbtn-div mb-3'>
             <button className='viewblog-editbtn' onClick={()=>navigateToEditBlog(blogdata._id)}>Edit Blog</button>
         </div>
     </div>
