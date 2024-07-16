@@ -3,7 +3,7 @@ import { useParams,useNavigate } from 'react-router-dom';
 import axiosInstance from '../../Constants/Baseurl'
 import './CounsellorSingleviewblogs.css'
 
-function CounsellorSingleviewblogs({close}) {
+function CounsellorSingleviewblogs() {
     const [blogdata,setBlogData]=useState([]);
     const {blog_id}=useParams();
     const viewblogbyid=()=>{

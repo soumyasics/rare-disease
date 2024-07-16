@@ -52,7 +52,7 @@ function Patientinfo() {
         if (res.data.status === 200) {
           toast.success("Added Successfully");
         } else {
-          toast.error("Something Went Wrong");
+          toast.error(res.data.msg);
         }
       });
   };

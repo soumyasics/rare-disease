@@ -111,23 +111,25 @@ function HpSibebar() {
             <img src={imgappoinment} alt="patients" />
            <span className="adminsidebar-reqimg">Appoinments</span>
           </div></Link> 
+          <Link to="/health-viewpatients" style={{textDecoration:"none"}}>
           <div className="sidebar-item">
             <img src={imgrecord} alt="healthcare" />
             <span className="adminsidebar-reqimg">Patient</span>
-          </div>
+          </div></Link>
           <div className="sidebar-item">
             <img src={imgchat} alt="healthcare" />
             <span className="adminsidebar-reqimg">Chat With Patient</span>
           </div>
 
-          <div className="sidebar-item">
+          {/* <div className="sidebar-item">
             <img src={imgprisc} alt="counsellor" />
             <span className="adminsidebar-reqimg">Prescription</span>
-          </div>
+          </div> */}
+                    <Link to="/health-viewmedicalreport" style={{textDecoration:"none"}}>
           <div className="sidebar-item">
             <img src={imgblog} alt="healthcare" />
             <span className="adminsidebar-reqimg">Medical Reports</span>
-          </div>
+          </div></Link>
 
           <div className="sidebar-item">
             <img src={imglogout} alt="logout" />

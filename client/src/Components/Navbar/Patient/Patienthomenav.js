@@ -73,7 +73,8 @@ function Patienthomenav() {
           <p className="nav-item">Councellors</p></Link>
           <Link to="/patient-hcpappoinment"
            style={{ textDecoration: "none" }}> <p className="nav-item">HCP</p></Link>
-          <p className="nav-item">Blogs</p>
+         <Link to="/patient-viewblogs"
+           style={{ textDecoration: "none" }}>  <p className="nav-item">Blogs</p></Link>
 
           <div className=" image-profilelicon" style={{paddingLeft:"300px"}}>
             <img

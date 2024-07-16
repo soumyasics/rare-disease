@@ -8,7 +8,7 @@ const patienthpreq=require("./HP/Patientreqhp/PatientreqHpController")
 const Patientinfo=require("./Patients/Patientinfo/Patientinfocontroller")
 const Patientcounsellorreq=require("./counsellor/PatientreqCounsellor/CounselllorReqController")
 const blogs=require("./counsellor/Blog/blogController")
-
+const prescription=require("./Prescription/prescriptionController")
 
 router.post("/registerpatient",Patients.upload,Patients.registerpatient)
 router.post("/patientlogin",Patients.patientLogin)
@@ -48,10 +48,14 @@ router.post("/approveBookingByid/:id",patienthpreq.approveBookingByid)
 router.post("/rejectBookingByid/:id",patienthpreq.rejectBookingByid)
 router.post("/viewBookingBypatientid/:id",patienthpreq.viewBookingBypatientid)
 router.post("/patientpaymentconfirm/:id",patienthpreq.patientpaymentconfirm)
+router.post("/viewacceptedBookingByhpid/:id",patienthpreq.viewacceptedBookingByhpid)
+router.post("/viewBookingByid/:id",patienthpreq.viewBookingByid)
 
 
 //patient information
 router.post("/regpatientinfo",Patientinfo.regpatientinfo)
+router.post("/viewinfobypId/:id",Patientinfo.viewinfobypId)
+
 
 //Patient req counsellor
 router.post("/registerreqcounsellor",Patientcounsellorreq.registerreqcounsellor)
@@ -62,12 +66,15 @@ router.post("/viewApprovedBookingByCounsellorid/:id",Patientcounsellorreq.viewAp
 
 //blogs
 router.post("/uploadblog",blogs.upload,blogs.uploadblog)
-router.post("/viewallblogs",blogs.viewallblogs)
+router.post("/viewablogsbucounsellorId/:id",blogs.viewablogsbucounsellorId)
 router.post("/viewblogsbyId/:id",blogs.viewblogsbyId)
 router.post("/updateBlog/:id",blogs.upload,blogs.updateBlog)
 
 
 
+router.post("/viewblogs",blogs.viewblogs)
+router.post("/viewblogbyid/:id",blogs.viewblogbyid)
 
-
+//prescription
+router.post("/addprescription",prescription.addprescription)
 module.exports=router

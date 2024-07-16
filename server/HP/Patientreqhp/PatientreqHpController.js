@@ -53,6 +53,29 @@ const viewBookingByhpid = (req, res) => {
       })
   
   }
+  const viewBookingByid = (req, res) => {
+    patientreqschema.findById({_id:req.params.id})
+    .populate('patientid')
+    .exec()
+      .then(data => {
+        console.log(data);
+        res.json({
+          status: 200,
+          msg: "Data obtained successfully",
+          data: data
+        })
+  
+      }).catch(err => {
+        console.log(err);
+        res.json({
+          status: 500,
+          msg: "No Data obtained",
+          Error: err
+        })
+      })
+  
+  }
+
   const patientpaymentconfirm = (req, res) => {
     patientreqschema.findByIdAndUpdate({_id:req.params.id},{
       paymentstatus:true
@@ -144,6 +167,28 @@ const viewBookingByhpid = (req, res) => {
   
   }
 
+  const viewacceptedBookingByhpid = (req, res) => {
+    patientreqschema.find({hpid:req.params.id,hpacceptstatus:"approved",paymentstatus:true})
+    .populate('patientid')
+    .exec()
+      .then(data => {
+        console.log(data);
+        res.json({
+          status: 200,
+          msg: "Data obtained successfully",
+          data: data
+        })
+  
+      }).catch(err => {
+        console.log(err);
+        res.json({
+          status: 500,
+          msg: "No Data obtained",
+          Error: err
+        })
+      })
+  
+  }
 
 module.exports={
     registerreq,
@@ -151,5 +196,7 @@ module.exports={
     approveBookingByid,
     rejectBookingByid,
     viewBookingBypatientid,
-    patientpaymentconfirm
+    patientpaymentconfirm,
+    viewacceptedBookingByhpid,
+    viewBookingByid
 }
