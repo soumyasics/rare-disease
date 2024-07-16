@@ -170,6 +170,7 @@ console.log(blogdata,'blogdata');
                     onChange={handleChange}
                     name='title'
                     />
+                    <p className='text-danger'>{errors.title}</p>
                         
             </div>
         </div>
