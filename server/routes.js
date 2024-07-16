@@ -41,7 +41,7 @@ router.post("/forgotPwdhp",Hp.forgotPwdhp)
 router.post("/hpupdateprofile/:id",Hp.upload,Hp.hpupdateprofile)
 
 
-// Patinet Request hp appoinment
+// Patient Request hp appoinment
 router.post("/registerreq",patienthpreq.registerreq)
 router.post("/viewBookingByhpid/:id",patienthpreq.viewBookingByhpid)
 router.post("/approveBookingByid/:id",patienthpreq.approveBookingByid)
