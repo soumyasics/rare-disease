@@ -96,7 +96,7 @@ const Patientviewprofile = () => {
       if (values.healthrecord) {
         formData.append("files", values.healthrecord);
       }
-            console.log(values);
+            console.log(formik.values);
       axiosInstance
         .post(`updatepatientprofile/${patientid}`, formData,{
           headers: {

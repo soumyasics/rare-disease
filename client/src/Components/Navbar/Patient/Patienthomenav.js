@@ -70,7 +70,7 @@ function Patienthomenav() {
           <Link to="/patient-counsellorappoinment"
             // onClick={handleAboutClick}
            style={{ textDecoration: "none" }}>
-          <p className="nav-item">Councellors</p></Link>
+          <p className="nav-item">Counsellors</p></Link>
           <Link to="/patient-hcpappoinment"
            style={{ textDecoration: "none" }}> <p className="nav-item">HCP</p></Link>
          <Link to="/patient-viewblogs"
@@ -106,9 +106,15 @@ function Patienthomenav() {
 
                 <Link to="/patient-viewhrappoinment" style={{ textDecoration: "none",color:"black" }}>
                 <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
-                  View Appoinment Status
+                  View Hp Appoinment Status
                 </button>
                 </Link>
+                <Link to="/patient-viewcounsellorappoinment" style={{ textDecoration: "none",color:"black" }}>
+                <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                  View Counsellor Appoinment Status
+                </button>
+                </Link>
+
                 <Link to="/patient-viewprofile" style={{ textDecoration: "none",color:"black" }}>
                 <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
                   Profile

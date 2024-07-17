@@ -63,15 +63,13 @@ router.post("/viewBookingByCounsellorid/:id",Patientcounsellorreq.viewBookingByC
 router.post("/approvecounsellorBookingByid/:id",Patientcounsellorreq.approvecounsellorBookingByid)
 router.post("/rejectcounsellorBookingByid/:id",Patientcounsellorreq.rejectcounsellorBookingByid)
 router.post("/viewApprovedBookingByCounsellorid/:id",Patientcounsellorreq.viewApprovedBookingByCounsellorid)
+router.post("/viewBookingByPid/:id",Patientcounsellorreq.viewBookingByPid)
 
 //blogs
 router.post("/uploadblog",blogs.upload,blogs.uploadblog)
 router.post("/viewablogsbucounsellorId/:id",blogs.viewablogsbucounsellorId)
 router.post("/viewblogsbyId/:id",blogs.viewblogsbyId)
 router.post("/updateBlog/:id",blogs.upload,blogs.updateBlog)
-
-
-
 router.post("/viewblogs",blogs.viewblogs)
 router.post("/viewblogbyid/:id",blogs.viewblogbyid)
 

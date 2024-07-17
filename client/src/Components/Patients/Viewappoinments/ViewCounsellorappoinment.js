@@ -7,7 +7,7 @@ import lottieimg from "../../../Assets/lottienodataanimation.json"
 import lottieimg2 from "../../../Assets/lottiedata2.json"
 
 
-function Viewhpappoinments() {
+function ViewCounsellorappoinment() {
     const patient = localStorage.getItem("patientid");
     console.log(patient);
     const navigate=useNavigate()
@@ -18,7 +18,7 @@ function Viewhpappoinments() {
             navigate("/patinet-login")
         }
         else{
-            axiosInstance.post(`viewBookingBypatientid/${patient}`)
+            axiosInstance.post(`viewBookingByPid/${patient}`)
             .then((res)=>{
                 console.log(res);
                 setData(res.data.data)
@@ -32,7 +32,7 @@ function Viewhpappoinments() {
   return (
     <div className='container'>
         <div className='col-12 pb-6 '>
-            <Link to="/patient-home" style={{textDecoration:"none"}}><p className='ri-arrow-left-line viewhpreq-insidecontent'>View Doctor Appoinment Status</p></Link>
+            <Link to="/patient-home" style={{textDecoration:"none"}}><p className='ri-arrow-left-line viewhpreq-insidecontent'>View Counsellor Appoinment Status</p></Link>
             <div className='row '>
 
             {data && data.length ? (
@@ -42,26 +42,26 @@ function Viewhpappoinments() {
                 <div className='col-4 pb-3 viewhpreq-insidebox'>
                 <div className=' viewhpreq-insideboxsecond d-flex '>
                     <div className='col-4 firstpviewhpreq-insidebox'>
-                    <p>Doctor Name </p>
+                    <p>Counsellor  </p>
                     <p>Date </p>
                     <p>Time</p>
-                    <p>Diagnosis</p>
+                    {/* <p>Diagnosis</p> */}
                     </div>
                     <div className='col-6 '>
-                    <p>: {a?.hpid?.name} </p>
+                    <p>: {a?.counsellorId?.name} </p>
                     <p>: {a?.date} </p>
                     <p>: {a?.time}</p>
-                    <p className='viewhpreq-insideboxseconfp'>: {a?.diagnosis}</p>
+                    {/* <p className='viewhpreq-insideboxseconfp'>: {a?.diagnosis}</p> */}
                     </div>
                     </div>
                     <div className='viewhpreq-containerdiv'>
-                    {a.hpacceptstatus === 'approved' && (
+                    {a.counsellorAcceptStatus === 'approved' && (
                                         <button type='submit' className='ri-check-line viewhpreqapproved'>Approved</button>
                                     )}
-                                    {a.hpacceptstatus === 'rejected' && (
+                                    {a.counsellorAcceptStatus === 'rejected' && (
                                         <button type='submit' className='ri-close-large-fill viewhpreqrejected'>Rejected</button>
                                     )}
-                                    {a.hpacceptstatus === 'pending' && (
+                                    {a.counsellorAcceptStatus === 'pending' && (
                                         <button type='submit' className='ri-pass-pending-line viewhpreqpending'>Pending ..</button>
                                     )}
                     </div>
@@ -85,4 +85,4 @@ function Viewhpappoinments() {
   )
 }
 
-export default Viewhpappoinments
+export default ViewCounsellorappoinment

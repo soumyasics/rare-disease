@@ -1,13 +1,13 @@
 const prescription = require("./prescriptionSchema");
 
-const addprescription = (req, res) => {
-    // const existingHistory=await prescription.findOne({patientId:req.body.patientId && hpId: req.body.hpId})
-    // if(existingHistory){
-    //     return res.json({
-    //       status: 404,
-    //         msg: "This patient has already  have prescription",
-    //     })
-    //   }
+const addprescription = async(req, res) => {
+    const existingHistory=await prescription.findOne({patientId:req.body.patientId,hpId: req.body.hpId})
+    if(existingHistory){
+        return res.json({
+          status: 404,
+            msg: "This patient has already  have prescription",
+        })
+      }
     
   const hp = new prescription({
     patientId: req.body.patientId,
