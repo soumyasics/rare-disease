@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../Constants/Baseurl'
 
 function Hpviewhealrecone() {
     const {id}=useParams()
     const [data,setData]=useState({})
+    const navigate=useNavigate()
     useEffect(()=>{
         axiosInstance.post(`viewinfobypId/${id}`)
         .then((res)=>{
@@ -16,10 +17,14 @@ function Hpviewhealrecone() {
         })
     },[])
 
+    const navbck=(()=>{
+        navigate(-1)
+    })
+
   return (
     <div className='col-9'>
         <div className='container view-pat-hrec'>
-            <Link to="/counsellor-viewpatientrecord" style={{textDecoration:"none"}}>
+            <Link onClick={navbck} style={{textDecoration:"none"}}>
         <div className='view-pat-hrechead'><h1 className='ri-arrow-left-line'>Patient Information</h1></div></Link>
         <div className='row'>
             <div className='col-2 view-pat-hrimage'>

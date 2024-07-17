@@ -47,10 +47,29 @@ const viewinfobypId=((req,res)=>{
           err:err
       })
   });
+})
 
+editinfobyid=((req,res)=>{
+  patientinfoschema.findByIdAndUpdate({_id:req.params.id},{
+    medicalhistory:req.body.medicalhistory
+  })
+  .then((data) => {
+    res.json({
+      status: 200,
+      msg: "Inserted Successfully",
+      data: data,
+    });
+  })
+  .catch((err) => {
+      res.json({
+          status:500,
+          err:err
+      })
+  });
 })
 
 module.exports={
     regpatientinfo,
-    viewinfobypId
+    viewinfobypId,
+    editinfobyid
 }

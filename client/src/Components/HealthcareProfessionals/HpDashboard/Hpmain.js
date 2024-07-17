@@ -9,6 +9,7 @@ import HpViewPatientrecord from '../Ptient/HpViewPatientrecord'
 import AddPrescription from '../Prescription/AddPrescription'
 import Hpviewmedicalreport from '../MedicalReport/Hpviewmedicalreport'
 import Hpviewhealrecone from '../MedicalReport/Hpviewhealrecone'
+import Viewprescriptionhp from '../Prescription/Viewprescriptionhp'
 
 function Hpmain({data}) {
   return (
@@ -24,6 +25,7 @@ function Hpmain({data}) {
         data==="health-addprescription"?(<AddPrescription/>):
         data==="health-viewmedicalreport"?(<Hpviewmedicalreport/>):
         data==="health-Hpviewhealrecone"?(<Hpviewhealrecone/>):
+        data==="health-viewprescription"?(<Viewprescriptionhp/>):
 
         <Healthcarelogin/>
     }

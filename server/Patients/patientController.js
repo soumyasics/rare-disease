@@ -234,6 +234,21 @@ const updateprofilepatient = (req, res) => {
       });
     });
 };
+
+const searchpatientByName = (req, res) => {
+  patientschema.find({ name: { $regex: req.params.name, $options: 'i' } })
+      .then(user => {
+          if (user.length === 0) {
+              return res.status(404).json({ message: 'No User Found With The Name.' });
+          }
+          res.status(200).json(user);
+      })
+      .catch(err => {
+          console.error(err);
+          res.status(500).json({ message: 'Server Error' });
+      });
+}
+
 module.exports = {
   registerpatient,
   upload,
@@ -242,5 +257,6 @@ module.exports = {
   forgotPwdpatient,
   viewallpatients,
   viewpatientbyid,
-  updateprofilepatient
+  updateprofilepatient,
+  searchpatientByName
 };

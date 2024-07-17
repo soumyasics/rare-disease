@@ -28,7 +28,7 @@ function ViewHcpList() {
                     <div className='row patient-viewhcplist-head '>
                         <div className='col'><h4>Name</h4></div>
                         <div className='col'><h4>Email Id</h4></div>
-                        <div className='col'><h4>Designation</h4></div>
+                        <div className='col'><h4>Specialisation</h4></div>
                         <div className='col'><h4>No Of Patients</h4></div>
                         <div className='col'><h4>Ratings</h4></div>
                     </div>
@@ -38,7 +38,7 @@ function ViewHcpList() {
                     <div className='row mt-3 '>
                         <div className='col'><p>{a?.name}</p></div>
                         <div className='col'><p>{a?.email}</p></div>
-                        <div className='col'><p>MD</p></div>
+                        <div className='col'><p>{a?.specialisation}</p></div>
                         <div className='col'><p>26</p></div>
                         <div className='col'><p><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/></p></div>
                     </div>

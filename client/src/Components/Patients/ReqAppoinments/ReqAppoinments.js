@@ -3,6 +3,7 @@ import './ReqAppoinments.css'
 import { Col, Row } from 'react-bootstrap'
 import main_img from '../../../Assets/patient-reqapp.png'
 import right_arrow from '../../../Assets/right-arrow.png'
+import { Link } from 'react-router-dom'
 
 function ReqAppoinments() {
   return (
@@ -19,9 +20,9 @@ function ReqAppoinments() {
                             <p 
                             className='patient-req-appo-col-p px-5 mt-3'>Schedule your session with our experienced counsellors by filling out the form below. We’re here to support you</p>
                             <div style={{textAlign:'center'}}>
-                            <button
+                         <Link to="/patient-counsellorappoinment">  <button
                             className='patient-req-appo-btn mt-3'
-                            >Get Appoinment <img src={right_arrow} /></button></div>
+                            >Get Appoinment <img src={right_arrow} /></button></Link></div>
                         </div>
                     </div>
                     <hr style={{maxWidth:'100vh'}}></hr>
@@ -32,9 +33,9 @@ function ReqAppoinments() {
                             className='patient-req-appo-col-p px-5 mt-3'
                             >Please complete the form below to schedule an appointment with one of our healthcare professionals</p>
                             <div style={{textAlign:'center'}}>
-                            <button
+                          <Link to="/patient-hcpappoinment"> <button
                             className='patient-req-appo-btn mt-3'
-                            >Get Appoinment <img src={right_arrow} /></button>
+                            >Get Appoinment <img src={right_arrow} /></button></Link> 
                             </div>
                         </div>
                     </div>

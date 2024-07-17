@@ -17,6 +17,7 @@ router.post("/forgotPwdpatient",Patients.forgotPwdpatient)
 router.post("/viewallpatients",Patients.viewallpatients)
 router.post("/viewallpatientbyid/:id",Patients.viewpatientbyid)
 router.post("/updatepatientprofile/:id",Patients.upload,Patients.updateprofilepatient)
+router.post("/searchpatientByName/name",Patients.searchpatientByName)
 
 
 router.post("/counsellorregistration",Counsellor.upload,Counsellor.registercounsellor)
@@ -55,6 +56,7 @@ router.post("/viewBookingByid/:id",patienthpreq.viewBookingByid)
 //patient information
 router.post("/regpatientinfo",Patientinfo.regpatientinfo)
 router.post("/viewinfobypId/:id",Patientinfo.viewinfobypId)
+router.post("/editinfobyid/:id",Patientinfo.editinfobyid)
 
 
 //Patient req counsellor
@@ -63,18 +65,21 @@ router.post("/viewBookingByCounsellorid/:id",Patientcounsellorreq.viewBookingByC
 router.post("/approvecounsellorBookingByid/:id",Patientcounsellorreq.approvecounsellorBookingByid)
 router.post("/rejectcounsellorBookingByid/:id",Patientcounsellorreq.rejectcounsellorBookingByid)
 router.post("/viewApprovedBookingByCounsellorid/:id",Patientcounsellorreq.viewApprovedBookingByCounsellorid)
+router.post("/viewBookingByPid/:id",Patientcounsellorreq.viewBookingByPid)
 
 //blogs
 router.post("/uploadblog",blogs.upload,blogs.uploadblog)
 router.post("/viewablogsbucounsellorId/:id",blogs.viewablogsbucounsellorId)
 router.post("/viewblogsbyId/:id",blogs.viewblogsbyId)
 router.post("/updateBlog/:id",blogs.upload,blogs.updateBlog)
-
-
-
 router.post("/viewblogs",blogs.viewblogs)
 router.post("/viewblogbyid/:id",blogs.viewblogbyid)
 
 //prescription
 router.post("/addprescription",prescription.addprescription)
+router.post("/viewprescbyappoinmntid/:id",prescription.viewprescbyappoinmntid)
+router.post("/editprescbyid/:id",prescription.editprescbyid)
+router.post("/viewprescbypatientid/:id",prescription.viewprescbypatientid)
+router.post("/viewprescbyid/:id",prescription.viewprescbyid)
+
 module.exports=router

@@ -100,10 +100,10 @@ function HpViewPatientrecord() {
             <h6>{record?.medicalhistory}</h6>
             </div>
             <div className='col-4 view-health-button'>
-           <Link to={`/health-addprescription/${data?.patientid?._id}`}> <button type='button' className='ri-add-circle-line'>Add Prescription</button></Link>
+           <Link to={`/health-addprescription/${data?.patientid?._id}/${id}`}> <button type='button' className='ri-add-circle-line'>Add Prescription</button></Link>
             </div>
             <div className='col-4 view-health-button'>
-            <button type='button' className='ri-eye-line'>View Prescription</button>
+            <Link to={`/health-viewprescription/${id}`}> <button type='button' className='ri-eye-line'>View Prescription</button></Link>
             </div>
 
         </div>
