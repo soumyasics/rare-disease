@@ -67,16 +67,20 @@ function Patienthomenav() {
             {" "}
             <p className="nav-item">About</p>
           </Link>
-          <Link to="/patient-counsellorappoinment"
-            // onClick={handleAboutClick}
+          <Link to="/patient-viewcounsellorlist"
            style={{ textDecoration: "none" }}>
-          <p className="nav-item">Counsellors</p></Link>
-          <Link to="/patient-hcpappoinment"
+
+          <p className="nav-item">Councellors</p></Link>
+          <Link to="/patient-viewhcplist"
+
            style={{ textDecoration: "none" }}> <p className="nav-item">HCP</p></Link>
          <Link to="/patient-viewblogs"
            style={{ textDecoration: "none" }}>  <p className="nav-item">Blogs</p></Link>
+         <Link to="/patient-reqappoinments"
+           style={{ textDecoration: "none" }}>  <p className="nav-item">Appoinments</p></Link>
 
-          <div className=" image-profilelicon" style={{paddingLeft:"300px"}}>
+
+          <div className=" image-profilelicon" style={{paddingLeft:"150px"}}>
             <img
               src={imgprofile}
               className={`dropdown-button ${
@@ -101,6 +105,11 @@ function Patienthomenav() {
                 <Link to="/patient-info" style={{ textDecoration: "none",color:"black" }}>
                 <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
                   Health Record
+                </button>
+                </Link>
+                <Link to="/patient-viewinfo" style={{ textDecoration: "none",color:"black" }}>
+                <button className="dropdown-item" onClick={closeDropdown}  style={{ textDecoration: "none",color:"black" }}>
+                 View Health Record
                 </button>
                 </Link>
 

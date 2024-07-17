@@ -6,6 +6,12 @@ const schema=mongoose.Schema({
         ref: "patients",
         required: true,
     },
+    appoinmentId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "userhprequest",
+        required: true,
+    },
+
     hpId:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "hp",

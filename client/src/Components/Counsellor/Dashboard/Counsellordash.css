@@ -1,7 +1,8 @@
 .counsellordash-main{
     width: 1053px;
     /* margin: 0; */
-    height:650px;
+    min-height:670px;
+    max-height: fit-content;
     background: #d1e5ed;
     border: 1px solid #095477;
 

@@ -1,0 +1,27 @@
+.patient-req-appo-main-col{
+    max-width: 100%;
+}
+
+
+.patient-req-appo-img{
+    width: 100%;
+}
+
+.patient-req-appo-col-h3{
+    text-align: left;
+    font-weight: 700;
+}
+
+.patient-req-appo-col-p{
+    text-align: justify;
+    font-weight: 500;
+}
+
+.patient-req-appo-btn{
+    width: 234px;
+    height: 56px;
+    border-radius: 10px 10px 10px 10px;
+    background: #FFB82FD6;
+    font-weight: 700;
+
+}

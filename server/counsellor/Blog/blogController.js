@@ -87,6 +87,7 @@ const updateBlog=((req,res)=>{
     author: req.body.author,
     content: req.body.content,
     category: req.body.category,
+    date:req.body.date,
     image: req.file,
   })
   .then((result) => {

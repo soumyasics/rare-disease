@@ -52,10 +52,10 @@ const navigateToEditBlog=(blog_id)=>{
             <div className='col-2'>
 
             </div>
-            <div className='col-1'>
+            <div className='col-2'>
                     <p className='viewblog-head-p'>Title </p>
             </div>
-            <div className='col-6'>
+            <div className='col-8'>
                     <p className='viewblog-value-p'>{blogdata?.title}</p>
             </div>
         </div>
@@ -63,10 +63,10 @@ const navigateToEditBlog=(blog_id)=>{
             <div className='col-2'>
 
             </div>
-            <div className='col-1'>
+            <div className='col-2'>
                     <p className='viewblog-head-p'>Author </p>
             </div>
-            <div className='col-6'>
+            <div className='col-8'>
                     <p className='viewblog-value-p'>{blogdata?.author}</p>
             </div>
         </div>
@@ -74,10 +74,10 @@ const navigateToEditBlog=(blog_id)=>{
             <div className='col-2'>
 
             </div>
-            <div className='col-1'>
+            <div className='col-2'>
                     <p className='viewblog-head-p'>Content</p>
             </div>
-            <div className='col-9 viewblog-content-p'>
+            <div className='col-8 viewblog-content-p'>
                     <p className='viewblog-value-p'>{blogdata?.content}</p>
             </div>
         </div>
@@ -85,10 +85,10 @@ const navigateToEditBlog=(blog_id)=>{
             <div className='col-2'>
 
             </div>
-            <div className='col-1'>
+            <div className='col-2'>
                     <p className='viewblog-head-p'>Category </p>
             </div>
-            <div className='col-6'>
+            <div className='col-8'>
                     <p className='viewblog-value-p'>{blogdata?.category}</p>
             </div>
         </div>
@@ -96,15 +96,15 @@ const navigateToEditBlog=(blog_id)=>{
             <div className='col-2'>
 
             </div>
-            <div className='col-1'>
+            <div className='col-2'>
                     <p className='viewblog-head-p'>Posted On </p>
             </div>
-            <div className='col-6'>
+            <div className='col-8'>
                     <p className='viewblog-value-p'>{blogdata?.date}</p>
             </div>
         </div>
         </div>
-        <div className=' mt-3 viewblog-editbtn-div'>
+        <div className=' mt-3 viewblog-editbtn-div mb-3'>
             <button className='viewblog-editbtn' onClick={()=>navigateToEditBlog(blogdata._id)}>Edit Blog</button>
         </div>
     </div>

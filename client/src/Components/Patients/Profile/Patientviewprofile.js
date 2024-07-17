@@ -123,7 +123,7 @@ const Patientviewprofile = () => {
           <form onSubmit={formik.handleSubmit}>
             <div className="row">
               <div className="col-4 sm-4 lg-4 patient-profile-image ">
-                {isEditing ? (
+                {/* {isEditing ? (
                   <div style={{ paddingTop: "20px" }}>
                     <h5>Update Profile Image</h5>
                     <input
@@ -141,7 +141,7 @@ const Patientviewprofile = () => {
                     width="180"
                     height="190"
                   />
-                )}
+                )} */}
               </div>
               <div className="col-8 sm-8 patient-profile-head">
                 <h6>UserProfile</h6>
@@ -342,11 +342,11 @@ const Patientviewprofile = () => {
                       <>: {data?.diseaseinfo}</>
                     )}
                   </div>
-                  <div className="col-4">
+                  {/* <div className="col-4">
                     <p>Upload health records</p>
                   </div>
-                  <div className="col-8">
-                    {isEditing ? (
+                  <div className="col-8"> */}
+                    {/* {isEditing ? (
                       <>
                         <input
                           type="file"
@@ -358,8 +358,8 @@ const Patientviewprofile = () => {
                       </>
                     ) : (
                       <>: {data?.healthrecord?.filename}</>
-                    )}
-                  </div>
+                    )} */}
+                  {/* </div> */}
                   <div className="col-4 patient-profile-button">
                     {isEditing ? (
                       <>

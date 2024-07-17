@@ -6,13 +6,15 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function AddPrescription() {
-  const { id } = useParams();
+  const { pid } = useParams();
+  const {id}=useParams()
   const hpid = localStorage.getItem("healthcareid");
   const [patient, setPatient] = useState({});
   const [hp, sethp] = useState({});
   const [data, setData] = useState({
-    patientId: id,
+    patientId: pid,
     hpId: hpid,
+    appoinmentId:id,
     description: "",
     medicalcode: "",
     nameofmedicine: "",
@@ -27,7 +29,7 @@ function AddPrescription() {
 
   useEffect(() => {
     axiosInstance
-      .post(`viewallpatientbyid/${id}`)
+      .post(`viewallpatientbyid/${pid}`)
       .then((res) => {
         console.log(res);
         setPatient(res.data.data);
@@ -61,7 +63,7 @@ function AddPrescription() {
         if (result.data.status == 200) {
           toast.success("Prescription added Successfully");
         } else {
-          toast.err(result.data.msg);
+          toast.error(result.data.msg);
         }
       })
       .catch((err) => {

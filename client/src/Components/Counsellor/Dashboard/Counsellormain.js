@@ -10,6 +10,8 @@ import CounPatientHealthRecord from "../Patients/CounPatientHealthRecord"
 import Counsellorviewblogs from "../BlogAdd/Counsellorviewblogs"
 import CounsellorSingleviewblogs from '../BlogAdd/CounsellorSingleviewblogs'
 import CounsellorEditBlog from '../BlogAdd/CounsellorEditBlog'
+import CounsellorPriscriptionview from '../Counviewprescription/CounsellorPriscriptionview'
+import Viewsinglepres from '../Counviewprescription/Viewsinglepres'
 
 function Counsellormain({data}) {
   return (
@@ -26,6 +28,8 @@ function Counsellormain({data}) {
         data==="counsellor-viewblog"?(<Counsellorviewblogs/>):
         data==="counsellor-viewsingleblog/:blog_id"?(<CounsellorSingleviewblogs/>):
         data==="counsellor-editblog/:blog_id"?(<CounsellorEditBlog/>):
+        data==="counsellor-viewpriscription"?(<CounsellorPriscriptionview/>):
+        data==="counsellor-viewsinglepriscription"?(<Viewsinglepres/>):
 
 
 

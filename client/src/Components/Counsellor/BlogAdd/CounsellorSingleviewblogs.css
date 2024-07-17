@@ -61,8 +61,8 @@
   }
 
   .viewblog-maindiv{
-    width: 1044px;
-    height: 120vh;
+    width: 1030px;
+    height: 100%;
     background: #DAEEF6;
     border: 2px solid #000000
   }
@@ -75,7 +75,7 @@
   }
 
   .viewblog-row{
-    margin-top: -140px;
+    /* margin-top: -140px; */
     display: flex;
   }
 
@@ -111,6 +111,15 @@
     margin-left: 490px;
   }
 
+
+  /* edit blog css */
+
+  .editblog-maindiv{
+    width: 1040px;
+    height: 100%;
+    background: #DAEEF6;
+    border: 2px solid #000000
+  }
   .editblog-editimage-icon{
     cursor: pointer;
   }

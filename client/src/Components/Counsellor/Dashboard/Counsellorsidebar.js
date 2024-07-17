@@ -9,6 +9,7 @@ import imglogout from "../../../Assets/logout.png";
 import imgchat from "../../../Assets/chat.png";
 import imgblog from "../../../Assets/blog.png";
 import axiosInstance from '../../Constants/Baseurl';
+import Logoutpopu from '../../Common/Popups/Logoutpopu';
 
 
 function Counsellorsidebar() {
@@ -25,6 +26,8 @@ function Counsellorsidebar() {
     const counselorid=localStorage.getItem("counsellorlogin")
     console.log(counselorid);
   
+    const[readerid,setReaderid]=useState(null);
+    const [showModal, setShowModal] = useState(false);
 
   
     // const toggleRequestsDropdown = (e) => {
@@ -33,10 +36,10 @@ function Counsellorsidebar() {
     // };
     // const adminid=localStorage.getItem("adminid")
     // console.log(adminid+"admin");
-    const handleLogout = () => {
-      localStorage.removeItem("counsellorlogin");
-      window.location.reload(); 
-    };
+    // const handleLogout = () => {
+    //   localStorage.removeItem("counsellorlogin");
+    //   window.location.reload(); 
+    // };
     useEffect(()=>{
       if(counselorid===null){
         navigate("/counsellor-login")
@@ -52,6 +55,23 @@ function Counsellorsidebar() {
         })
       }
     },[])
+
+    const handleLogout = () => {
+      setShowModal(true);
+    };
+  
+    const confirmLogout = () => {
+      localStorage.removeItem("counsellorlogin");
+      setReaderid(null);
+      setShowModal(false);
+      navigate("/")
+    };
+  
+    const closeModal = () => {
+      setShowModal(false);
+    };
+  
+
 
   return (
     <div className="col-3">
@@ -87,10 +107,10 @@ function Counsellorsidebar() {
             <img src={imgappoinment} alt="patients" />
            <Link to="/counsellor-viewpatientappoinmnt" style={{textDecoration:"none"}}><span className="adminsidebar-reqimg">Appoinments</span></Link> 
           </div>
-          <div className="sidebar-item">
+          {/* <div className="sidebar-item">
             <img src={imgprisc} alt="counsellor" />
-            <Link to="/" style={{textDecoration:"none"}}> <span className="adminsidebar-reqimg">Prescription</span></Link>
-          </div>
+            <Link to="" style={{textDecoration:"none"}}> <span className="adminsidebar-reqimg">Prescription</span></Link>
+          </div> */}
           <div className="sidebar-item">
             <img src={imgrecord} alt="healthcare" />
             <Link to="/counsellor-viewpatientrecord" style={{textDecoration:"none"}}> <span className="adminsidebar-reqimg">Patient Records</span></Link>
@@ -111,6 +131,8 @@ function Counsellorsidebar() {
           <div className="sidebar-item">
             <img src={imglogout} alt="logout" />
             <span className="adminsidebar-reqimg" onClick={handleLogout}>Logout</span>
+            <Logoutpopu show={showModal} onClose={closeModal} onConfirm={confirmLogout} />
+
           </div>
         </div>
       </div>

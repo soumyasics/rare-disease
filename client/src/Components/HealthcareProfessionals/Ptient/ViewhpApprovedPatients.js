@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 function ViewhpApprovedPatients() {
     const id=localStorage.getItem("healthcareid")
     const [data,setData]=useState([])
+    const [searchInput, setSearchInput] = useState('');
 
-    useEffect(()=>{
+
+    const fetchAllRescueMembers = () => {
         axiosInstance.post(`viewacceptedBookingByhpid/${id}`)
         .then((res)=>{
         console.log(res);
@@ -17,7 +19,12 @@ function ViewhpApprovedPatients() {
     .catch((err)=>{
         console.log(err);
     })
-    },[])
+    }
+
+    useEffect(() => {
+        fetchAllRescueMembers();
+    }, []);
+
 
     const calculateAge = (dob) => {
         const birthDate = new Date(dob);
@@ -31,6 +38,26 @@ function ViewhpApprovedPatients() {
 
         return age;
     };
+
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearchInput(value);
+
+        if (value.trim() === '') {
+            fetchAllRescueMembers();
+        } else {
+            axiosInstance.post(`searchpatientByName/${value}`)
+                .then((res) => {
+                    console.log(res);
+                    setData(res.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    alert(err.response.data.message)
+                });
+        }
+    };
+
 
   return (
     <div className="col-9 adminviewallpatient-main">
@@ -46,6 +73,8 @@ function ViewhpApprovedPatients() {
                         type="text"
                         className="search-inputadminnav"
                         placeholder="Search"
+                        value={searchInput}
+                        onChange={handleSearch}          
                     />
                 </div>
             </div>

@@ -12,6 +12,7 @@ const addprescription = async(req, res) => {
   const hp = new prescription({
     patientId: req.body.patientId,
     hpId: req.body.hpId,
+    appoinmentId:req.body.appoinmentId,
     date: new Date(),
     description: req.body.description,
     medicalcode: req.body.medicalcode,
@@ -36,6 +37,90 @@ const addprescription = async(req, res) => {
     })
 };
 
+const viewprescbyappoinmntid=((req,res)=>{
+  prescription.findOne({appoinmentId:req.params.id})
+  .populate("patientId")
+  .populate("hpId")
+  .exec()
+  .then((data) => {
+    res.json({
+      status: 200,
+      msg: "Data get Successfully",
+      data: data,
+    });
+  })
+  .catch((err) => {
+      res.json({
+          status:400,
+          msg:err
+      })
+  })
+
+})
+const editprescbyid=((req,res)=>{
+  prescription.findByIdAndUpdate({_id:req.params.id})
+  .exec()
+  .then((data) => {
+    res.json({
+      status: 200,
+      msg: "Updated Successfully",
+      data: data,
+    });
+  })
+  .catch((err) => {
+      res.json({
+          status:400,
+          msg:err
+      })
+  })
+
+})
+
+const viewprescbypatientid=((req,res)=>{
+  prescription.find({patientId:req.params.id})
+  .populate("patientId")
+  .populate("hpId")
+  .exec()
+  .then((data) => {
+    res.json({
+      status: 200,
+      msg: "Data get Successfully",
+      data: data,
+    });
+  })
+  .catch((err) => {
+      res.json({
+          status:400,
+          msg:err
+      })
+  })
+
+})
+const viewprescbyid=((req,res)=>{
+  prescription.findById({_id:req.params.id})
+  .populate("patientId")
+  .populate("hpId")
+  .exec()
+  .then((data) => {
+    res.json({
+      status: 200,
+      msg: "Data get Successfully",
+      data: data,
+    });
+  })
+  .catch((err) => {
+      res.json({
+          status:400,
+          msg:err
+      })
+  })
+
+})
+
 module.exports={
-    addprescription
+    addprescription,
+    viewprescbyappoinmntid,
+    editprescbyid,
+    viewprescbypatientid,
+    viewprescbyid
 }

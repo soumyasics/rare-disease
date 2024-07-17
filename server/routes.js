@@ -17,6 +17,7 @@ router.post("/forgotPwdpatient",Patients.forgotPwdpatient)
 router.post("/viewallpatients",Patients.viewallpatients)
 router.post("/viewallpatientbyid/:id",Patients.viewpatientbyid)
 router.post("/updatepatientprofile/:id",Patients.upload,Patients.updateprofilepatient)
+router.post("/searchpatientByName/name",Patients.searchpatientByName)
 
 
 router.post("/counsellorregistration",Counsellor.upload,Counsellor.registercounsellor)
@@ -41,7 +42,7 @@ router.post("/forgotPwdhp",Hp.forgotPwdhp)
 router.post("/hpupdateprofile/:id",Hp.upload,Hp.hpupdateprofile)
 
 
-// Patinet Request hp appoinment
+// Patient Request hp appoinment
 router.post("/registerreq",patienthpreq.registerreq)
 router.post("/viewBookingByhpid/:id",patienthpreq.viewBookingByhpid)
 router.post("/approveBookingByid/:id",patienthpreq.approveBookingByid)
@@ -55,6 +56,7 @@ router.post("/viewBookingByid/:id",patienthpreq.viewBookingByid)
 //patient information
 router.post("/regpatientinfo",Patientinfo.regpatientinfo)
 router.post("/viewinfobypId/:id",Patientinfo.viewinfobypId)
+router.post("/editinfobyid/:id",Patientinfo.editinfobyid)
 
 
 //Patient req counsellor
@@ -75,4 +77,9 @@ router.post("/viewblogbyid/:id",blogs.viewblogbyid)
 
 //prescription
 router.post("/addprescription",prescription.addprescription)
+router.post("/viewprescbyappoinmntid/:id",prescription.viewprescbyappoinmntid)
+router.post("/editprescbyid/:id",prescription.editprescbyid)
+router.post("/viewprescbypatientid/:id",prescription.viewprescbypatientid)
+router.post("/viewprescbyid/:id",prescription.viewprescbyid)
+
 module.exports=router

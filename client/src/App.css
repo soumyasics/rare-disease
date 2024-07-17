@@ -233,3 +233,76 @@ text-transform:capitalize;
     background: #FFF;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.edit-pinfo-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* top: 30px; */
+}
+.edit-pinfo-btn button{
+  width: 157px;
+height: 42px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #5B8369;
+color: #FFF;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+border: none;
+}
+.view-pat-hrcontent-main textarea{
+  width: 700px;
+ min-height: 300px;
+ max-height: fit-content;
+}
+.view-pat-prescription h1{
+  color: #095477;
+  text-align: center;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.40);
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.15px;
+  text-transform: capitalize;
+}
+.view-pat-prescription-pd{
+  padding: 20px;
+}
+.view-pat-prescription-pd h3{
+  padding: 10px;
+}
+.viewhp-app-pre-btn{
+  padding: 30px;
+}
+.viewhp-app-pre-btn button{
+  border-radius: 10px;
+background: #349be9;
+color: #FFF;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+border: none;
+
+}
+.view-pat-prescription-pd p{
+  padding: 10px;
+}
+.view-pat-hrcontent-edit textarea{
+  width: 600px;
+}
+.edit-viewhppresc input{
+  width: 400px;
+  height: 40px;
+  border-radius: 12px;
+}
