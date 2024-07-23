@@ -3,10 +3,11 @@ import "./Payment.css"
 import axiosInstance from '../../Constants/Baseurl';
 import { toast } from 'react-toastify';
 import icon from "../../../Assets/payment.jpg"
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Payment() {
     const {id}=useParams()
+    const navigate=useNavigate()
     const [form, setForm] = useState({
         servicedate: "",
         name: "",
@@ -55,8 +56,8 @@ function Payment() {
           .then((res) => {
             console.log(res);
             if (res.data.status === 200) {
-              toast.success("Payment successfully processed");
-              // navigate("/viewservices")
+              toast.success("Appoinment booked and Payment successfully processed");
+              navigate("/patient-home")
             } else {
               alert("Error in booking");
             }

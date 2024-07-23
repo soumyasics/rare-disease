@@ -113,12 +113,16 @@ function Counsellorsidebar() {
           </div> */}
           <div className="sidebar-item">
             <img src={imgrecord} alt="healthcare" />
-            <Link to="/counsellor-viewpatientrecord" style={{textDecoration:"none"}}> <span className="adminsidebar-reqimg">Patient Records</span></Link>
+            <Link to="/counsellor-viewpatientrecord" style={{textDecoration:"none"}}> 
+            <span className="adminsidebar-reqimg">Patient Records</span></Link>
           </div>
+          <Link to="/counsellor-viewallpatientforchat" style={{textDecoration:"none"}}> 
+
           <div className="sidebar-item">
             <img src={imgchat} alt="healthcare" />
             <span className="adminsidebar-reqimg">Chat With Patient</span>
           </div>
+          </Link>
           <Link to="/counsellor-addblog" style={{textDecoration:"none"}}> <div className="sidebar-item">
             <img src={imgblog} alt="healthcare" />
             <span className="adminsidebar-reqimg">Blogs</span>

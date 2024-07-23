@@ -46,6 +46,17 @@ import ViewHcpList from './Components/Patients/ViewHcp/ViewHcpList';
 import ViewCounsellorList from './Components/Patients/ViewCounsellor/ViewCounsellorList';
 import Patientviewinfo from './Components/Patients/Patientinfo/Patientviewinfo';
 import Pviewprescription from './Components/Patients/PatientAppoinments/Pviewprescription';
+import Chatmain from './Components/Patients/Chats/Chatmain';
+import ViewallCounsellors from './Components/Patients/Chats/ViewallCounsellors';
+import Viewallhcpchat from './Components/Patients/Chats/Viewallhcpchat';
+import Viewallpatientschat from './Components/Patients/Chats/Viewallpatientschat';
+import Chathome from './Components/Patients/Chats/Recipients/Chathome';
+import Chatwithpatient from './Components/HealthcareProfessionals/Hpchat/Chatwithpatient';
+import Viewrecepiants from './Components/HealthcareProfessionals/Hpchat/Viewrecepiants';
+import Viewpatiensforchatcoun from './Components/Counsellor/Chats/Viewpatiensforchatcoun';
+import Counsellorchat from './Components/Patients/Chats/Chatwithcounsellor/Counsellorchat';
+import Chatwithhpmain from './Components/Patients/Chats/Chatwithhp/Chatwithhpmain';
+import Chatusermain from './Components/Patients/Chats/Chatwithuser/Chatusermain';
 
 function App() {
   return (
@@ -63,7 +74,7 @@ function App() {
     <Route path='/patient_signin' element={[<Homenav/>,<Patientsignin/>,<Footer/>]}/>
     <Route path='/patinet-login' element={[<Homenav/>,<Patientlogin/>,<Footer/>]}/>
     <Route path='/patient-forgetpswd' element={[<Homenav/>,<Patientforgrtpswd/>,<Footer/>]}/>
-    <Route path='/aboutus' element={[<Homenav/>,<Aboutuspage/>,<Footer/>]}/>
+    <Route path='/aboutus' element={[<Aboutuspage/>,<Footer/>]}/>
     <Route path='/homenav' element={<Homenav/>}/>
     <Route path='/footer' element={<Footer/>}/>
     <Route path='/patient-home' element={[<Patienthomenav/>,<Patienthome/>]}/>
@@ -81,8 +92,16 @@ function App() {
     <Route path='/patient-viewhcplist' element={[<Patienthomenav/>,<ViewHcpList/>]}/>
     <Route path='/patient-viewcounsellorlist' element={[<Patienthomenav/>,<ViewCounsellorList/>]}/>
     <Route path='/patient-viewprescription/:id' element={[<Patienthomenav/>,<Pviewprescription/>]}/>
+    <Route path='/patient-chatmian' element={[<Patienthomenav/>,<Chatmain/>]}/>
+    <Route path='/patient-viewallcounsellororchat' element={[<Patienthomenav/>,<ViewallCounsellors/>]}/>
+    <Route path='/patient-viewallhporchat' element={[<Patienthomenav/>,<Viewallhcpchat/>]}/>
+    <Route path='/patient-viewallpatientrchat' element={[<Patienthomenav/>,<Viewallpatientschat/>]}/>
 
+    {/* <Route path='/patient-chatrecipients' element={[<Patienthomenav/>,<Chathome data="patient-chatrecipients"/>]}/> */}
 
+    <Route path='/patient-chatwithcounsellor' element={[<Patienthomenav/>,<Counsellorchat/>]}/>
+    <Route path='/patient-chatwithhp' element={[<Patienthomenav/>,<Chatwithhpmain/>]}/>
+    <Route path='/patient-chatwithpatient' element={[<Patienthomenav/>,<Chatusermain/>]}/>
 
 
 
@@ -100,6 +119,8 @@ function App() {
     <Route path='/health-viewmedicalreport' element={[<Adminhome/>,<Hpmain data="health-viewmedicalreport"/>]}/>
     <Route path='/health-Hpviewhealrecone/:id' element={[<Adminhome/>,<Hpmain data="health-Hpviewhealrecone"/>]}/>
     <Route path='/health-viewprescription/:id' element={[<Adminhome/>,<Hpmain data="health-viewprescription"/>]}/>
+    <Route path='/health-viewpatientforchat' element={[<Adminhome/>,<Viewallpatientschat/>,<Footer/>]}/>
+    <Route path='/health-viewchats' element={[<Adminhome/>,<Chatwithpatient/>]}/>
 
 
 
@@ -118,6 +139,7 @@ function App() {
     <Route path='/counsellor-healthrecord/:id' element={[<Adminhome/>,<Counsellormain data="counsellor-healthrecord"/>]}/>
     <Route path='/counsellor-viewpriscription/:id' element={[<Adminhome/>,<Counsellormain data="counsellor-viewpriscription"/>]}/>
     <Route path='/counsellor-viewsinglepriscription/:id' element={[<Adminhome/>,<Counsellormain data="counsellor-viewsinglepriscription"/>]}/>
+    <Route path='/counsellor-viewallpatientforchat' element={[<Adminhome/>,<Viewpatiensforchatcoun/>]}/>
 
 
     {/* Admin */}

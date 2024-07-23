@@ -17,7 +17,7 @@ router.post("/forgotPwdpatient",Patients.forgotPwdpatient)
 router.post("/viewallpatients",Patients.viewallpatients)
 router.post("/viewallpatientbyid/:id",Patients.viewpatientbyid)
 router.post("/updatepatientprofile/:id",Patients.upload,Patients.updateprofilepatient)
-router.post("/searchpatientByName/name",Patients.searchpatientByName)
+router.post("/searchpatientByName/:name",Patients.searchpatientByName)
 
 
 router.post("/counsellorregistration",Counsellor.upload,Counsellor.registercounsellor)
@@ -62,6 +62,7 @@ router.post("/editinfobyid/:id",Patientinfo.editinfobyid)
 //Patient req counsellor
 router.post("/registerreqcounsellor",Patientcounsellorreq.registerreqcounsellor)
 router.post("/viewBookingByCounsellorid/:id",Patientcounsellorreq.viewBookingByCounsellorid)
+router.post("/viewCounsellorBookingByPatientid/:id",Patientcounsellorreq.viewCounsellorBookingByPatientid)
 router.post("/approvecounsellorBookingByid/:id",Patientcounsellorreq.approvecounsellorBookingByid)
 router.post("/rejectcounsellorBookingByid/:id",Patientcounsellorreq.rejectcounsellorBookingByid)
 router.post("/viewApprovedBookingByCounsellorid/:id",Patientcounsellorreq.viewApprovedBookingByCounsellorid)

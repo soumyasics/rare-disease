@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 
 function AdiminViewallpatient() {
     const [data, setData] = useState([]);
+    const [searchInput, setSearchInput] = useState('')
 
-    useEffect(() => {
+   
+
+    const fetchallpatients=()=>{
         axiosInstance.post(`viewallpatients`)
             .then((res) => {
                 console.log(res);
@@ -17,6 +20,10 @@ function AdiminViewallpatient() {
             .catch((err) => {
                 console.log(err);
             });
+
+    }
+    useEffect(() => {
+        fetchallpatients()
     }, []);
 
     // Function to calculate age from DOB
@@ -33,6 +40,23 @@ function AdiminViewallpatient() {
         return age;
     };
 
+    //search functionality
+    const handleSearch = (e) => {
+        const value = e.target.value
+        setSearchInput(value)
+
+        if (value.trim() === '') {
+            fetchallpatients()
+        } else {
+            const filteredData = data.filter(a => 
+                a.name.toLowerCase().includes(value.toLowerCase())
+            )
+            setData(filteredData)
+        }
+    }
+
+
+
     return (
         <div className="col-9 adminviewallpatient-main">
             <div className="adminviewallpatient-headcmain d-flex">
@@ -47,6 +71,8 @@ function AdiminViewallpatient() {
                                 type="text"
                                 className="search-inputadminnav"
                                 placeholder="Search"
+                                value={searchInput}
+                                onChange={handleSearch}
                             />
                         </div>
                     </div>

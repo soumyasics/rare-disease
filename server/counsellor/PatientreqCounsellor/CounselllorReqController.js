@@ -48,6 +48,31 @@ const viewBookingByCounsellorid = (req, res) => {
       })
   
   }
+
+
+  const viewCounsellorBookingByPatientid = (req, res) => {
+    counselloreqschema.find({patientId:req.params.id,counsellorAcceptStatus:"approved"})
+    .populate('patientId counsellorId')
+    .exec()
+      .then(data => {
+        console.log(data);
+        res.json({
+          status: 200,
+          msg: "Data obtained successfully",
+          data: data
+        })
+  
+      }).catch(err => {
+        console.log(err);
+        res.json({
+          status: 500,
+          msg: "No Data obtained",
+          Error: err
+        })
+      })
+  
+  }
+
   const viewBookingByPid = (req, res) => {
     counselloreqschema.find({patientId:req.params.id})
     .populate('counsellorId')
@@ -143,5 +168,6 @@ module.exports={
     approvecounsellorBookingByid,
     rejectcounsellorBookingByid,
     viewApprovedBookingByCounsellorid,
-    viewBookingByPid
+    viewBookingByPid,
+    viewCounsellorBookingByPatientid
 }

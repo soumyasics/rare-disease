@@ -2,9 +2,20 @@ import React from 'react'
 import "./Aboutuspage.css"
 import img from "../../Assets/careimage.png"
 import { Button } from 'bootstrap'
+import Homenav from '../Navbar/Homenav'
+import Patienthomenav from '../Navbar/Patient/Patienthomenav'
 
 function Aboutuspage() {
+    const id=localStorage.getItem("patientid")
   return (
+    <>
+    {!id ?(
+        <>
+    <Homenav/>
+        </>
+    ):(
+        <><Patienthomenav/></>
+    )}
     <div className='aboutus-page'>
         <div className='container'>
             <div className='row'>
@@ -29,7 +40,7 @@ function Aboutuspage() {
             </div>
 
         </div>
-    </div>
+    </div></>
   )
 }
 

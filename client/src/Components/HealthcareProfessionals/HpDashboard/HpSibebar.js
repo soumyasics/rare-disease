@@ -116,10 +116,12 @@ function HpSibebar() {
             <img src={imgrecord} alt="healthcare" />
             <span className="adminsidebar-reqimg">Patient</span>
           </div></Link>
+          <Link to="/health-viewpatientforchat" style={{textDecoration:"none"}}>
           <div className="sidebar-item">
             <img src={imgchat} alt="healthcare" />
             <span className="adminsidebar-reqimg">Chat With Patient</span>
           </div>
+          </Link>
 
           {/* <div className="sidebar-item">
             <img src={imgprisc} alt="counsellor" />

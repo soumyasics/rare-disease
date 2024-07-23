@@ -12,6 +12,8 @@ function Hpdashboard() {
   console.log(hpid);
   const navigate=useNavigate()
   const [data,setData]=useState([])
+  const [patient,setPatient]=useState([])
+  const [counsellor,setCounsellor]=useState([])
 
   useEffect(()=>{
       if(hpid===null){
@@ -26,6 +28,22 @@ function Hpdashboard() {
           .catch((err)=>{
               console.log(err);
           })
+          axiosInstance.post(`viewallpatients`)
+          .then((res)=>{
+            console.log(res);
+            setPatient(res.data.data)
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+        axiosInstance.post(`viewallcounsellor`)
+        .then((res)=>{
+          console.log(res);
+          setCounsellor(res.data.data)
+      })
+      .catch((err)=>{
+          console.log(err);
+      })
       }
 
   },[])
@@ -37,7 +55,7 @@ function Hpdashboard() {
   <div className="stats">
     <div className="stat-item col-4">
       <div className="stat-circle">
-        <div className="stat-number">1300</div>
+        <div className="stat-number">{patient.length}</div>
       </div>
       <div className="stat-label">Total Patients</div>
     </div>
@@ -49,7 +67,7 @@ function Hpdashboard() {
     </div>
     <div className="stat-item col-4">
       <div className="stat-circle">
-        <div className="stat-number">11</div>
+        <div className="stat-number">{counsellor.length}</div>
       </div>
       <div className="stat-label">Total Counsellors</div>
     </div>

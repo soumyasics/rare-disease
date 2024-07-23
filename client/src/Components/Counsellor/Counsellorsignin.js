@@ -18,27 +18,31 @@ function Counsellorsignin() {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
-
+  const [error, setError] = useState('');
   const onSubmit = (e) => {
     
     // e.preventDefault()
     const passwordRule =
       /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
-    // if (values.contact.toString().length !== 10) {
-    //   alert("Contact number must be a 10-digit number");
-    //   return;
-    // }
-    // if (values.pincode.toString().length !== 6) {
-    //   alert("Pincode must be a 6-digit number");
-    //   return;
-    // }
+    if (values.phone.toString().length !== 10) {
+      alert("Contact number must be a 10-digit number");
+      return;
+    }
+    if (values.regno.toString().length !== 9) {
+      alert("Registration number must be a 9-digit number");
+      return;
+    }
 
-    // if (!passwordRule.test(values.password)) {
-    //   alert("Password must meet the specified criteria");
-    //   return;
-    // }
+    if (!passwordRule.test(values.password)) {
+      alert("Password must meet the specified criteria");
+      return;
+    }
 
+    if (values.password !== values.confirmpassword) {
+      setError("Passwords do not match");
+      return;
+    }
     axiosInstance
       .post(`/counsellorregistration`, values, {
         headers: {
@@ -49,9 +53,7 @@ function Counsellorsignin() {
         console.log(res);
         if (res.data.status === 200) {
           alert("Registration Successful");
-          navigate("/counsellor-login")
-          // localStorage.setItem("userid",res.data.data._id)
-          // console.log(res.data.data._id);
+          navigate("/cou nsellor-login")
         } else {
           alert(res.response.data.msg);
         }
@@ -224,9 +226,10 @@ function Counsellorsignin() {
                       {showConfirmPassword ? <RiEyeOffFill /> : <RiEyeFill />}
                     </span>
                   </div>
-                  {errors.confirmpassword && touched.confirmpassword && (
+                  {error && <i style={{ color: 'red' }}>{error}</i>}
+                  {/* {errors.confirmpassword && touched.confirmpassword && (
                     <i className="error">{errors.confirmpassword}</i>
-                  )}
+                  )} */}
                 </div>                <div className="col-12 pb-3 patient-signin-inputbutton ">
                   <button type="submit" className="btn btn-primary" style={{marginLeft:"70px"}}>
                     Register

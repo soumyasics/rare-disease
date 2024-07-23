@@ -7,17 +7,22 @@ import { Link } from "react-router-dom";
 function Hpviewmedicalreport() {
     const id=localStorage.getItem("healthcareid")
     const [data,setData]=useState([])
+    const [searchInput, setSearchInput] = useState('')
 
-    useEffect(()=>{
+    const fetchAllRescueMembers = () => {
         axiosInstance.post(`viewacceptedBookingByhpid/${id}`)
-        .then((res)=>{
-        console.log(res);
-        setData(res.data.data)
-    })
-    .catch((err)=>{
-        console.log(err);
-    })
-    },[])
+            .then((res) => {
+                console.log(res)
+                setData(res.data.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    useEffect(() => {
+        fetchAllRescueMembers()
+    }, [])
 
     const calculateAge = (dob) => {
         const birthDate = new Date(dob);
@@ -31,6 +36,20 @@ function Hpviewmedicalreport() {
 
         return age;
     };
+    const handleSearch = (e) => {
+        const value = e.target.value
+        setSearchInput(value)
+
+        if (value.trim() === '') {
+            fetchAllRescueMembers()
+        } else {
+            const filteredData = data.filter(a => 
+                a.patientid.name.toLowerCase().includes(value.toLowerCase())
+            )
+            setData(filteredData)
+        }
+    }
+
 
   return (
     <div className="col-9 adminviewallpatient-main">
@@ -46,6 +65,9 @@ function Hpviewmedicalreport() {
                         type="text"
                         className="search-inputadminnav"
                         placeholder="Search"
+                        value={searchInput}
+                        onChange={handleSearch}
+
                     />
                 </div>
             </div>

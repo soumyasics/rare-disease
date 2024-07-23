@@ -69,7 +69,8 @@ function CounsellorAppoinment() {
         console.log(res.data);
         if (res.data.status == 200) {
           toast.success("Appoinment Booked Successfully");
-          window.location.reload();
+          // window.location.reload();
+          navigate("/patient-home")
         } else {
           toast.error("Something Went Wrong");
         }
