@@ -9,6 +9,7 @@ const Patientinfo=require("./Patients/Patientinfo/Patientinfocontroller")
 const Patientcounsellorreq=require("./counsellor/PatientreqCounsellor/CounselllorReqController")
 const blogs=require("./counsellor/Blog/blogController")
 const prescription=require("./Prescription/prescriptionController")
+const Chat=require("./Chats/chatController")
 
 router.post("/registerpatient",Patients.upload,Patients.registerpatient)
 router.post("/patientlogin",Patients.patientLogin)
@@ -81,5 +82,13 @@ router.post("/viewprescbyappoinmntid/:id",prescription.viewprescbyappoinmntid)
 router.post("/editprescbyid/:id",prescription.editprescbyid)
 router.post("/viewprescbypatientid/:id",prescription.viewprescbypatientid)
 router.post("/viewprescbyid/:id",prescription.viewprescbyid)
+
+
+//chat
+router.post("/chat",Chat.chatting)
+router.post("/viewChatRecipientsforUserById/:id",Chat.viewChatRecipientsforUserById)
+
+router.post("/viewChatBetweenuserandCouncellor",Chat.viewChatBetweenuserandCouncellor)
+router.post("/viewChatBetweenuserandHp",Chat.viewChatBetweenuserandHp)
 
 module.exports=router
