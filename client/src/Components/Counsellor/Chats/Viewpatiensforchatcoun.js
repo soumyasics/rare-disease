@@ -102,7 +102,7 @@ function Viewpatiensforchatcoun() {
             <p>{e?.patientId?.diseaseinfo}</p>
           </div>
           <div className="col-3">
-         <Link to=""> <button type="button">Chat</button></Link>  
+         <Link to={`/counsellor-viewsinglepatientforchat/${e?.patientId?._id}`}> <button type="button">Chat</button></Link>  
           </div>
           </>
                 );

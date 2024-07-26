@@ -97,7 +97,7 @@ function Viewallpatientschat() {
                     <p>{e?.diseaseinfo}</p>
                   </div>
                   <div className="col-3">
-                    <Link to="/patient-chatwithpatient">
+                    <Link to={`/patient-chatwithpatient/${e?._id}`}>
                       <button type="button">Chat</button>
                     </Link>
                   </div>

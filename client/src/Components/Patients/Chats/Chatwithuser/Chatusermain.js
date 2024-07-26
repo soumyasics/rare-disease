@@ -2,8 +2,10 @@ import React from "react";
 import img from "../../../../Assets/doctorimg.jpg";
 import sent from "../../../../Assets/sent.png";
 import Chatuserside from "./Chatuserside";
+import { useParams } from "react-router-dom";
 
 function Chatusermain() {
+  const {id}=useParams()
   return (
     <div className="">
     <div className="row container">

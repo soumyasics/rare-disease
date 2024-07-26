@@ -57,6 +57,8 @@ import Viewpatiensforchatcoun from './Components/Counsellor/Chats/Viewpatiensfor
 import Counsellorchat from './Components/Patients/Chats/Chatwithcounsellor/Counsellorchat';
 import Chatwithhpmain from './Components/Patients/Chats/Chatwithhp/Chatwithhpmain';
 import Chatusermain from './Components/Patients/Chats/Chatwithuser/Chatusermain';
+import AllpatientforChat from './Components/HealthcareProfessionals/Hpchat/AllpatientforChat';
+import Viewsinglepatientforcgatcoun from './Components/Counsellor/Chats/Viewsinglepatientforcgatcoun';
 
 function App() {
   return (
@@ -99,9 +101,9 @@ function App() {
 
     {/* <Route path='/patient-chatrecipients' element={[<Patienthomenav/>,<Chathome data="patient-chatrecipients"/>]}/> */}
 
-    <Route path='/patient-chatwithcounsellor' element={[<Patienthomenav/>,<Counsellorchat/>]}/>
-    <Route path='/patient-chatwithhp' element={[<Patienthomenav/>,<Chatwithhpmain/>]}/>
-    <Route path='/patient-chatwithpatient' element={[<Patienthomenav/>,<Chatusermain/>]}/>
+    <Route path='/patient-chatwithcounsellor/:id' element={[<Patienthomenav/>,<Counsellorchat/>]}/>
+    <Route path='/patient-chatwithhp/:id' element={[<Patienthomenav/>,<Chatwithhpmain/>]}/>
+    <Route path='/patient-chatwithpatient/:id' element={[<Patienthomenav/>,<Chatusermain/>]}/>
 
 
 
@@ -119,8 +121,8 @@ function App() {
     <Route path='/health-viewmedicalreport' element={[<Adminhome/>,<Hpmain data="health-viewmedicalreport"/>]}/>
     <Route path='/health-Hpviewhealrecone/:id' element={[<Adminhome/>,<Hpmain data="health-Hpviewhealrecone"/>]}/>
     <Route path='/health-viewprescription/:id' element={[<Adminhome/>,<Hpmain data="health-viewprescription"/>]}/>
-    <Route path='/health-viewpatientforchat' element={[<Adminhome/>,<Viewallpatientschat/>,<Footer/>]}/>
-    <Route path='/health-viewchats' element={[<Adminhome/>,<Chatwithpatient/>]}/>
+    <Route path='/health-viewpatientforchat' element={[<Adminhome/>,<AllpatientforChat/>]}/>
+    <Route path='/health-viewchats/:id' element={[<Adminhome/>,<Chatwithpatient/>]}/>
 
 
 
@@ -140,6 +142,7 @@ function App() {
     <Route path='/counsellor-viewpriscription/:id' element={[<Adminhome/>,<Counsellormain data="counsellor-viewpriscription"/>]}/>
     <Route path='/counsellor-viewsinglepriscription/:id' element={[<Adminhome/>,<Counsellormain data="counsellor-viewsinglepriscription"/>]}/>
     <Route path='/counsellor-viewallpatientforchat' element={[<Adminhome/>,<Viewpatiensforchatcoun/>]}/>
+    <Route path='/counsellor-viewsinglepatientforchat/:id' element={[<Adminhome/>,<Viewsinglepatientforcgatcoun/>]}/>
 
 
     {/* Admin */}

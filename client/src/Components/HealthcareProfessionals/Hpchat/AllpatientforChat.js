@@ -1,12 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../../Assets/doctorimg.jpg";
 import { Link, useNavigate } from "react-router-dom";
+import axiosInstance from "../../Constants/Baseurl";
+import Lottie from "lottie-react"
+import lottieimg2 from "../../../Assets/lottiedata2.json"
 
 function AllpatientforChat() {
+  const id=localStorage.getItem("healthcareid")
+  const url = axiosInstance.defaults.url;
+
+    const[data,setData]=useState([])
+    const [searchInput, setSearchInput] = useState('')
+
+
+    const fetchAllRescueMembers = () => {
+      axiosInstance.post(`viewacceptedBookingByhpid/${id}`)
+          .then((res) => {
+              console.log(res)
+              setData(res.data.data)
+          })
+          .catch((err) => {
+              console.log(err)
+          })
+  }
+
+  useEffect(() => {
+      fetchAllRescueMembers()
+  }, [])
+
+  const handleSearch = (e) => {
+    const value = e.target.value
+    setSearchInput(value)
+
+    if (value.trim() === '') {
+        fetchAllRescueMembers()
+    } else {
+        const filteredData = data.filter(a => 
+            a.patientid.name.toLowerCase().includes(value.toLowerCase())
+        )
+        setData(filteredData)
+    }
+}
+
     const navigate=useNavigate()
     const navbackfn=(()=>{
         navigate(-1)
     })
+
   return (
     <>
     <div className="view-chat-allcounse-container">
@@ -24,6 +64,9 @@ function AllpatientforChat() {
               type="text"
               className="search-inputadminnav"
               placeholder="Search"
+              value={searchInput}
+              onChange={handleSearch}
+
             />
           </div>
         </div>
@@ -42,24 +85,34 @@ function AllpatientforChat() {
           </div>
           <hr className="chat-viewco-hr" />
 
+          {data && data.length ? (
+              data.map((e) => {
+                return (
 
-
+        <>
           <div className="col-3">
             <p>
-              <img src={img} /> Name
+              <img src={`${url}/${e?.patientid?.image?.filename}`} /> {e?.patientid?.name}
             </p>
           </div>
           <div className="col-3">
-            <p>Registration No</p>
+            <p>{e?.patientid?.usertype}</p>
           </div>
           <div className="col-3">
-            <p>Address</p>
+            <p>{e?.patientid?.diseaseinfo}</p>
           </div>
           <div className="col-3">
-         <Link to=""> <button type="button">Chat</button></Link>  
+         <Link to={`/health-viewchats/${e?.patientid?._id}`}> <button type="button">Chat</button></Link>  
           </div>
+        </>
 
-
+);
+})
+) : (
+<div className="viewcounsellor-lottie">
+<Lottie animationData={lottieimg2} style={{ width: 150, height: 150 }} />
+</div>       
+)}
 
           
         </div>

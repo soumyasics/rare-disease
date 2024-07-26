@@ -105,7 +105,7 @@ function ViewallCounsellors() {
               <p>{e?.counsellorId?.address}</p>
             </div>
             <div className="col-3">
-            <Link to="/patient-chatwithcounsellor">  <button type="button">Chat</button></Link>
+            <Link to={`/patient-chatwithcounsellor/${e?.counsellorId?._id}`}>  <button type="button">Chat</button></Link>
             </div>
             </>
                 );

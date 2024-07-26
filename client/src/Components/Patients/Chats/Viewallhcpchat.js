@@ -106,7 +106,7 @@ function Viewallhcpchat() {
               <p>{e?.hpid?.specialisation}</p>
             </div>
             <div className="col-3">
-             <Link to="/patient-chatwithhp"><button type="button">Chat</button></Link> 
+             <Link to={`/patient-chatwithhp/${e?.hpid?._id}`}><button type="button">Chat</button></Link> 
             </div>
             </>
                 );

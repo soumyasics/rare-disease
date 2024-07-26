@@ -1,12 +1,14 @@
 .viewconplaintmain{
     width: 24%;
-    height: 580px;
+    min-height: 610px;
+    max-height: fit-content;
     flex-shrink: 0;
     background: #0A5377;
     }
 .viewallprevchats-main{
     width: 327px;
-height: 580px;
+    min-height: 650px;
+    max-height: fit-content;
 flex-shrink: 0;
 background: #0A5377;
 }
@@ -77,9 +79,9 @@ padding-left: 14px;
 }
 
 .chatviewallchat-content {
-    max-height: 380px; /* Adjust height as needed */
+    max-height: 420px; /* Adjust height as needed */
     overflow-y: auto;
-    padding-right: 15px; /* Adjust to avoid hiding scrollbar */
+    padding-right: 15px;
   }
   .chatviewallchat-content::-webkit-scrollbar{
     scrollbar-width: none;
