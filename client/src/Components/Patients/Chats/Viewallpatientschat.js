@@ -52,7 +52,7 @@ function Viewallpatientschat() {
     <>
       <div className="view-chat-allcounse-container">
         <div className="chatviewallcounsellor-search d-flex">
-          <div className="chatviewallcounsellor-head" onClick={navbackfn}>
+          <div className="chatviewallcounsellor-head">
             <p className="ri-arrow-left-line">Chat</p>
           </div>
           <div className="searchnav-adminhomemain" style={{ marginLeft: "auto" }}>

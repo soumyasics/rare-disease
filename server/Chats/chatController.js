@@ -269,7 +269,8 @@ const userChatting = async (req, res) => {
 const viewChatBetweenUsers = (req, res) => {
   let fromId = req.body.fromId;
   let toId = req.body.toId;
-  chat
+  console.log(fromId,toId);
+  userchat
     .find({
       $or: [
         {
@@ -304,7 +305,7 @@ const viewChatBetweenUsers = (req, res) => {
 const viewChatRecipientsforUserByUserId = (req, res) => {
   let users=[]
 
-  chat
+  userchat
     .find({ $or: [{ fromId: req.params.id }, { toId: req.params.id }] })
     .populate("fromId toId")
     .exec()

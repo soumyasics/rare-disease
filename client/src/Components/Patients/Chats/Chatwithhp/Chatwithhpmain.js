@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import img from "../../../../Assets/doctorimg.jpg";
 import sent from "../../../../Assets/sent.png";
 import Chatwithhpside from "./Chatwithhpside";
@@ -82,6 +82,14 @@ function Chatwithhpmain() {
       });
   }, [chat]);
   
+  const chatBodyRef = useRef(null);
+
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
+  }, [data]);
+
 
   return (
     <div
@@ -99,9 +107,10 @@ function Chatwithhpmain() {
                 </div>
               </div>
             </div>
-            <div className="container chat-main-cnt-scrol">
+            <div className="container chat-main-cnt-scrol" ref={chatBodyRef}>
               <div className="row chat-content-all">
-                {data.map((message, index) => (
+              {data&&data.length?(
+                data.map((message, index) => (
                   <div
                     key={index}
                     className={`col-12 ${message.from === mesg.from ? "chat-content-to" : "chat-content-from"}`}
@@ -110,7 +119,10 @@ function Chatwithhpmain() {
                     <h6 style={{ textAlign: "end" }}>{new Date(message?.createdAt).toLocaleTimeString()}
                     </h6>
                   </div>
-                ))}
+                ))):(
+                  <div className="viewcounsellor-lottiereqq">Start Chat</div>
+
+                )}
               </div>
             </div>
             <div className="row msg-send mt-auto">

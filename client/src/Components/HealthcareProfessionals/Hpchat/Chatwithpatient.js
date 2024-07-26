@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import img from "../../../Assets/doctorimg.jpg";
 import sent from "../../../Assets/sent.png";
 import Viewrecepiants from "./Viewrecepiants";
@@ -87,6 +87,15 @@ useEffect(()=>{
 
 },[])
 
+const chatBodyRef = useRef(null);
+
+useEffect(() => {
+  if (chatBodyRef.current) {
+    chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+  }
+}, [data]);
+
+
   return (
     <div className=""
     style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
@@ -121,14 +130,14 @@ useEffect(()=>{
                 <h6 style={{ textAlign: "end" }}>{new Date(message?.createdAt).toLocaleTimeString()}</h6>
               </div>
                 ))):(
-                  <div className="viewcounsellor-lottiereqq">No request found</div>
+                  <div className="viewcounsellor-lottiereqq">Start Chat</div>
 
                 )}
 
 
             </div>
           </div>
-          <div className="row msg-send mt-auto">
+          <div className="row msg-send mt-auto" ref={chatBodyRef}>
             <div className="col-10 msg-send-box">
               <textarea name="msg" value={mesg.msg} onChange={handleChange}/>
             </div>
