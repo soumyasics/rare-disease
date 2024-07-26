@@ -8,8 +8,9 @@ import imglottiedata from "../../../Assets/nodatalottie.json";
 function Allcounsellors() {
   const [data, setData] = useState([]);
   const url = axiosInstance.defaults.url;
+  const [searchInput, setSearchInput] = useState('')
 
-  useEffect(() => {
+  const fetchcounsellor=()=>{
     axiosInstance
       .post(`viewallcounsellor`)
       .then((res) => {
@@ -19,7 +20,28 @@ function Allcounsellors() {
       .catch((err) => {
         console.log(err);
       });
+
+  }
+
+  useEffect(() => {
+    fetchcounsellor()
   }, []);
+
+  const handleSearch = (e) => {
+    const value = e.target.value
+    setSearchInput(value)
+
+    if (value.trim() === '') {
+        fetchcounsellor()
+    } else {
+        const filteredData = data.filter(a => 
+            a.name.toLowerCase().includes(value.toLowerCase())
+        )
+        setData(filteredData)
+    }
+}
+
+
 
   return (
     <div className="col-9 adminviewallpatient-main">
@@ -35,6 +57,8 @@ function Allcounsellors() {
                 type="text"
                 className="search-inputadminnav"
                 placeholder="Search"
+                value={searchInput}
+                onChange={handleSearch}
               />
             </div>
           </div>

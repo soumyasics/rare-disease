@@ -8,8 +8,9 @@ import imglottiedata from "../../../Assets/nodatalottie.json";
 function Viewallhp() {
     const [data,setData]=useState([])
     const url = axiosInstance.defaults.url;
+    const [searchInput, setSearchInput] = useState('')
 
-    useEffect(()=>{
+    const fetchallhp=()=>{
         axiosInstance.post(`viewallhp`)
         .then((res)=>{
             console.log(res);
@@ -18,7 +19,27 @@ function Viewallhp() {
         .catch((err)=>{
             console.log(err);
         })
+
+    }
+    useEffect(()=>{
+        fetchallhp()
     },[])
+
+    const handleSearch = (e) => {
+        const value = e.target.value
+        setSearchInput(value)
+
+        if (value.trim() === '') {
+            fetchallhp()
+        } else {
+            const filteredData = data.filter(a => 
+                a.name.toLowerCase().includes(value.toLowerCase())
+            )
+            setData(filteredData)
+        }
+    }
+
+
   return (
     <div className="col-9 adminviewallpatient-main">
       <div className="adminviewallpatient-headcmain d-flex">
@@ -33,6 +54,8 @@ function Viewallhp() {
                 type="text"
                 className="search-inputadminnav"
                 placeholder="Search"
+                value={searchInput}
+                onChange={handleSearch}
               />
             </div>
           </div>

@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 function CounsellorPatientrecord() {
     const counselorid=localStorage.getItem("counsellorlogin")
     const [data,setData]=useState([])
+    const [searchInput, setSearchInput] = useState('')
 
-    useEffect(()=>{
+    const fetchpatients=()=>{
         axiosInstance.post(`viewApprovedBookingByCounsellorid/${counselorid}`)
         .then((res)=>{
         console.log(res);
@@ -18,6 +19,10 @@ function CounsellorPatientrecord() {
     .catch((err)=>{
         console.log(err);
     })
+
+    }
+    useEffect(()=>{
+        fetchpatients()
     },[])
 
     const calculateAge = (dob) => {
@@ -33,6 +38,22 @@ function CounsellorPatientrecord() {
         return age;
     };
 
+    const handleSearch = (e) => {
+        const value = e.target.value
+        setSearchInput(value)
+
+        if (value.trim() === '') {
+            fetchpatients()
+        } else {
+            const filteredData = data.filter(a => 
+                a.patientId.name.toLowerCase().includes(value.toLowerCase())
+            )
+            setData(filteredData)
+        }
+    }
+
+
+
   return (
     <div className="col-9 adminviewallpatient-main">
     <div className="adminviewallpatient-headcmain d-flex">
@@ -47,6 +68,9 @@ function CounsellorPatientrecord() {
                         type="text"
                         className="search-inputadminnav"
                         placeholder="Search"
+                        value={searchInput}
+                        onChange={handleSearch}
+
                     />
                 </div>
             </div>

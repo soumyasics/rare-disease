@@ -4,7 +4,9 @@ import './ViewCounsellorList.css'
 import axiosInstance from '../../Constants/Baseurl';
 
 function ViewCounsellorList() {
-    const [counsellordata,setCounsellorData]=useState('');
+    const [counsellordata,setCounsellorData]=useState([]);
+    const url = axiosInstance.defaults.url;
+
     useEffect(()=>{
         axiosInstance.post('viewallcounsellor')
         .then((res)=>{
@@ -29,8 +31,8 @@ function ViewCounsellorList() {
                         <div className='col'><h4>Name</h4></div>
                         <div className='col'><h4>Email Id</h4></div>
                         <div className='col'><h4>Reg.No</h4></div>
-                        <div className='col'><h4>No Of Patients</h4></div>
-                        <div className='col'><h4>Ratings</h4></div>
+                        <div className='col'><h4>Address</h4></div>
+                        <div className='col'><h4>Images</h4></div>
                     </div>
                     {counsellordata && counsellordata.length ? (
               counsellordata.map((a) => {
@@ -39,8 +41,10 @@ function ViewCounsellorList() {
                         <div className='col'><p>{a?.name}</p></div>
                         <div className='col'><p>{a?.email}</p></div>
                         <div className='col'><p>{a?.regno}</p></div>
-                        <div className='col'><p>26</p></div>
-                        <div className='col'><p><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/></p></div>
+                        <div className='col'><p>{a?.address}</p></div>
+                        <div className='col allcounser-user-image' ><img src={`${url}/${a?.image?.filename}`}/></div>
+
+                        {/* <div className='col'><p><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/></p></div> */}
                     </div>
                     );
                 })

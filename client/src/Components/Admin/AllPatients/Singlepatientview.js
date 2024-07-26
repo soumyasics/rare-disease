@@ -25,7 +25,7 @@ function Singlepatientview() {
       <div className="adminviewallpatient-headc " style={{ width: "350px" }}>
         Patient Health Record{" "}
       </div>
-      <div className="adminviewallpatient-search">
+      {/* <div className="adminviewallpatient-search">
         <div className=" searchnav-adminhomemain">
           <div className="search-containeradminnav">
             <i className="ri-search-line"></i>
@@ -36,7 +36,7 @@ function Singlepatientview() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
     <div className="">
       <div className="admin-viewsinglepatient-insidebox">

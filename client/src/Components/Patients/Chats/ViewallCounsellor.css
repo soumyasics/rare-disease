@@ -1,0 +1,67 @@
+.view-chat-allcounse-container{
+    width: 100%;
+    min-height: 100vh;
+    max-height: fit-content;
+    background-color: #0A5377;
+}
+.chatviewallcounsellor-search{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+.chatviewallcounsellor-head p{
+    color: #FFF;
+font-family: Poppins;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 45px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.chatviewallcounsellor-chead h6{
+    color: #FFF;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 25.5px */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+}
+.chat-viewco-hr{
+    height: 1.6px;
+    color: white;
+}
+.chatviewallcounsellor-chead img{
+    width: 50px;
+height: 50px;
+flex-shrink: 0;
+border-radius: 50px;
+object-fit: contain;
+}
+.chatviewallcounsellor-chead p{
+    color: #FFF;
+font-family: Poppins;
+font-size: 15.296px;
+font-style: normal;
+font-weight: 300;
+line-height: 150%; /* 22.943px */
+letter-spacing: 0.478px;
+text-transform: capitalize;
+}
+.chatviewallcounsellor-chead button{
+    width: 66px;
+height: 32px;
+flex-shrink: 0;
+border-radius: 10px;
+background: #D9D9D9;
+}
+.chatviewallcounsellor-content {
+    max-height: 70vh; /* Adjust height as needed */
+    overflow-y: auto;
+    padding-right: 15px; /* Adjust to avoid hiding scrollbar */
+  }
+  .chatviewallcounsellor-content::-webkit-scrollbar{
+    scrollbar-width: none;
+  }
