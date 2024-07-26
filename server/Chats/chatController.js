@@ -1,4 +1,5 @@
 const chat = require("./chatSchema");
+const userchat = require("./userChats");
 
 const chatting = async (req, res) => {
   // Create a new message
@@ -166,39 +167,8 @@ const viewChatRecipientsforUserById = (req, res) => {
       });
     });
 };
-const viewChatBetweenUsers = (req, res) => {
-  let fromId = req.body.fromId;
-  let toId = req.body.toId;
-  chat
-    .find({
-      $or: [
-        {
-          fromId: fromId,
-          toId: toId,
-        },
-        { fromId: toId, toId: fromId },
-      ],
-    })
-    .sort({ date: 1 })
-    .populate("fromId")
-    .populate("toId")
-    .exec()
 
-    .then((data) => {
-      res.json({
-        status: 200,
-        msg: "got it successfully",
-        data: data,
-      });
-    })
-    .catch((err) => {
-      res.json({
-        status: 500,
-        msg: "Data not obtained",
-        Error: err,
-      });
-    });
-};
+
 const viewChatBetweenuserandHp = (req, res) => {
   let patientId = req.body.patientId;
   let hpId = req.body.hpId;
@@ -260,10 +230,136 @@ const viewChatBetweenuserandCouncellor = (req, res) => {
       });
     });
 };
+
+
+
+
+
+//User Chats
+
+
+const userChatting = async (req, res) => {
+  // Create a new message
+  const message = new userchat({
+    msg: req.body.msg,
+       fromId: req.body.fromId,
+    toId: req.body.toId,
+  });
+  await message
+    .save()
+
+    .then((data) => {
+      res.json({
+        status: 200,
+        msg: "Inserted successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      res.json({
+        status: 500,
+        msg: "Data not Inserted",
+        Error: err,
+      });
+    });
+};
+
+
+
+const viewChatBetweenUsers = (req, res) => {
+  let fromId = req.body.fromId;
+  let toId = req.body.toId;
+  chat
+    .find({
+      $or: [
+        {
+          fromId: fromId,
+          toId: toId,
+        },
+        { fromId: toId, toId: fromId },
+      ],
+    })
+    .sort({ createdAt: 1 })
+    .populate("fromId")
+    .populate("toId")
+    .exec()
+
+    .then((data) => {
+      res.json({
+        status: 200,
+        msg: "got it successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      res.json({
+        status: 500,
+        msg: "Data not obtained",
+        Error: err,
+      });
+    });
+};
+
+
+const viewChatRecipientsforUserByUserId = (req, res) => {
+  let users=[]
+
+  chat
+    .find({ $or: [{ fromId: req.params.id }, { toId: req.params.id }] })
+    .populate("fromId toId")
+    .exec()
+    .then((data) => {
+      if (data.length > 0) {
+        let users = [];
+        data.forEach((x) => {
+          if (x.fromId && x.fromId._id.toString() !== req.params.id) {
+            users.push(x.fromId);
+          }
+          if (x.toId && x.toId._id.toString() !== req.params.id) {
+            users.push(x.toId);
+          }
+          
+        });
+
+        // Remove duplicates
+        users = users.filter((user, index, self) =>
+          index === self.findIndex((t) => t._id.toString() === user._id.toString())
+        );
+
+        res.json({
+          status: 200,
+          msg: "Data obtained successfully",
+          users: users
+        });
+      } else {
+        res.json({
+          status: 200,
+          msg: "No Data obtained",
+          users: []
+          
+        });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json({
+        status: 500,
+        msg: "Data not obtained",
+        error: err,
+      });
+    });
+};
+
+
+
 module.exports = {
   chatting,
   // viewChatBetweenUsers,
   viewChatBetweenuserandHp,
   viewChatBetweenuserandCouncellor,
   viewChatRecipientsforUserById,
+
+  userChatting,
+viewChatRecipientsforUserByUserId,
+viewChatBetweenUsers
 };

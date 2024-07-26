@@ -91,4 +91,10 @@ router.post("/viewChatRecipientsforUserById/:id",Chat.viewChatRecipientsforUserB
 router.post("/viewChatBetweenuserandCouncellor",Chat.viewChatBetweenuserandCouncellor)
 router.post("/viewChatBetweenuserandHp",Chat.viewChatBetweenuserandHp)
 
+
+
+router.post("/userChatting",Chat.userChatting)
+router.post("/viewChatRecipientsforUserByUserId/:id",Chat.viewChatRecipientsforUserByUserId)
+router.post("/viewChatBetweenUsers",Chat.viewChatBetweenUsers)
+
 module.exports=router
