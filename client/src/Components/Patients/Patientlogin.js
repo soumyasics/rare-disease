@@ -33,7 +33,7 @@ const navigate=useNavigate()
       console.log(res);
       if(res.data.status===200){
           localStorage.setItem("patientid", res.data.id)
-           alert("Login Successfully")
+          //  alert("Login Successfully")
           navigate("/patient-home")
       }
       else{
