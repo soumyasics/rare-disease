@@ -27,13 +27,13 @@ function ViewOneBlog() {
             <img src={`${url}/${data?.image?.filename}`} alt='image'/>
             </div>
             <div className='col-8'>
-            <h6>{data?.title}</h6>
+            <h6 style={{whiteSpace:"pre-wrap",wordWrap:"break-word"}}>{data?.title}</h6>
             <div className='d-flex'>
                 <p>{data?.category}</p>
                 <span className='one-blog-autherend'>-{data?.author}</span>
             </div>
             <span className='one-blog-autherend'>{data?.date}</span><br/>
-            <i>{data?.content}</i>
+            <i style={{whiteSpace:"pre-wrap",wordWrap:"break-word"}}>{data?.content}</i>
             </div>
 
         </div>

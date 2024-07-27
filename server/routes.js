@@ -76,6 +76,7 @@ router.post("/viewblogsbyId/:id",blogs.viewblogsbyId)
 router.post("/updateBlog/:id",blogs.upload,blogs.updateBlog)
 router.post("/viewblogs",blogs.viewblogs)
 router.post("/viewblogbyid/:id",blogs.viewblogbyid)
+router.post("/deleteblog/:id",blogs.deleteblog)
 
 //prescription
 router.post("/addprescription",prescription.addprescription)

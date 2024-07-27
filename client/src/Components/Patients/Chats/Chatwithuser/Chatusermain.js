@@ -11,7 +11,7 @@ function Chatusermain() {
   const patientId = localStorage.getItem("patientid");
   const [user, setUser] = useState({});
 
-  //view user
+  // View user
   useEffect(() => {
     axiosInstance
       .post(`viewallpatientbyid/${id}`)
@@ -22,10 +22,9 @@ function Chatusermain() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
 
-  //chat with user functionality
-
+  // Chat with user functionality
   const [mesg, setMesg] = useState({
     msg: "",
     fromId: patientId,
@@ -39,7 +38,6 @@ function Chatusermain() {
       [e.target.name]: e.target.value,
     });
   };
-  console.log(mesg);
 
   const handlemsgSubmit = () => {
     const messageWithTimestamp = {
@@ -52,8 +50,13 @@ function Chatusermain() {
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
-          window.location.reload();
-          setData((prevData) => [...prevData, messageWithTimestamp]);
+          setData((prevData) => [
+            ...prevData,
+            {
+              ...messageWithTimestamp,
+              fromId: { _id: mesg.fromId }, // Ensure fromId has _id property for consistency
+            },
+          ]);
           setMesg({
             ...mesg,
             msg: "",
@@ -66,14 +69,15 @@ function Chatusermain() {
       });
   };
 
-  //view chats
-  const [chat, setChat] = useState({
-    fromId: patientId,
-    toId: id,
-  });
+  // View chats
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    const chat = {
+      fromId: patientId,
+      toId: id,
+    };
+
     axiosInstance
       .post(`viewChatBetweenUsers`, chat)
       .then((res) => {
@@ -83,7 +87,8 @@ function Chatusermain() {
       .catch((err) => {
         console.log(err);
       });
-  }, [chat]);
+  }, [id]); // Update chat data when id changes
+
   const chatBodyRef = useRef(null);
 
   useEffect(() => {
@@ -112,7 +117,6 @@ function Chatusermain() {
               <div className="row chat-content-all">
                 {data && data.length ? (
                   data.map((message, index) => (
-                    // <div className="col-12 chat-content-from">
                     <div
                       key={index}
                       className={`col-12 ${
