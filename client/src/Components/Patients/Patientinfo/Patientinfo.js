@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Patientinfo.css";
-import axios from "axios";
 import axiosInstance from "../../Constants/Baseurl";
 import { toast } from "react-toastify";
 
@@ -13,6 +12,7 @@ function Patientinfo() {
   });
 
   const [patient, setPatient] = useState({});
+  const [predictions, setPredictions] = useState("");
 
   const calculateAge = (dobString) => {
     const today = new Date();
@@ -28,7 +28,6 @@ function Patientinfo() {
   useEffect(() => {
     axiosInstance.post(`viewallpatientbyid/${patientid}`)
       .then((res) => {
-        console.log(res);
         const patientData = res.data.data;
         patientData.age = calculateAge(patientData.dob);
         setPatient(patientData);
@@ -39,16 +38,38 @@ function Patientinfo() {
   }, [patientid]);
 
   const changefn = (e) => {
+    const { name, value } = e.target;
     setData({
-      ...data, [e.target.name]: e.target.value
+      ...data, [name]: value
     });
+
+    if (name === "medicalhistory") {
+      // Split the medical history text into an array by commas
+      const symptomsArray = value.split(",").map(symptom => symptom.trim());
+
+      axiosInstance.post(`getDiseaseBySymptoms`, { symptoms: symptomsArray })
+        .then((res) => {
+          console.log(res);
+          if(res.data.data.length===0){
+            setPredictions("No predictions available.");
+          }
+          else if (res.data.status === 200) {
+            setPredictions(res.data.data.join(", "));
+          } else {
+            setPredictions("No predictions available.");
+          }
+        })
+        .catch((err) => {
+          console.error('Error fetching predictions:', err);
+          setPredictions("Error fetching predictions.");
+        });
+    }
   };
 
   const submitfn = (a) => {
     a.preventDefault();
     axiosInstance.post(`regpatientinfo`, data)
       .then((res) => {
-        console.log(res);
         if (res.data.status === 200) {
           toast.success("Added Successfully");
         } else {
@@ -106,7 +127,19 @@ function Patientinfo() {
                 name="medicalhistory"
                 value={data.medicalhistory}
                 onChange={changefn}
+                required
               />
+            </div>
+          </div>
+          <div className="prediction-content">
+            <div className="col-12 profileinfo-bottm">
+              <p>Prediction of your disease using AI</p>
+              <div className="col-12">
+                <textarea 
+                  value={predictions}
+                  readOnly
+                />
+              </div>
             </div>
           </div>
           <div className="profileinfo-button">

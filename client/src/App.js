@@ -59,6 +59,8 @@ import Chatwithhpmain from './Components/Patients/Chats/Chatwithhp/Chatwithhpmai
 import Chatusermain from './Components/Patients/Chats/Chatwithuser/Chatusermain';
 import AllpatientforChat from './Components/HealthcareProfessionals/Hpchat/AllpatientforChat';
 import Viewsinglepatientforcgatcoun from './Components/Counsellor/Chats/Viewsinglepatientforcgatcoun';
+import Hpallviewblog from './Components/HealthcareProfessionals/Blog/Hpallviewblog';
+import Hpviewsingleblog from './Components/HealthcareProfessionals/Blog/Hpviewsingleblog';
 
 function App() {
   return (
@@ -123,6 +125,8 @@ function App() {
     <Route path='/health-viewprescription/:id' element={[<Adminhome/>,<Hpmain data="health-viewprescription"/>]}/>
     <Route path='/health-viewpatientforchat' element={[<Adminhome/>,<AllpatientforChat/>]}/>
     <Route path='/health-viewchats/:id' element={[<Adminhome/>,<Chatwithpatient/>]}/>
+    <Route path='/health-viewallblogs' element={[<Adminhome/>,<Hpallviewblog/>]}/>
+    <Route path='/health-viewsingleblog/:id' element={[<Adminhome/>,<Hpviewsingleblog/>]}/>
 
 
 
