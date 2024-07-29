@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/rare_disease/static/css/main.624ca3fc.css",
+    "main.js": "/rare_disease/static/js/main.5fbf41a1.js",
+    "static/js/787.5836545c.chunk.js": "/rare_disease/static/js/787.5836545c.chunk.js",
+    "static/media/counsellor.jpg": "/rare_disease/static/media/counsellor.76519afd77e217253bcd.jpg",
+    "static/media/rarecarelogin.jpg": "/rare_disease/static/media/rarecarelogin.92cfad1426ca7e683ff2.jpg",
+    "static/media/counsellor1.jpg": "/rare_disease/static/media/counsellor1.29af827d374af8a18fc7.jpg",
+    "static/media/doctor.jpg": "/rare_disease/static/media/doctor.f5bd8b5d6f5eb839e95b.jpg",
+    "static/media/remixicon.svg?t=1708865856766": "/rare_disease/static/media/remixicon.7735fab8dbf8ff78afe9.svg",
+    "static/media/homepage.jpg": "/rare_disease/static/media/homepage.7255802652e07876cb5f.jpg",
+    "static/media/patient-reqapp.png": "/rare_disease/static/media/patient-reqapp.d8dffd2411a636745c44.png",
+    "static/media/remixicon.eot?t=1708865856766": "/rare_disease/static/media/remixicon.8542c1bb279bcd77063a.eot",
+    "static/media/remixicon.ttf?t=1708865856766": "/rare_disease/static/media/remixicon.4c942de19d980993f612.ttf",
+    "static/media/regimg.png": "/rare_disease/static/media/regimg.c995e7ff883d84de9f3b.png",
+    "static/media/backgroundhome.jpg": "/rare_disease/static/media/backgroundhome.43b2d98de6e216fcf101.jpg",
+    "static/media/chat.jpg": "/rare_disease/static/media/chat.da594e0eca4f2914742a.jpg",
+    "static/media/careimage.png": "/rare_disease/static/media/careimage.fd09820db5c8f8a2abff.png",
+    "static/media/remixicon.woff?t=1708865856766": "/rare_disease/static/media/remixicon.28ceff39ee3e17dc99db.woff",
+    "static/media/doctorimg.jpg": "/rare_disease/static/media/doctorimg.747ff185f631bd730491.jpg",
+    "static/media/payment.jpg": "/rare_disease/static/media/payment.e3e37f5b447cfbb1421f.jpg",
+    "static/media/remixicon.woff2?t=1708865856766": "/rare_disease/static/media/remixicon.39f4def56d0e8712909a.woff2",
+    "static/media/Rectangle223.jpg": "/rare_disease/static/media/Rectangle223.e8cf8c4c83a545ec6ded.jpg",
+    "static/media/imagegroup.jpg": "/rare_disease/static/media/imagegroup.2f634e5d663dac875217.jpg",
+    "static/media/code.png": "/rare_disease/static/media/code.5fadb4eb7d5d968f5fda.png",
+    "static/media/research.png": "/rare_disease/static/media/research.99360458315a24d58b93.png",
+    "static/media/logor.png": "/rare_disease/static/media/logor.50b3912ccfa83e15e2c8.png",
+    "static/media/support.png": "/rare_disease/static/media/support.c87ec85859bd5aabf122.png",
+    "static/media/hospital-building.png": "/rare_disease/static/media/hospital-building.4a9c0eee770e6af7a608.png",
+    "static/media/logo.svg": "/rare_disease/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/rare_disease/index.html",
+    "main.624ca3fc.css.map": "/rare_disease/static/css/main.624ca3fc.css.map",
+    "main.5fbf41a1.js.map": "/rare_disease/static/js/main.5fbf41a1.js.map",
+    "787.5836545c.chunk.js.map": "/rare_disease/static/js/787.5836545c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.624ca3fc.css",
+    "static/js/main.5fbf41a1.js"
+  ]
+}
