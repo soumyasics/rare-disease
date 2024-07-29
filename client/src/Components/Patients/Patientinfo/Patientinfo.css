@@ -9,7 +9,8 @@
 
 .patient-info-main {
     width: 768px;
-    height: 584px;
+    min-height: 584px;
+    max-height: fit-content;
     flex-shrink: 0;
     background: #FFF;
     position: absolute;
@@ -91,4 +92,13 @@ font-weight: 400;
 line-height: normal;
 text-transform: capitalize;
 border: none;
+}
+.prediction-content textarea{
+    width: 652px;
+    height: 78px;
+    flex-shrink: 0;
+    border: 1px solid #000;
+    background: #FFF;
+    margin-left: 30px;
+     
 }
