@@ -132,6 +132,12 @@ function HpSibebar() {
             <img src={imgblog} alt="healthcare" />
             <span className="adminsidebar-reqimg">Medical Reports</span>
           </div></Link>
+          <Link to="/health-viewallblogs" style={{textDecoration:"none"}}>
+          <div className="sidebar-item">
+            <img src={imgchat} alt="healthcare" />
+            <span className="adminsidebar-reqimg">View Blogs</span>
+          </div>
+          </Link>
 
           <div className="sidebar-item">
             <img src={imglogout} alt="logout" />
