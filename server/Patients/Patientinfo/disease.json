@@ -1,0 +1,229 @@
+{
+    "Chronic Fatigue Syndrome": [
+        "Persistent fatigue",
+        "Unrefreshing sleep",
+        "Muscle pain",
+        "Joint pain",
+        "Headaches",
+        "Memory problems",
+        "Sore throat",
+        "Swollen lymph nodes",
+        "Difficulty concentrating",
+        "Post-exertional malaise"
+    ],
+    "Fibromyalgia": [
+        "Persistent fatigue",
+        "Unrefreshing sleep",
+        "Muscle pain",
+        "Joint pain",
+        "Headaches",
+        "Memory problems",
+        "Sore throat",
+        "Swollen lymph nodes",
+        "Difficulty concentrating",
+        "Post-exertional malaise"
+    ],
+    "Polymyositis": [
+        "Muscle weakness",
+        "Muscle pain",
+        "Fatigue",
+        "Difficulty swallowing",
+        "Shortness of breath",
+        "Joint pain",
+        "Weight loss",
+        "Skin rash",
+        "Fever",
+        "Depression"
+    ],
+    "Stiff Person Syndrome": [
+        "Muscle stiffness",
+        "Muscle spasms",
+        "Difficulty walking",
+        "Increased sensitivity to noise or touch",
+        "Anxiety",
+        "Rigidity",
+        "Painful muscle contractions",
+        "Postural instability"
+    ],
+    "Rheumatoid Arthritis": [
+        "Joint pain",
+        "Joint swelling",
+        "Morning stiffness",
+        "Fatigue",
+        "Fever",
+        "Weight loss",
+        "Rheumatoid nodules",
+        "Symmetrical joint involvement",
+        "Decreased range of motion"
+    ],
+    "Ehlers-Danlos Syndrome": [
+        "Skin hyperelasticity",
+        "Joint hypermobility",
+        "Fragile skin",
+        "Easy bruising",
+        "Delayed wound healing",
+        "Hypermobile joints",
+        "Skin fragility",
+        "Abnormal scarring",
+        "Muscle pain"
+    ],
+    "Dermatitis Herpetiformis": [
+        "Itchy skin rash",
+        "Blisters",
+        "Burning sensation",
+        "Rash on elbows, knees, buttocks, and back",
+        "Painful lesions",
+        "Inflammation",
+        "Erythema",
+        "Crusting"
+    ],
+    "Bardet-Biedl Syndrome": [
+        "Vision loss",
+        "Obesity",
+        "Polydactyly",
+        "Kidney abnormalities",
+        "Hearing loss",
+        "Learning difficulties",
+        "Retinitis pigmentosa",
+        "Delayed development",
+        "Hypogonadism"
+    ],
+    "Wolfram Syndrome": [
+        "Vision loss",
+        "Diabetes mellitus",
+        "Hearing loss",
+        "Neurological decline",
+        "Kidney problems",
+        "Ataxia",
+        "Dysarthria",
+        "Optic atrophy",
+        "Endocrine abnormalities"
+    ],
+    "Usher Syndrome": [
+        "Hearing loss",
+        "Vision loss (retinitis pigmentosa)",
+        "Balance issues",
+        "Difficulty with night vision",
+        "Tunnel vision",
+        "Hearing impairment from birth",
+        "Dizziness",
+        "Problems with spatial orientation"
+    ],
+    "Pendred Syndrome": [
+        "Hearing loss",
+        "Balance problems",
+        "Thyroid goiter",
+        "Vestibular dysfunction",
+        "Hearing loss from infancy",
+        "Speech delay",
+        "Difficulty with coordination"
+    ],
+    "Dravet Syndrome": [
+        "Frequent seizures",
+        "Seizures that start in infancy",
+        "Developmental delay",
+        "Behavioral problems",
+        "Autonomic dysfunction",
+        "Motor problems",
+        "Growth retardation"
+    ],
+    "Lennox-Gastaut Syndrome": [
+        "Multiple types of seizures",
+        "Severe developmental delay",
+        "Behavioral problems",
+        "Cognitive impairment",
+        "Frequent drop attacks",
+        "Resistance to anti-seizure medications"
+    ],
+    "Osteogenesis Imperfecta": [
+        "Frequent bone fractures",
+        "Bone deformities",
+        "Short stature",
+        "Hearing loss",
+        "Dental problems",
+        "Blue sclera",
+        "Hyperlaxity of joints",
+        "Skin elasticity"
+    ],
+    "Paget's Disease of Bone": [
+        "Bone pain",
+        "Bone deformities",
+        "Fractures",
+        "Hearing loss",
+        "Arthritis",
+        "Increased bone size",
+        "Warmth over affected bones"
+    ],
+    "Pompe Disease": [
+        "Muscle weakness",
+        "Respiratory problems",
+        "Difficulty swallowing",
+        "Fatigue",
+        "Enlarged heart",
+        "Weakness in the arms and legs",
+        "Difficulty in motor skills"
+    ],
+    "Myasthenia Gravis": [
+        "Muscle weakness",
+        "Fatigue after activity",
+        "Difficulty swallowing",
+        "Double vision",
+        "Drooping eyelids",
+        "Difficulty in chewing",
+        "Weakness in the facial muscles"
+    ],
+    "Huntington's Disease": [
+        "Movement disorders",
+        "Cognitive decline",
+        "Behavioral changes",
+        "Difficulty with coordination",
+        "Involuntary jerking movements",
+        "Personality changes",
+        "Difficulty with speech and swallowing"
+    ],
+    "Progressive Supranuclear Palsy": [
+        "Difficulty with balance",
+        "Eye movement abnormalities",
+        "Speech difficulties",
+        "Cognitive decline",
+        "Parkinsonism symptoms",
+        "Falls",
+        "Dysphagia"
+    ],
+    "Progeria": [
+        "Rapid aging",
+        "Growth retardation",
+        "Skin changes",
+        "Joint stiffness",
+        "Hair loss",
+        "Cardiovascular problems",
+        "Loss of subcutaneous fat"
+    ],
+    "Neurofibromatosis Type 1": [
+        "Skin lesions (neurofibromas)",
+        "Freckling",
+        "Bone deformities",
+        "Learning disabilities",
+        "Optic gliomas",
+        "Scoliosis",
+        "Seizures"
+    ],
+    "Hyper IgM Syndrome": [
+        "Recurrent infections",
+        "Failure to thrive",
+        "Chronic diarrhea",
+        "Autoimmune disorders",
+        "Lymphopenia",
+        "Opportunistic infections",
+        "Enlarged lymph nodes"
+    ],
+    "Severe Combined Immunodeficiency": [
+        "Severe recurrent infections",
+        "Failure to thrive",
+        "Delayed development",
+        "Chronic diarrhea",
+        "Graft-versus-host disease",
+        "Autoimmune manifestations",
+        "Susceptibility to infections"
+    ]
+}

@@ -68,8 +68,52 @@ editinfobyid=((req,res)=>{
   });
 })
 
+const diseasesData = require('./disease.json'); 
+
+const getDiseaseBySymptoms = (req, res) => {
+    try {
+        const { symptoms } = req.body;
+
+        if (!symptoms || !Array.isArray(symptoms) || symptoms.length === 0) {
+            return res.status(400).json({ message: 'Please provide an array of symptoms.' });
+        }
+
+        // Initialize a set to avoid duplicate disease names
+        const diseaseSet = new Set();
+
+        // Iterate over each symptom
+        symptoms.forEach(symptom => {
+            // Iterate over each disease in the diseasesData
+            for (const [disease, diseaseSymptoms] of Object.entries(diseasesData)) {
+                if (diseaseSymptoms.includes(symptom)) {
+                    diseaseSet.add(disease);
+                }
+            }
+        });
+
+        // Convert the set to an array
+        const diseases = Array.from(diseaseSet);
+
+        res.status(200).json({
+            status: 200,
+            message: 'Diseases retrieved successfully',
+            data: diseases,
+        });
+    } catch (error) {
+        console.error('Error processing symptoms:', error);
+        res.status(500).json({
+            message: 'Error processing symptoms',
+            error: error.message,
+        });
+    }
+};
+
+
+
+
 module.exports={
     regpatientinfo,
     viewinfobypId,
-    editinfobyid
+    editinfobyid,
+    getDiseaseBySymptoms
 }

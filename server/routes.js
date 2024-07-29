@@ -58,6 +58,7 @@ router.post("/viewBookingByid/:id",patienthpreq.viewBookingByid)
 router.post("/regpatientinfo",Patientinfo.regpatientinfo)
 router.post("/viewinfobypId/:id",Patientinfo.viewinfobypId)
 router.post("/editinfobyid/:id",Patientinfo.editinfobyid)
+router.post("/getDiseaseBySymptoms",Patientinfo.getDiseaseBySymptoms)
 
 
 //Patient req counsellor
