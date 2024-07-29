@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { useParams,useNavigate } from 'react-router-dom';
 import axiosInstance from '../../Constants/Baseurl'
 import './CounsellorSingleviewblogs.css'
+import { toast } from 'react-toastify';
 
 function CounsellorSingleviewblogs() {
     const [blogdata,setBlogData]=useState([]);
@@ -31,6 +32,22 @@ const navigateToViewallBlog=()=>{
 const navigateToEditBlog=(blog_id)=>{
     navigate(`/counsellor-editblog/${blog_id}`)
   }
+
+  const deletefn=(()=>{
+    axiosInstance.post(`deleteblog/${blog_id}`)
+    .then((res)=>{
+        console.log(res);
+        if(res.data.status==200){
+            toast.success("Deleted Successfully")
+            navigate("/counsellor-viewblog")
+        }
+      })
+      .catch((err)=>{
+        console.log(err);
+        alert('Failed to delete')
+      })
+
+  })
   return (
     <>
     <div className="container viewblog-maindiv mx-2">
@@ -107,6 +124,10 @@ const navigateToEditBlog=(blog_id)=>{
         <div className=' mt-3 viewblog-editbtn-div mb-3'>
             <button className='viewblog-editbtn' onClick={()=>navigateToEditBlog(blogdata._id)}>Edit Blog</button>
         </div>
+        <div className=' mt-3 viewblog-editbtn-div mb-3'>
+            <button className='viewblog-editbtn' onClick={deletefn} style={{backgroundColor:"red"}}>Delete Blog</button>
+        </div>
+
     </div>
     </>
   )

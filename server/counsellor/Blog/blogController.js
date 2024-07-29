@@ -144,6 +144,25 @@ const viewblogbyid=((req,res)=>{
       });
   
 })
+const deleteblog=((req,res)=>{
+  blogSchema.findByIdAndDelete({_id:req.params.id})
+  .exec()
+  .then((data) => {
+      res.json({
+        status: 200,
+        msg: "Deleted Successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+        res.json({
+            status:404,
+            msg:err
+        })
+    });
+
+})
+
 
 
 module.exports={
@@ -152,5 +171,6 @@ module.exports={
     viewblogsbyId,
     updateBlog,
     viewblogs,
-    viewblogbyid
+    viewblogbyid,
+    deleteblog
 }
