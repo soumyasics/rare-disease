@@ -53,7 +53,7 @@ function Viewallpatientschat() {
       <div className="view-chat-allcounse-container">
         <div className="chatviewallcounsellor-search d-flex">
           <div className="chatviewallcounsellor-head">
-            <p className="ri-arrow-left-line">Chat</p>
+          <Link to="/patient-chatmian" style={{textDecoration:"none"}}><p className="ri-arrow-left-line">Chat</p></Link>  
           </div>
           <div className="searchnav-adminhomemain" style={{ marginLeft: "auto" }}>
             <div className="search-containeradminnav">

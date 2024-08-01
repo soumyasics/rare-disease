@@ -13,14 +13,15 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage }).array("files",2);
+// const upload = multer({ storage: storage }).array("files",2);
+const upload = multer({ storage: storage }).single("files");
 
 // const upload = multer({ storage: storage }).array("files");
 // const upload2 = multer({ storage: storage }).single("image");
 
 
 const registerpatient = (req, res) => {
-  console.log("req",req.files);
+  console.log("req",req.file);
   const patient = new patientschema({
     name: req.body.name,
     phone: req.body.phone,
@@ -32,8 +33,8 @@ const registerpatient = (req, res) => {
     city: req.body.city,
     diseaseinfo:req.body.diseaseinfo,
     usertype:req.body.usertype,
-    healthrecord:req.files[0],
-    image: req.files[1],
+    // healthrecord:req.files[0],
+    image: req.file,
   });
   patient
     .save()
@@ -196,13 +197,13 @@ const viewpatientbyid = (req, res) => {
 //view patientby id completed
 
 const updateprofilepatient = (req, res) => {
-  const files = req.files || [];
-  const healthRecordFile = files.find((file) => file.originalname === req.body.healthrecord);
-  const imageFile = files.find((file) => file.originalname === req.body.image);
+  // const files = req.files || [];
+  // const healthRecordFile = files.find((file) => file.originalname === req.body.healthrecord);
+  // const imageFile = files.find((file) => file.originalname === req.body.image);
 
   patientschema
     .findByIdAndUpdate(
-      req.params.id,
+     {_id: req.params.id},
       {
         name: req.body.name,
         phone: req.body.phone,
@@ -213,10 +214,10 @@ const updateprofilepatient = (req, res) => {
         city: req.body.city,
         diseaseinfo: req.body.diseaseinfo,
         usertype: req.body.usertype,
-        healthrecord: healthRecordFile ? healthRecordFile.filename : undefined,
-        image: imageFile ? imageFile.filename : undefined,
+        // healthrecord: healthRecordFile ? healthRecordFile.filename : undefined,
+        image: req.file,
       },
-      { new: true } 
+      // { new: true } 
     )
     .exec()
     .then((result) => {

@@ -23,7 +23,7 @@ const Patientviewprofile = () => {
     state: "",
     country: "",
     diseaseinfo: "",
-    healthrecord: "",
+    // healthrecord: "",
     image: "",
     dob: "",
     gender: "",
@@ -77,6 +77,7 @@ const Patientviewprofile = () => {
     enableReinitialize: true,
     validationSchema,
     onSubmit: (values) => {
+      console.log(values);
       const formData = new FormData();
       formData.append("name", values.name);
       formData.append("phone", values.phone);
@@ -93,9 +94,9 @@ const Patientviewprofile = () => {
       if (values.image) {
         formData.append("files", values.image);
       }
-      if (values.healthrecord) {
-        formData.append("files", values.healthrecord);
-      }
+      // if (values.healthrecord) {
+      //   formData.append("files", values.healthrecord);
+      // }
             console.log(formik.values);
       axiosInstance
         .post(`updatepatientprofile/${patientid}`, formData,{
@@ -108,6 +109,7 @@ const Patientviewprofile = () => {
             toast.success("Updated Successfully");
             setIsEditing(false);
             setData(res.data.data)
+            window.location.reload()
           }
         })
         .catch((err) => {
@@ -123,7 +125,7 @@ const Patientviewprofile = () => {
           <form onSubmit={formik.handleSubmit}>
             <div className="row">
               <div className="col-4 sm-4 lg-4 patient-profile-image ">
-                {/* {isEditing ? (
+                 {isEditing ? (
                   <div style={{ paddingTop: "20px" }}>
                     <h5>Update Profile Image</h5>
                     <input
@@ -141,7 +143,7 @@ const Patientviewprofile = () => {
                     width="180"
                     height="190"
                   />
-                )} */}
+                )} 
               </div>
               <div className="col-8 sm-8 patient-profile-head">
                 <h6>UserProfile</h6>

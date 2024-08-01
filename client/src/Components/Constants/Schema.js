@@ -96,7 +96,7 @@ export const patientregschema  = yup.object().shape({
   .max(new Date(), "Date of birth cannot be in the future")
   .typeError("Date must be (month-day-year)format"),
   image: yup.string().required("Required"),   
-  healthrecord: yup.string().required("Required"),     
+  // healthrecord: yup.string().required("Required"),     
   
 })
 
