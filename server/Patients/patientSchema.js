@@ -49,10 +49,10 @@ const schema=mongoose.Schema({
         type:Object,
         required: true
     },
-    healthrecord:{
-        type:Object,
-        required:true
-    }
+    // healthrecord:{
+    //     type:Object,
+    //     required:true
+    // }
 
    
 });

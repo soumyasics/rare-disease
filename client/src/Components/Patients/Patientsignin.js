@@ -34,11 +34,13 @@ function Patientsignin() {
       city: "",
       diseaseinfo: "",
       usertype: "",
-      healthrecord: null, 
-      image: null,
+      // healthrecord: null, 
+      image: "",
     },
     validationSchema: patientregschema,
     onSubmit: (values) => {
+      console.log("form submitted");
+      // console.log(values);
       const formData = new FormData();
       formData.append("name", values.name);
       formData.append("email", values.email);
@@ -51,7 +53,7 @@ function Patientsignin() {
       formData.append("city", values.city);
       formData.append("diseaseinfo", values.diseaseinfo);
       formData.append("usertype", values.usertype);
-      formData.append("files", values.healthrecord);
+      // formData.append("files", values.healthrecord);
       formData.append("files", values.image);
 
       console.log(values);
@@ -89,6 +91,7 @@ function Patientsignin() {
     // Update state using setFieldValue
     setFieldValue(name, files[0]);
   };
+  
   return (
     <div className="patient-signin">
       <div className="container">
@@ -259,7 +262,7 @@ function Patientsignin() {
                   )}
                 </div>
                 <div className="col-6 pb-3 patient-signin-input">
-                <span className="patient-signin-span">
+                {/* <span className="patient-signin-span">
                   Upload Health Record
                 </span>
                 <input
@@ -272,7 +275,7 @@ function Patientsignin() {
                 />
                 {errors.healthrecord && touched.healthrecord && (
                   <i className="error">{errors.healthrecord}</i>
-                )}
+                )} */}
               </div>
               <div className="col-6 pb-3 patient-signin-input">
                 <span className="patient-signin-span">Upload Image</span>
