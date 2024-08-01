@@ -12,7 +12,7 @@ import imgabt from "../../../Assets/careimage.png"
 function Patienthome() {
     const navigate=useNavigate()
     const navfn=(()=>{
-        navigate("/patient-hcpappoinment")
+        navigate("/patient-reqappoinments")
     })
   return (
     <>
