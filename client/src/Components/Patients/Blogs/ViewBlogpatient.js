@@ -35,7 +35,7 @@ function ViewBlogpatient() {
                   <div className="col-8 view-blog-content">
                     <h6>{a?.title}</h6>
                     <i>
-                      -{a?.author} | {a?.date} | {a?.category}
+                      {a?.author} | {a?.date} | {a?.category}
                     </i>
                     <p>{a?.content}</p>
                   </div>
