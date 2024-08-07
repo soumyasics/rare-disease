@@ -78,7 +78,7 @@ const navigateToViewSingleBlog=(blog_id)=>{
                       </div>
                     </div>
                     <div
-                      className="view-moreadmindash"
+                      className="view-moreadmindash1"
                       onClick={()=>navigateToViewSingleBlog(a?._id)}
                     >
                       view more

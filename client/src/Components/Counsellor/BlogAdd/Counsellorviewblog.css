@@ -24,15 +24,19 @@ letter-spacing: 0.5px;
 text-transform: capitalize;
 }
 .viewblog-counsellor-counsellorcount{
-    width: 260px;
+    /* width: 260px;
 min-height: 123px;
-max-height: fit-content;
+max-height: fit-content; */
 flex-shrink: 0;
 border-radius: 5px 5px 0px 0px;
 background: #FFF;
 box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.70);
 margin: 10px;
 margin-left: 45px;
+display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Optional: Ensures content is spread out */
+  height: 100%; 
 }
 .viewblog-counsellor-dashpic{
     display: flex;
@@ -70,18 +74,26 @@ text-overflow: ellipsis;
     text-overflow: ellipsis;
     max-width: 177px; 
   }
-.view-moreadmindash{
-    width: 260px;
+.view-moreadmindash1{
+    /* width: 260px;
     height: 26px;
     flex-shrink: 0;
     background: #0A5377;
     color: white;
     margin-left: -12px;
     margin-top: -20px;
-    /* margin-top: 15px; */
-    /* padding: 10px; */
     text-align: center;
-    /* border-radius: 0 0 8px 8px; */
+    cursor: pointer;
+    top: auto; */
+    min-width: 329px;
+    max-width: 329px;
+    height: 26px;
+    flex-shrink: 0;
+    background: #0A5377;
+    color: white;
+    margin-left: -12px; /* Adjust if necessary */
+    margin-top: auto;  /* Pushes the button to the bottom */
+    text-align: center;
     cursor: pointer;
   }
   
