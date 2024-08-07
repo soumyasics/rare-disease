@@ -17,7 +17,7 @@ function CounsellorEditBlog() {
         content:"",
         category:"",
         image:{filename:''},
-        date:''
+        // date:''
     })
     const [errors, setErrors] = useState({
         title:"",
@@ -25,7 +25,7 @@ function CounsellorEditBlog() {
         content:"",
         category:"",
         image:"",
-        date:''
+        // date:''
     });
     const {blog_id}=useParams();
     const viewblogbyid=()=>{
@@ -86,7 +86,7 @@ console.log(blogdata,'blogdata');
         if (!blogdata.author) newErrors.author = "Author is required";
         if (!blogdata.content) newErrors.content = "Content is required";
         if (!blogdata.category) newErrors.category = "Category is required";
-        if (!blogdata.date) newErrors.date = "Posted On Date is required";
+        // if (!blogdata.date) newErrors.date = "Posted On Date is required";
 
 
 
@@ -104,7 +104,7 @@ console.log(blogdata,'blogdata');
         updatedData.append('author', blogdata.author);
         updatedData.append('content', blogdata.content);
         updatedData.append('category', blogdata.category);
-        updatedData.append('date', blogdata.date);
+        // updatedData.append('date', blogdata.date);
         updatedData.append('image',blogdata.image)
         
         axiosInstance.post(`updateBlog/${blog_id}`,updatedData,{
@@ -246,10 +246,10 @@ console.log(blogdata,'blogdata');
             <div className='col-2'>
 
             </div>
-            <div className='col-1 mt-3'>
+            {/* <div className='col-1 mt-3'>
                     <p className='viewblog-head-p'>Posted On </p>
-            </div>
-            <div className='col-9 mt-3'>
+            </div> */}
+            {/* <div className='col-9 mt-3'>
                 <input 
                     style={{width:'100%',borderRadius:'5px'}}
                     className='viewblog-value-p'
@@ -259,7 +259,7 @@ console.log(blogdata,'blogdata');
                     name='date'
                 />
                 <p className='text-danger'>{errors.date}</p>
-            </div>
+            </div> */}
         </div>
         </div>
         <div className=' mt-3 viewblog-editbtn-div mb-3'>

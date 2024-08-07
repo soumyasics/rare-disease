@@ -7,7 +7,7 @@ function CounsellorBlogadd() {
     const id = localStorage.getItem("counsellorlogin");
     const today = new Date().toISOString().split("T")[0];
 
-    const [data, setData] = useState({
+    const initialState = {
         title: "",
         author: "",
         content: "",
@@ -15,8 +15,9 @@ function CounsellorBlogadd() {
         date: today,
         image: "",
         counsellorId: id
-    });
-    // const today = new Date().toISOString().split("T")[0];
+    };
+
+    const [data, setData] = useState(initialState);
 
     const handlechange = (e) => {
         setData({
@@ -53,6 +54,7 @@ function CounsellorBlogadd() {
             console.log(result);
             if (result.data.status === 200) {
                 toast.success("Blog Added Successfully");
+                setData(initialState); // Reset state after successful submission
             } else {
                 toast.error("Cannot add at this moment");
             }
@@ -122,6 +124,7 @@ function CounsellorBlogadd() {
                                 onChange={handlechange}
                                 min={today}
                                 required
+                                readOnly
                             />
                         </div>
                         <div className='col-4'>

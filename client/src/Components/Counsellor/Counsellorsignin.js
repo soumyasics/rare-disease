@@ -53,7 +53,7 @@ function Counsellorsignin() {
         console.log(res);
         if (res.data.status === 200) {
           alert("Registration Successful");
-          navigate("/cou nsellor-login")
+          navigate("/counsellor-login")
         } else {
           alert(res.response.data.msg);
         }
