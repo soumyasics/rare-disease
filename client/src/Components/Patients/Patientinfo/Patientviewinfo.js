@@ -12,6 +12,8 @@ function Patientviewinfo() {
     useEffect(() => {
         axiosInstance.post(`viewinfobypId/${id}`)
             .then((res) => {
+                console.log(res);
+                
                 setData(res.data.data)
                 setMedicalHistory(res.data.data.medicalhistory) // Initialize the textarea with existing medical history
             })
@@ -40,7 +42,7 @@ function Patientviewinfo() {
     const updateMedicalHistory = () => {
         if (!validateMedicalHistory()) return
 
-        axiosInstance.post(`editinfobyid/${data._id}`, { medicalhistory: medicalHistory })
+        axiosInstance.post(`editinfobyid/${data?._id}`, { medicalhistory: medicalHistory })
             .then((res) => {
                 setData({ ...data, medicalhistory: medicalHistory })
                 setEditMode(false)
@@ -53,6 +55,14 @@ function Patientviewinfo() {
     return (
         <div>
             <div className='container view-pat-hrec'>
+                { data===null?(
+                    <>
+                    <div>
+                        <h3 style={{color:"red",textAlign:"center"}}>No Health Record Found</h3>
+                    </div>
+                    </>
+                ):(
+                    <>
                 <Link to="/patient-home" style={{ textDecoration: "none" }}>
                     <div className='view-pat-hrechead'>
                         <h1 className='ri-arrow-left-line'>Patient Information</h1>
@@ -121,6 +131,8 @@ function Patientviewinfo() {
                         </div>
                     )}
                 </div>
+                </>
+                )}
             </div>
         </div>
     )

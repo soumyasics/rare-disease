@@ -45,7 +45,9 @@ function Patientinfo() {
 
     if (name === "medicalhistory") {
       // Split the medical history text into an array by commas
-      const symptomsArray = value.split(",").map(symptom => symptom.trim());
+      const symptomsArray = value
+      .split(" ")
+      .map(symptom => symptom.trim());
 
       axiosInstance.post(`getDiseaseBySymptoms`, { symptoms: symptomsArray })
         .then((res) => {
@@ -72,6 +74,7 @@ function Patientinfo() {
       .then((res) => {
         if (res.data.status === 200) {
           toast.success("Added Successfully");
+          
         } else {
           toast.error(res.data.msg);
         }

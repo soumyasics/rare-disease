@@ -85,17 +85,17 @@ function Patienthomenav() {
               <p className="nav-item">Chats</p>
             </Link>
 
-            <Link
+            {/* <Link
               to="/patient-reqappoinments"
               style={{ textDecoration: "none" }}
             >
               {" "}
               <p className="nav-item">Appoinments</p>
-            </Link>
+            </Link> */}
 
             <div
               className=" image-profilelicon"
-              style={{ paddingLeft: "100px" }}
+              style={{ paddingLeft:"200px" }}
             >
               <img
                 src={imgprofile}
