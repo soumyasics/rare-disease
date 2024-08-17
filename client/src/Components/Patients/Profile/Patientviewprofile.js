@@ -341,7 +341,7 @@ const Patientviewprofile = () => {
                         )}
                       </>
                     ) : (
-                      <>: {data?.diseaseinfo}</>
+                      <span style={{fontWeight:"bold"}}>: {data?.diseaseinfo}</span>
                     )}
                   </div>
                   {/* <div className="col-4">

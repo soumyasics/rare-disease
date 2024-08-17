@@ -93,6 +93,12 @@ function HpViewPatientrecord() {
             <div className='col-8'>
             <h6>: {data?.patientid?.diseaseinfo}</h6>
             </div>
+            <div className='col-4'>
+            <p>Current Medication</p>
+            </div>
+            <div className='col-8'>
+            <h6>: {data?.medicalhistory}</h6>
+            </div>
             <div className='hpview-patientrecord-head'><h3>Medical History of {data?.patientid?.name}</h3></div>
             <div className='col-1'>
             </div>

@@ -163,12 +163,14 @@ function Counsellorsignin() {
                   )}
                 </div>
                 <div className="col-8 pb-3 patient-signin-input">
+                  <h5>Profile Upload : </h5>
                   <input
                     type="file"
                     name="image"
                     onChange={handleImageChange}
                     onBlur={handleBlur}
                     required
+                    
                   />
                 </div>
 

@@ -88,6 +88,8 @@ function Hpprofileview() {
     const phonePattern = /^\d{10}$/;
     const aadharPattern = /^\d{12}$/;
     const yearOfExpPattern = /^\d{1,3}$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
 
     if (!phonePattern.test(formData.phone)) {
       toast.info("Phone number must have exactly 10 digits and cannot be negative.");
@@ -106,6 +108,10 @@ function Hpprofileview() {
 
     if (!yearOfExpPattern.test(formData.yearofexp) || formData.yearofexp <= 0) {
       toast.info("Years of experience must be a positive number and cannot be more than 3 digits.");
+      return false;
+    }
+    if (!emailPattern.test(formData.email)) {
+      toast.info("Please enter a valid email address.");
       return false;
     }
 

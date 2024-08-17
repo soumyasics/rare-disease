@@ -35,7 +35,10 @@ function ViewCounsellorList() {
                         <div className='col'><h4>Images</h4></div>
                     </div>
                     {counsellordata && counsellordata.length ? (
-              counsellordata.map((a) => {
+              counsellordata
+              .slice()
+              .reverse()
+              .map((a) => {
                 return (
                     <div className='row mt-3 '>
                         <div className='col'><p>{a?.name}</p></div>
