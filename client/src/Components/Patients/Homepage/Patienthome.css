@@ -1,7 +1,7 @@
 .patient-homecontainer{
     background-image: url("../../../Assets//backgroundhome.jpg");
     height: 450px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .patient-homebackgroundtext p{

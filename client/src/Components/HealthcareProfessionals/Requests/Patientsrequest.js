@@ -97,6 +97,7 @@ function Patientsrequest() {
                     <p>Allergies</p>
                     <p>Medication</p>
                     <p>Emergency Contact</p>
+                    <p>Medical History</p>
 
                   </div>
                 </div>
@@ -112,6 +113,9 @@ function Patientsrequest() {
                     <p style={{paddingTop:""}}>: {a?.allergies}</p>
                     <p style={{paddingTop:""}}>: {a?.medication}</p>
                     <p style={{paddingTop:""}}>: {a?.emergencycontact}</p>
+                    <p style={{paddingTop:"" ,wordWrap: "break-word"}}>: {a?.medicalhistory}
+                      
+  </p>
 
                   </div>
                 </div>

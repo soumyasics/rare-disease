@@ -35,7 +35,10 @@ function ViewHcpList() {
                         <div className='col'><h4>Image</h4></div>
                     </div>
                     {hcpdata && hcpdata.length ? (
-              hcpdata.map((a) => {
+              hcpdata
+              .slice()
+              .reverse()
+              .map((a) => {
                 return (
                     <div className='row mt-3 '>
                         <div className='col'><p>{a?.name}</p></div>

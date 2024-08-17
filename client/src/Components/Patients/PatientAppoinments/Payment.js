@@ -46,7 +46,7 @@ function Payment() {
           setFormData({ ...formData, numberError: "Card number must be 16 digits." });
           return;
         }
-        if (formData.cdnumber.length < 3) {
+        if (formData.cdnumber.length != 3) {
           setFormData({ ...formData, cdnumberError: "CVV must be at least 3 digits." });
           return;
         }
