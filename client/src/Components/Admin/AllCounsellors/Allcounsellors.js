@@ -69,7 +69,7 @@ function Allcounsellors() {
           <div className="adminviewallpatient-scrollmain">
             <div className="row">
               {data && data.length ? (
-                data.map((a) => {
+                data.slice().reverse().map((a) => {
                   return (
                     <div className="col-6 sm-3 lg-6 allcounsellors-detailedbox d-flex">
                       <div className="row">

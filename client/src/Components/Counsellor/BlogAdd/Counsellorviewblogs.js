@@ -46,7 +46,7 @@ const navigateToViewSingleBlog=(blog_id)=>{
           <div className="viewblog-counsellor-shrink">Counsellor</div>
           <div className="row d-flex">
             {blogdata && blogdata.length ? (
-              blogdata.map((a) => {
+              blogdata.slice().reverse().map((a) => {
                 return (
                   <div 
                   key={a?._id} 

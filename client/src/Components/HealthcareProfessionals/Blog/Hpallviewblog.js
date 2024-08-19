@@ -25,7 +25,7 @@ function Hpallviewblog() {
     <div className="container">
       <div className="row">
         {blog && blog.length ? (
-          blog.map((a) => {
+          blog.slice().reverse().map((a) => {
             return (
                 <Link 
                 to={`/health-viewsingleblog/${a._id}`} style={{textDecoration:"none"}}

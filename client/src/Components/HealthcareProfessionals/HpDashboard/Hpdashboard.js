@@ -79,7 +79,7 @@ function Hpdashboard() {
   <div className="admindash-shrink">Appointments</div>
   <div className="row d-flex">
      {data && data.length ? (
-      data.slice(0, 3).map((a) => {
+      data.slice(0, 3).reverse().map((a) => {
         return ( 
           <div  className="col-4 counsellordash-counsellorcount">
             <div className="counsellor-dashdetails row d-flex">

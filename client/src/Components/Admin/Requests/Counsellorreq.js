@@ -78,7 +78,7 @@ function Counsellorreq() {
 
 
       {counsellor && counsellor.length ? (
-              counsellor.map((a) => {
+              counsellor.slice().reverse().map((a) => {
                 return (
 
       <div className="counreq-mainbox d-flex">
