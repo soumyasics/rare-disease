@@ -79,7 +79,7 @@ function Hprequest() {
 
 
     {hp && hp.length ? (
-            hp.map((a) => {
+            hp.slice().reverse().map((a) => {
               return (
 
     <div className="counreq-mainbox d-flex" style={{height:"319px"}}>

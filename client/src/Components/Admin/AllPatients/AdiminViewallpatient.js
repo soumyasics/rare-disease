@@ -84,7 +84,7 @@ function AdiminViewallpatient() {
                         <div className="row">
 
                             {data && data.length ? (
-                                data.map((a) => {
+                                data.slice().reverse().map((a) => {
                                     return (
                                         <div className="col-6 " key={a.id}>
                                             <div className="admin-viewpatient-box1st">

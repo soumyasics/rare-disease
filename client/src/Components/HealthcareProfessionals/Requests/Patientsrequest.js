@@ -80,7 +80,7 @@ function Patientsrequest() {
       <div className="counsreq-headc">Total Appoinments</div>
       <div className="counsereq-scrollmain">
         {data && data.length ? (
-          data.map((a) => {
+          data.slice().reverse().map((a) => {
             return (
               <div className="patienthp-mainbox d-flex">
                 <div className="col-3">

@@ -24,7 +24,10 @@ function ViewBlogpatient() {
     <div className="container">
       <div className="row">
         {blog && blog.length ? (
-          blog.map((a) => {
+          blog
+          .slice()
+          .reverse()
+          .map((a) => {
             return (
                 <Link to={`/patient-viewoneblog/${a._id}`} style={{textDecoration:"none"}}>
               <div className="view-blog-mainbox">

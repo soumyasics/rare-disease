@@ -38,7 +38,10 @@ function Viewhpappoinments() {
         </Link>
         <div className="row ">
           {data && data.length ? (
-            data.map((a) => {
+            data
+            .slice()
+            .reverse()
+            .map((a) => {
               return (
                 <div className="col-4 pb-3 viewhpreq-insidebox">
                   <div className=" viewhpreq-insideboxsecond d-flex ">

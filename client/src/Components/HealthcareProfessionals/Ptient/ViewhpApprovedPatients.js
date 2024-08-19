@@ -77,7 +77,7 @@ function ViewhpApprovedPatients() {
                     <div className="adminviewallpatient-scrollmain">
                         <div className="row">
                             {data && data.length ? (
-                                data.map((a) => (
+                                data.slice().reverse().map((a) => (
                                     <div className="col-6" key={a._id}>
                                         <div className="admin-viewpatient-box1st">
                                             <div className="row admin-viewpatient-contents">

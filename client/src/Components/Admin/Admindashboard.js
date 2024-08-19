@@ -143,7 +143,7 @@ function Admindashboard() {
           <div className="admindash-shrink">Counsellor</div>
           <div className="row d-flex">
             {counsellor && counsellor.length ? (
-              counsellor.slice(0, 3).map((a) => {
+              counsellor.slice(0, 3).reverse().map((a) => {
                 return (
                   <div key={a?._id} className="col-4 admindash-counsellorcount">
                     <div className="counsellor-dashpic row d-flex">
@@ -192,7 +192,7 @@ function Admindashboard() {
           </div>
           <div className="row d-flex">
             {hp && hp.length ? (
-              hp.slice(0, 3).map((e) => {
+              hp.slice(0, 3).reverse().map((e) => {
                 return (
                   <div key={e?._id} className="col-4 admindash-counsellorcount">
                     <div className="counsellor-dashpic row d-flex">

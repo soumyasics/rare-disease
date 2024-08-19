@@ -79,7 +79,7 @@ function Hpviewmedicalreport() {
                 <div className="row">
 
                      {data && data.length ? (
-                        data.map((a) => {
+                        data.slice().reverse().map((a) => {
                             return ( 
                                 <div className="col-6 ">
                                     <div className="admin-viewpatient-box1st">
