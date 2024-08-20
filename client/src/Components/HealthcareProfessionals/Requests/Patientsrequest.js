@@ -120,7 +120,7 @@ function Patientsrequest() {
                   </div>
                 </div>
                 <div className="col-3 counsereq-buttons">
-                  <p>Emial : {a?.patientid?.email}</p>
+                  <p>Email : {a?.patientid?.email}</p>
                   <p >Gender : {a?.patientid?.gender}</p>
 
                   <div className="custreqbutton-container patientreqhp-button">
