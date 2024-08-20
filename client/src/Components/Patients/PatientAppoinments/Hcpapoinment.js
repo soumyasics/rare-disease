@@ -47,7 +47,8 @@ function Hcpapoinment() {
       });
   }, []);
 
-  const today = new Date().toISOString().split("T")[0];
+  // const today = new Date().toISOString().split("T")[0];
+  const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split("T")[0];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -132,7 +133,7 @@ function Hcpapoinment() {
                 <input
                   type="date"
                   name="date"
-                  min={today}
+                  min={tomorrow}
                   value={formData.date}
                   onChange={handleInputChange}
                   required
@@ -140,11 +141,13 @@ function Hcpapoinment() {
               </div>
               <div className="col-6 pb-3">
                 <select name="time" value={formData.time} onChange={handleInputChange} required>
-                  <option hidden>Select Time Slot</option>
-                  <option>09:30am to 10:30am</option>
-                  <option>11:00am to 12:30pm</option>
-                  <option>01:30pm to 2:00pm</option>
-                  <option>02:30pm to 3:30pm</option>
+                <option value="" hidden disabled>
+      Select Time Slot
+    </option>
+    <option value="09:30am to 10:30am">09:30am to 10:30am</option>
+    <option value="11:00am to 12:30pm">11:00am to 12:30pm</option>
+    <option value="01:30pm to 2:00pm">01:30pm to 2:00pm</option>
+    <option value="02:30pm to 3:30pm">02:30pm to 3:30pm</option>
                 </select>
               </div>
               <div className="col-6 pb-3">

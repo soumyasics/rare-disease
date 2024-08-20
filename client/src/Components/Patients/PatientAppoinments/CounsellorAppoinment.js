@@ -41,7 +41,8 @@ function CounsellorAppoinment() {
         console.log(err);
       });
   }, []);
-  const today = new Date().toISOString().split("T")[0];
+  // const today = new Date().toISOString().split("T")[0];
+  const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split("T")[0];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -144,7 +145,7 @@ function CounsellorAppoinment() {
             <div className="col-6 ">
               <input
                 type="date"
-                min={today}
+                min={tomorrow}
                 name="date"
                 value={data.date}
                 onChange={handleInputChange}
