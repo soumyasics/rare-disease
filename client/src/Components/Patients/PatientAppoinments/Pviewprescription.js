@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axiosInstance from "../../Constants/Baseurl";
+import { FaPrescription } from "react-icons/fa";
 
 function Pviewprescription() {
     const {id}=useParams()
@@ -20,7 +21,7 @@ function Pviewprescription() {
     <div>
       <div className="container view-pat-hrec">
         <Link
-          to="/patient-home"
+          to="/patient-viewhrappoinment"
           className="ri-arrow-left-line"
           style={{ textDecoration: "none" }}
         ></Link>
@@ -28,6 +29,12 @@ function Pviewprescription() {
           <h1>Prescription</h1>
         </div>
         <hr />
+{
+  data===null?(<>
+  <p style={{fontSize:"22px",fontFamily:"cursive",textAlign:"center",color:"brown"}}>Your prescriptions will be updated by your doctor soon. Thank you for your patience! 😊</p>
+  </>):(
+
+
         <div className="row view-pat-prescription-pd">
           <div className="col-12 view-pat-hrcontent-main">
             <div className="row ">
@@ -112,6 +119,9 @@ function Pviewprescription() {
             </div>
           </div>
         </div>
+
+  )}
+
       </div>
     </div>
   );

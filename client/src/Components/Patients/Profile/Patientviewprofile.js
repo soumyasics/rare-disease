@@ -220,7 +220,7 @@ const Patientviewprofile = () => {
                         <input
                           type="date"
                           name="dob"
-                          value={formik.values.dob}
+                          value={formik.values.dob || (data?.dob && new Date(data.dob).toISOString().split("T")[0])}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
                         />
@@ -244,7 +244,7 @@ const Patientviewprofile = () => {
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
                         >
-                          <option hidden>Select Gender</option>
+                          <option hidden>{data?.gender}</option>
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
                           <option value="Others">Others</option>
@@ -311,7 +311,7 @@ const Patientviewprofile = () => {
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
                         >
-                          <option hidden>Select Usertype</option>
+                          <option hidden>{data?.usertype}</option>
                           <option value="Patient">Patient</option>
                           <option value="Care Giver">Care Giver</option>
                         </select>
@@ -324,13 +324,17 @@ const Patientviewprofile = () => {
                     )}
                   </div>
                   <div className="col-4">
-                    <p>Rare disease information</p>
+                    <p style={{fontWeight:"bold"}}>Rare disease information</p>
                   </div>
                   <div className="col-8">
                     {isEditing ? (
                       <>
-                        <input
-                          type="text"
+                        <textarea
+                        style={{
+                           width:"290px",
+                        height:"150px"
+                        }}
+                       
                           name="diseaseinfo"
                           value={formik.values.diseaseinfo}
                           onChange={formik.handleChange}
