@@ -80,7 +80,7 @@ function Counsellorsidebar() {
         <div className="adminsidebar-content">
           <div className="adminsidebar-head d-flex counsellor-headimage" >
            <Link to="/counsellor-priofile"> <img src={`${url}/${data?.image?.filename}`} alt="admin" width="150px" height="150px"/></Link>
-            <h4>{data.name}</h4>
+            <h4 style={{ whiteSpace: "pre-wrap", wordWrap: "break-word",width:"200px" }}>{data.name}</h4>
           </div>
 
           <div className="sidebar-item">

@@ -57,7 +57,7 @@ function Homepage() {
                         <p>At rare care, we are dedicated to empowering and supporting individuals and families affected by rare diseases. Our goal is to be a comprehensive and 
                             reliable resource for the rare disease community, offering up-to-date information, emotional support, and advocacy.<br></br><br></br>
                         {/* <i className='about-question'>How Rare care Can Help You?</i><br/> */}
-                        Rrare care is a non-profit organization, who were personally affected by [specific rare disease or general
+                        Rare care is a non-profit organization, who were personally affected by [specific rare disease or general
                          rare diseases]. Recognizing the urgent need for
                          support and information, we set out to create a community where patients, families, and healthcare professionals could 
                          connect and find hope.<br></br><br/>Thank you for visiting rare care. Together, we can make a difference in the lives of those affected by rare diseases.</p>
