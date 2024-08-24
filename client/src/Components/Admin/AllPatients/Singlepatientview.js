@@ -8,6 +8,8 @@ function Singlepatientview() {
     console.log(id);
 
     const [data,setData]=useState({})
+    const url = axiosInstance.defaults.url;
+
 
     useEffect(()=>{
         axiosInstance.post(`viewallpatientbyid/${id}`)
@@ -63,6 +65,13 @@ function Singlepatientview() {
                 <div className='col-8'>
                     <p>: {data?.phone}</p>
                 </div>
+                <div className='col-4'>
+                    <p>User Type</p>
+                </div>
+                <div className='col-8'>
+                    <p>: {data?.usertype}</p>
+                </div>
+
 
             </div>
             <h6 className='adminviewsingle-head'>diagnostic information</h6>
@@ -74,7 +83,13 @@ function Singlepatientview() {
                 <p>: {data?.diseaseinfo}</p>
             </div>
 
-            
+            {/* <h6 className='adminviewsingle-head'>Image </h6>
+            <div className='row adminviewsingle-personal'>
+            <div className='col-8'>
+            <img src={`${url}/${data?.image?.filename}`} alt='image' width="150px" height="150px"/> */}
+
+            {/* </div> */}
+            {/* </div> */}
             </div>
             </div>
 

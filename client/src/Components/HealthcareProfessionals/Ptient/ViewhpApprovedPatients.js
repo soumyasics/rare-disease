@@ -81,6 +81,12 @@ function ViewhpApprovedPatients() {
                                     <div className="col-6" key={a._id}>
                                         <div className="admin-viewpatient-box1st">
                                             <div className="row admin-viewpatient-contents">
+                                            <div className="col-6">
+                                                    <p>Appoinment Id</p>
+                                                </div>
+                                                <div className="col-6">
+                                                    <h6>: {a?._id.slice(0,10)}</h6>
+                                                </div>
                                                 <div className="col-6">
                                                     <p>Name</p>
                                                 </div>
@@ -88,10 +94,11 @@ function ViewhpApprovedPatients() {
                                                     <h6>: {a?.patientid?.name}</h6>
                                                 </div>
                                                 <div className="col-6">
-                                                    <p>Age</p>
+                                                    <p>Appoinment Date</p>
                                                 </div>
                                                 <div className="col-6">
-                                                    <h6>: {calculateAge(a?.patientid?.dob)}</h6>
+                                                    {/* <h6>: {calculateAge(a?.patientid?.dob)}</h6> */}
+                                                    <h6>: {a?.date}</h6>
                                                 </div>
                                                 <div className="col-6">
                                                     <p>Gender</p>
@@ -99,6 +106,7 @@ function ViewhpApprovedPatients() {
                                                 <div className="col-6">
                                                     <h6>: {a?.patientid?.gender}</h6>
                                                 </div>
+                                                
                                             </div>
                                             <div className="admin-viewpatient-content">
                                                 <Link to={`/health-viewpatientsrecord/${a?.patientid?._id}/${a?._id}`} style={{ textDecoration: "none", color: "white" }}>

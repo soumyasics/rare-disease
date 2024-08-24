@@ -6,6 +6,8 @@ function Hpviewhealrecone() {
     const {id}=useParams()
     const [data,setData]=useState({})
     const navigate=useNavigate()
+    const url = axiosInstance.defaults.url;
+
     useEffect(()=>{
         axiosInstance.post(`viewinfobypId/${id}`)
         .then((res)=>{
@@ -58,15 +60,24 @@ function Hpviewhealrecone() {
         <div>
             <div className='view-pat-hrechead'><h1>Medical History of {data?.patientid?.name}</h1></div>
             <div className='row'>
-            <div className='col-2 view-pat-hrimage'>
-            {/* <img src={img} alt='image'/> */}
-            </div>
-            <div className='col-8 sm-4 lg-4 view-pat-hrcontent-main'>
+            <div className='col-12 sm-6 lg-6 view-pat-hrcontent-main'>
             <div className='row'>
                 <p>{data?.medicalhistory}</p>
             </div>
             </div>
             </div>
+            
+        </div>
+        <div>
+            <div className='view-pat-hrechead'><h1>Image of Medical Report of {data?.patientid?.name}</h1></div>
+            <div className=''>
+            <div className='col-12 sm-6 lg-6 view-pat-hrcontent-main'>
+            <div className='row'>
+                <img src={`${url}/${data?.image?.filename}`} width="400px" height="400px"/>
+            </div>
+            </div>
+            </div>
+            
         </div>
         </div>
 

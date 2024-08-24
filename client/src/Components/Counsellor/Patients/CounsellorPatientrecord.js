@@ -14,7 +14,16 @@ function CounsellorPatientrecord() {
         axiosInstance.post(`viewApprovedBookingByCounsellorid/${counselorid}`)
         .then((res)=>{
         console.log(res);
-        setData(res.data.data)
+        const filteredDatas = res.data.data.reduce((uniquePatients, currentPatient) => {
+            // Check if the _id already exists in the uniquePatients array
+            if (!uniquePatients.some(patient => patient.patientId._id === currentPatient.patientId._id)) {
+              uniquePatients.push(currentPatient);
+            }
+            return uniquePatients;
+          }, []);
+          console.log(filteredDatas);
+
+        setData(filteredDatas)
     })
     .catch((err)=>{
         console.log(err);
@@ -87,6 +96,13 @@ function CounsellorPatientrecord() {
                                 <div className="col-6 ">
                                     <div className="admin-viewpatient-box1st">
                                         <div className="row admin-viewpatient-contents">
+                                        <div className="col-6">
+                                                <p>Appoinment Id</p>
+                                            </div>
+                                            <div className="col-6">
+                                                <h6>: {a?._id.slice(0,10)}</h6>
+                                            </div>
+
                                             <div className="col-6">
                                                 <p>Name</p>
                                             </div>

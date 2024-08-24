@@ -7,6 +7,8 @@ import axiosInstance from "../../Constants/Baseurl";
 function CounPatientHealthRecord() {
   const { id } = useParams();
   const [data, setData] = useState({});
+  const url = axiosInstance.defaults.url;
+
   useEffect(() => {
     axiosInstance
       .post(`viewinfobypId/${id}`)
@@ -61,12 +63,15 @@ function CounPatientHealthRecord() {
             <h1>Medical History of {data?.patientid?.name}</h1>
           </div>
           <div className="row">
-            <div className="col-2 view-pat-hrimage">
-              {/* <img src={img} alt='image'/> */}
-            </div>
-            <div className="col-8 sm-4 lg-4 view-pat-hrcontent-main">
+            <div className="col-12 sm-4 lg-4 view-pat-hrcontent-main">
               <div className="row">
                 <p>{data?.medicalhistory}</p>
+              </div>
+              <div className="view-pat-hrechead">
+            <h1>Image of Medical Report of {data?.patientid?.name}</h1>
+          </div>
+            <div className="col-12 sm-4 lg-4 view-pat-hrcontent-main">
+              <img src={`${url}/${data?.image?.filename}`} width="350px" height="400px"/>
               </div>
               <div>
                 <Link
