@@ -20,7 +20,16 @@ function ViewallCounsellors() {
       axiosInstance.post(`viewCounsellorBookingByPatientid/${id}`)
           .then((res) => {
               console.log(res)
-              setData(res.data.data)
+              const filteredDatas = res.data.data.reduce((uniquePatients, currentPatient) => {
+                // Check if the _id already exists in the uniquePatients array
+                if (!uniquePatients.some(patient => patient.counsellorId._id === currentPatient.counsellorId._id)) {
+                  uniquePatients.push(currentPatient);
+                }
+                return uniquePatients;
+              }, []);
+              console.log(filteredDatas);
+
+              setData(filteredDatas)
           })
           .catch((err) => {
               console.log(err)

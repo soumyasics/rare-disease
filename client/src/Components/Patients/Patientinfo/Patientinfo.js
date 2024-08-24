@@ -8,7 +8,8 @@ function Patientinfo() {
 
   const [data, setData] = useState({
     patientid: patientid,
-    medicalhistory: ""
+    medicalhistory: "",
+    image:""
   });
 
   const [patient, setPatient] = useState({});
@@ -67,17 +68,56 @@ function Patientinfo() {
         });
     }
   };
+  // const handleImageChange = (event) => {
+  //   const file = event.target.files[0];
+  //   setData({
+  //     ...data,
+  //     image: file,
+  //   });
+  // };
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const allowedTypes = ["image/jpeg", "image/png"];
+  
+    if (file && allowedTypes.includes(file.type)) {
+      setData({
+        ...data,
+        image: file,
+      });
+    } else {
+      toast.error("Please upload a valid image (JPG or PNG).");
+      // Clear the file input if the file type is not valid
+      event.target.value = null;
+    }
+  };
 
   const submitfn = (a) => {
     a.preventDefault();
-    axiosInstance.post(`regpatientinfo`, data)
+    
+    const formData = new FormData();
+    formData.append("patientid", data.patientid);
+    formData.append("medicalhistory", data.medicalhistory);
+    formData.append("image", data.image); 
+  
+    axiosInstance.post(`regpatientinfo`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
       .then((res) => {
+        console.log(res);
+        
         if (res.data.status === 200) {
           toast.success("Added Successfully");
-          
+          // window.location.reload()
+
         } else {
           toast.error(res.data.msg);
         }
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("An error occurred while uploading.");
       });
   };
 
@@ -141,6 +181,17 @@ function Patientinfo() {
                 <textarea 
                   value={predictions}
                   readOnly
+                />
+              </div>
+            </div>
+          </div>
+          <div className="prediction-content">
+            <div className="col-12 profileinfo-bottm">
+              <p>Upload Image of Medical Report</p>
+              <div className="col-12 input_file">
+                <input type="file"
+                name="image"
+                onChange={handleImageChange}
                 />
               </div>
             </div>

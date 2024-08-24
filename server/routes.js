@@ -55,9 +55,9 @@ router.post("/viewBookingByid/:id",patienthpreq.viewBookingByid)
 
 
 //patient information
-router.post("/regpatientinfo",Patientinfo.regpatientinfo)
+router.post("/regpatientinfo",Patientinfo.upload,Patientinfo.regpatientinfo)
 router.post("/viewinfobypId/:id",Patientinfo.viewinfobypId)
-router.post("/editinfobyid/:id",Patientinfo.editinfobyid)
+router.post("/editinfobyid/:id",Patientinfo.upload,Patientinfo.editinfobyid)
 router.post("/getDiseaseBySymptoms",Patientinfo.getDiseaseBySymptoms)
 
 

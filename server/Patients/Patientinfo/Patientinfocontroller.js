@@ -1,4 +1,17 @@
 const patientinfoschema = require("./PatientinfoSchema");
+const multer=require("multer")
+
+const storage = multer.diskStorage({
+  destination: function (req, res, cb) {
+    cb(null, "./upload");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage }).single("image");
+
 
 
 const regpatientinfo =async (req, res) => {
@@ -11,7 +24,9 @@ const regpatientinfo =async (req, res) => {
   }
   const patient = new patientinfoschema({
     patientid:req.body.patientid,
-    medicalhistory:req.body.medicalhistory
+    medicalhistory:req.body.medicalhistory,
+    image: req.file,
+
   });
  await patient
     .save()
@@ -49,9 +64,10 @@ const viewinfobypId=((req,res)=>{
   });
 })
 
-editinfobyid=((req,res)=>{
+const editinfobyid=((req,res)=>{
   patientinfoschema.findByIdAndUpdate({_id:req.params.id},{
-    medicalhistory:req.body.medicalhistory
+    medicalhistory:req.body.medicalhistory,
+    image:req.file
   })
   .then((data) => {
     res.json({
@@ -187,6 +203,7 @@ const getDiseaseBySymptoms = (req, res) => {
 
 module.exports={
     regpatientinfo,
+    upload,
     viewinfobypId,
     editinfobyid,
     getDiseaseBySymptoms

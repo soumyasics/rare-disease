@@ -22,6 +22,8 @@ function ViewBlogpatient() {
   }, []);
   return (
     <div className="container">
+            <Link to="/patient-home" style={{textDecoration:"none"}}><h5 className="ri-arrow-left-line"></h5></Link>
+
       <div className="row">
         {blog && blog.length ? (
           blog

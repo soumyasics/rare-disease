@@ -190,6 +190,33 @@ const viewBookingByhpid = (req, res) => {
   
   }
 
+  // const viewacceptedBookingByhpid = (req, res) => {
+  //   patientreqschema.find({ hpid: req.params.id, hpacceptstatus: "approved", paymentstatus: true })
+  //     .populate('patientid')
+  //     .exec()
+  //     .then(data => {
+  //       // Filter out duplicate patient IDs
+  //       const uniquePatients = data.filter(
+  //         (value, index, self) =>
+  //           index === self.findIndex((t) => t.patientid._id.toString() === value.patientid._id.toString())
+  //       );
+  
+  //       res.json({
+  //         status: 200,
+  //         msg: "Data obtained successfully",
+  //         data: uniquePatients
+  //       });
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       res.json({
+  //         status: 500,
+  //         msg: "No Data obtained",
+  //         Error: err
+  //       });
+  //     });
+  // };
+  
 module.exports={
     registerreq,
     viewBookingByhpid,

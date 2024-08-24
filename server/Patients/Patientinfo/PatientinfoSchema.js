@@ -12,6 +12,10 @@ const schema=mongoose.Schema({
         type:String,
               required:true,
            },
+           image:{
+            type:Object,
+            required:true
+           }
 
 });
 module.exports=mongoose.model('patientinfo',schema)

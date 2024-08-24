@@ -8,6 +8,8 @@ function HpViewPatientrecord() {
     const {id}=useParams()
     const [data,setData]=useState({})
     const [record,setRecord]=useState({})
+    const url = axiosInstance.defaults.url;
+
 
     useEffect(()=>{
         axiosInstance.post(`viewBookingByid/${id}`)
@@ -99,12 +101,23 @@ function HpViewPatientrecord() {
             <div className='col-8'>
             <h6>: {data?.medicalhistory}</h6>
             </div>
-            <div className='hpview-patientrecord-head'><h3>Medical History of {data?.patientid?.name}</h3></div>
+            <div className='hpview-patientrecord-head'>
+                <h3>Medical History of {data?.patientid?.name}</h3>
+                </div>
             <div className='col-1'>
             </div>
             <div className='col-11'>
             <h6>{record?.medicalhistory}</h6>
             </div>
+            <div className='hpview-patientrecord-head'>
+                <h3>Image of Medical Report of {data?.patientid?.name}</h3>
+                </div>
+            <div className='col-1'>
+            </div>
+            <div className='col-11'>
+            <h6><img src={`${url}/${record?.image?.filename}`} width="300px" height="400px"/></h6>
+            </div>
+
             <div className='col-4 view-health-button'>
            <Link to={`/health-addprescription/${data?.patientid?._id}/${id}`}> <button type='button' className='ri-add-circle-line'>Add Prescription</button></Link>
             </div>
