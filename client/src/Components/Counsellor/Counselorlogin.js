@@ -80,7 +80,7 @@ function Counselorlogin() {
           <button type="button" onClick={togglePasswordVisibility}>
           <i className={showPassword ? 'ri-eye-off-line' : 'ri-eye-line'}></i>          </button>
         </div>
-        <Link className="hpreset-password" to="/counselor-forgetpswd">Reset password</Link>
+        <Link className="hpreset-password" to="/counselor-forgetpswd">Forgot password</Link>
       </div>
       <button type="submit" className="hplogin-button">LOGIN</button>
       <div className='hplofin-reg'>

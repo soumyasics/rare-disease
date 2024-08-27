@@ -233,20 +233,6 @@ function Patientsignin() {
                     <i className="error">{errors.country}</i>
                   )}
                 </div>
-                <div className="col-6 pb-3 patient-signin-input">
-                  <input
-                    type="text"
-                    placeholder="City"
-                    name="city"
-                    value={values.city}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    required
-                  />
-                  {errors.city && touched.city && (
-                    <i className="error">{errors.city}</i>
-                  )}
-                </div>
                 <div className="col-12 pb-3 patient-signin-input">
                   <input
                     type="text"
@@ -261,7 +247,22 @@ function Patientsignin() {
                     <i className="error">{errors.diseaseinfo}</i>
                   )}
                 </div>
-                <div className="col-6 pb-3 patient-signin-input">
+                <div className="col-6 pb-3 patient-signin-input" style={{paddingTop:"34px"}}>
+                  <input
+                    type="text"
+                    placeholder="City"
+                    name="city"
+                    value={values.city}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    required
+                  />
+                  {errors.city && touched.city && (
+                    <i className="error">{errors.city}</i>
+                  )}
+                </div>
+
+                {/* <div className="col-6 pb-3 patient-signin-input"> */}
                 {/* <span className="patient-signin-span">
                   Upload Health Record
                 </span>
@@ -276,7 +277,7 @@ function Patientsignin() {
                 {errors.healthrecord && touched.healthrecord && (
                   <i className="error">{errors.healthrecord}</i>
                 )} */}
-              </div>
+              {/* </div> */}
               <div className="col-6 pb-3 patient-signin-input">
                 <span className="patient-signin-span">Upload Image</span>
                 <input
