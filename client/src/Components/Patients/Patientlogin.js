@@ -82,7 +82,7 @@ const navigate=useNavigate()
           <i className={showPassword ? 'ri-eye-off-line' : 'ri-eye-line'}></i>  
                   </button>
         </div>
-        <Link className="hpreset-password" to="/patient-forgetpswd">Reset password</Link>
+        <Link className="hpreset-password" to="/patient-forgetpswd">Forgot password</Link>
       </div>
       <button type="submit" className="hplogin-button">LOGIN</button>
       <div className='hplofin-reg'>

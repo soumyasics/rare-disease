@@ -4,12 +4,13 @@ const passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 // min 5 char, 1 uppercase, 1 lowercase, 1number, 1 symbol
 const pincodeErrorMessage = "Pincode must be a 6 digit number";
 const regnoErrorMessage = "Registernumber must be a 6 digit number";
+const passwordRules = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,16}$/;
 
 
 export const hpRegSchema  = yup.object().shape({
     name: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
     email:yup.string().email("Please enter a valid email").required("Required"),
-    password:  yup.string().min(5).max(16).matches(passwordRule, "1 uppercase, 1 number, 1 symbol").required("Required"),
+    password:  yup.string().min(5).max(16).matches(passwordRules, "1 uppercase, 1 number, 1 symbol").required("Required"),
     confirmpassword: yup.string().oneOf([yup.ref("password"), null], "Password mismatch").required("Required"),
     // buildingname: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
     city: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
